@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3967ab810339b63438484f05c79449b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1245840138601815419, guid: 9e103633d185ac944b3bec6298025be8, type: 3}
+  gameIsOver: 0
+  score: 0
