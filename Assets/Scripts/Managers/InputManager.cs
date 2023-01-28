@@ -10,12 +10,12 @@ public class InputManager : MonoBehaviour
 
     public float pauseButton = 0;
 
+    // The global instance for other scripts to reference
     public static InputManager instance;
 
     private void Awake()
     {
-        ResetValuesToDefault();
-        // Set up the instance of this
+        // Set up the singleton instance of this
         if (instance == null)
         {
             instance = this;
@@ -24,6 +24,8 @@ public class InputManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        ResetValuesToDefault();
     }
 
     void ResetValuesToDefault()
