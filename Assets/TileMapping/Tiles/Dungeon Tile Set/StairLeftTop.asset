@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: StairTopLeft
+  m_Name: StairLeftTop
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -5065799248461177404, guid: 539583acf11f9de408d48361a92a54ff,
     type: 3}

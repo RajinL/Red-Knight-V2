@@ -1,0 +1,1379 @@
+fileFormatVersion: 2
+guid: f7d7e549fb46975499e68c1658a138c7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1281440011619190713
+    second: EdgeBrickTopLeft
+  - first:
+      213: -9137202733848781849
+    second: EdgeBrickTopMid
+  - first:
+      213: 1216427606803757315
+    second: EdgeBrickTopRight
+  - first:
+      213: -5065799248461177404
+    second: StairTopLeft
+  - first:
+      213: -5866470876088802194
+    second: RightStairTop
+  - first:
+      213: 1867639659628828597
+    second: EdgeCrumbled1Left
+  - first:
+      213: -703131079376690137
+    second: EdgeCrumbled1Right
+  - first:
+      213: -2415522183862246450
+    second: WallEyesTopLeft
+  - first:
+      213: 3589604346796488548
+    second: WallEyesTopRight
+  - first:
+      213: 8402069431753979681
+    second: BrickBG4
+  - first:
+      213: 5325169273575712911
+    second: BrickBG3_TopMidBot0
+  - first:
+      213: 9039649710130466848
+    second: EdgeBrickMidLeft
+  - first:
+      213: 6882303124984309148
+    second: BlankDark
+  - first:
+      213: -9002537574882471207
+    second: EdgeBrickMidRight
+  - first:
+      213: -6519603601847834372
+    second: StairLeftMid
+  - first:
+      213: 8460146181467370424
+    second: RightStairMid
+  - first:
+      213: -4344102541092949575
+    second: EdgeCrumbled2Left
+  - first:
+      213: 776863144781068007
+    second: EdgeCrumbled2Right
+  - first:
+      213: -6083761851117212262
+    second: WallEyesBotLeft
+  - first:
+      213: -7944941820267036594
+    second: WallEyesBotRight
+  - first:
+      213: 2330420742427429724
+    second: BrickBG3_Bot0
+  - first:
+      213: -8752237890084566229
+    second: BrickBG2_Bot0
+  - first:
+      213: 7175520883438463860
+    second: EdgeBrickBotLeft
+  - first:
+      213: 5992326389220831505
+    second: EdgeBrickBotMid
+  - first:
+      213: -6850786736688866950
+    second: EdgeBrickBotRight
+  - first:
+      213: 5442271858762933506
+    second: StairLeftBot
+  - first:
+      213: 5014181046111876104
+    second: RightStairBot
+  - first:
+      213: 2682754667064825614
+    second: EdgeCrumbled3Left
+  - first:
+      213: -5361001871073967805
+    second: EdgeCrumbled3Right
+  - first:
+      213: 87495921702241009
+    second: SewerGateTopLeft
+  - first:
+      213: 310576162034533415
+    second: SewerGateTopRight
+  - first:
+      213: 2629193572532178365
+    second: BridgeBG1_Mid0
+  - first:
+      213: -5168892407593297801
+    second: BrickBG2_MidTop0
+  - first:
+      213: 7681413975841682921
+    second: EdgeCrumbled4Left
+  - first:
+      213: -7349768977360501514
+    second: EdgeCrumbled4Right
+  - first:
+      213: -8921894011469837626
+    second: SewerGateBotLeft
+  - first:
+      213: 3229402414043557221
+    second: SewerGateBotRight
+  - first:
+      213: -708339282981778308
+    second: BrickBG1_BotLeft0
+  - first:
+      213: 942224191796374929
+    second: EdgeSolidTopLeft
+  - first:
+      213: 6452315171691754915
+    second: EdgeSolidTopMid
+  - first:
+      213: -8129625776224431246
+    second: EdgeSolidTopRight
+  - first:
+      213: 473072096595021964
+    second: PeakInvertedLeft
+  - first:
+      213: 2821915465494016920
+    second: PeakInvertedRight
+  - first:
+      213: -8255729536650550849
+    second: EdgeCrumbled5Left
+  - first:
+      213: 3192115674992195230
+    second: EdgeCrumbled5Right
+  - first:
+      213: 281810332187911816
+    second: EdgeBrickSmall
+  - first:
+      213: -4149797047563344609
+    second: BrickBG1_MidRight0
+  - first:
+      213: -1796932982882365497
+    second: BrickBG3_Bot1
+  - first:
+      213: -5719848937715256222
+    second: EdgeSolidMidLeft
+  - first:
+      213: 1614142025017193642
+    second: BlankMed
+  - first:
+      213: -8703687311128899435
+    second: EdgeSolidMidRight
+  - first:
+      213: -5425702640691213970
+    second: BrickBG1_Mid1
+  - first:
+      213: -8698827482307696878
+    second: BrickBG2_TopBot0
+  - first:
+      213: 2539735960255660793
+    second: BrickBG2_MidTopLeft0
+  - first:
+      213: -832634844220940984
+    second: BrickBG2_MidTopRight0
+  - first:
+      213: 6167186260956001139
+    second: BrickBG2_MidTop1
+  - first:
+      213: -3622443499663340958
+    second: BrickBG2_Mid0
+  - first:
+      213: -7727031796329512772
+    second: BrickBG2_Mid1
+  - first:
+      213: -1005009782842076244
+    second: EdgeSolidBotLeft
+  - first:
+      213: -5306506427549766645
+    second: EdgeSolidBotMid
+  - first:
+      213: -546290137841397866
+    second: EdgeSolidBotRight
+  - first:
+      213: -5065431668459457460
+    second: BrickBG1_Mid2
+  - first:
+      213: 1191840544270050310
+    second: BrickBG2_TopBot1
+  - first:
+      213: -7074246986100729857
+    second: BrickBG1_TopRight0
+  - first:
+      213: 4903162962363679368
+    second: BrickBG1_TopLeft0
+  - first:
+      213: 7842573668713814581
+    second: BrickBG2_Mid2
+  - first:
+      213: -4819323680217043842
+    second: BrickBG3_TopMidBot1
+  - first:
+      213: -4807911516719414270
+    second: BrickBG3_TopMidBot2
+  - first:
+      213: -5100960930594872828
+    second: LadderTop
+  - first:
+      213: 952190018906804754
+    second: PlatformLightLeft
+  - first:
+      213: 5063383123503267149
+    second: PlatformLightMid
+  - first:
+      213: 2157888094811724182
+    second: PlatformLightRight
+  - first:
+      213: -2497477272437851690
+    second: LadderMain
+  - first:
+      213: -4562090183779277412
+    second: BridgeMain
+  - first:
+      213: 8805274735533550716
+    second: BridgeRight
+  - first:
+      213: -3680677221921655805
+    second: BridgeEndLeft
+  - first:
+      213: 4181698436641752397
+    second: Rock
+  - first:
+      213: 6137378769863165820
+    second: Key
+  - first:
+      213: -6999109337804598064
+    second: ChestClosed
+  - first:
+      213: -6283294577644682010
+    second: ChestOpen
+  - first:
+      213: -1293011420899447722
+    second: PlatformDarkLeft
+  - first:
+      213: -5646881769393876148
+    second: PlatformDarkMid
+  - first:
+      213: -4801130068602112633
+    second: PlatformDarkRight
+  - first:
+      213: 3989201682377867074
+    second: LadderBroken
+  - first:
+      213: -6721868081009775196
+    second: SignRight
+  - first:
+      213: -8380629293074426717
+    second: SignLeft
+  - first:
+      213: 5673921885698166438
+    second: Crate
+  - first:
+      213: 9162995001592093840
+    second: DoorOpenedTop
+  - first:
+      213: -9196969965278877067
+    second: DoorClosedTop
+  - first:
+      213: 9056975825846706132
+    second: PlatformBrokenLeft
+  - first:
+      213: 340284764103167279
+    second: PlatformBrokenRight
+  - first:
+      213: -1148195817511136813
+    second: LadderBot
+  - first:
+      213: -8579512277948729984
+    second: FenceLeft
+  - first:
+      213: 518115707770662278
+    second: FenceMid
+  - first:
+      213: 6685208747863228781
+    second: FenceRight
+  - first:
+      213: -7515290668025934182
+    second: FenceAlone
+  - first:
+      213: 4009054832780057503
+    second: DoorOpenedBot
+  - first:
+      213: -7915433986529153645
+    second: DoorClosedBot
+  - first:
+      213: 4197175469752727902
+    second: ChainVertMed
+  - first:
+      213: 5264174532613765798
+    second: ChainVertLongTop
+  - first:
+      213: 1677662028204419608
+    second: ChainVertShort
+  - first:
+      213: -860329419365272132
+    second: ChainHorizLeft
+  - first:
+      213: -6205799372120681239
+    second: ChainHorizMed
+  - first:
+      213: 2370556260047204919
+    second: ChainHorizRight
+  - first:
+      213: -2868929276509225914
+    second: HangingCageTopLeft
+  - first:
+      213: 3418864747007012509
+    second: HangingCageTopMid
+  - first:
+      213: 6186595729444907202
+    second: HangingCageTopRight
+  - first:
+      213: 697509473648982185
+    second: Barrel
+  - first:
+      213: -846391974095125158
+    second: BrownPot
+  - first:
+      213: -4561171003522874810
+    second: WhitePot
+  - first:
+      213: 4945284090559196315
+    second: ChainVertLongBot
+  - first:
+      213: 4768394320552816485
+    second: SkullsGroundLeft
+  - first:
+      213: 5867573130331378446
+    second: SkullsGroundMid
+  - first:
+      213: -8846300555725031555
+    second: SkullsGroundRight
+  - first:
+      213: -7339208995095750728
+    second: HangingCageBotLeft
+  - first:
+      213: 7257346360047789762
+    second: HangingCageBotMid
+  - first:
+      213: 3885741529897735657
+    second: HangingCageBotRight
+  - first:
+      213: 5722580045048602736
+    second: SpikesCleanLeft
+  - first:
+      213: -7465507967543426331
+    second: SpikesCleanRight
+  - first:
+      213: 5941507049196980252
+    second: SpikesBloodLeftHeavy
+  - first:
+      213: 4775801237407443081
+    second: SpikesBloodRightHeavy
+  - first:
+      213: -401053969549073822
+    second: SpikesBloodLeftMed
+  - first:
+      213: 5622726697052903215
+    second: SpikesBloodRightMed
+  - first:
+      213: 7359800309944425007
+    second: CobwebsLeft
+  - first:
+      213: -3695138972615592552
+    second: CobwebsLeftMid
+  - first:
+      213: 7580966542636351855
+    second: CobwebsRightMid
+  - first:
+      213: -2599197600530592986
+    second: CobwebsRight
+  - first:
+      213: 5064035844679676521
+    second: SawCircularLeftBottom
+  - first:
+      213: -674193664813326493
+    second: SawCircularMidBot
+  - first:
+      213: -7463370996822527099
+    second: SawCircularRightBot
+  - first:
+      213: -5112370778815970215
+    second: SawCircularLeftTop
+  - first:
+      213: 4501766584646465972
+    second: SawCircularMidTop
+  - first:
+      213: 3441636090532066517
+    second: SawCircularRightTop
+  - first:
+      213: 5979211315804911057
+    second: Copy for making stair collider_0
+  - first:
+      213: -2245851080340835929
+    second: Copy for making stair collider_1
+  - first:
+      213: 1889878545931383041
+    second: Copy for making stair collider_2
+  - first:
+      213: 7795177480636178904
+    second: Copy for making stair collider_3
+  - first:
+      213: -2766171504597901570
+    second: Copy for making stair collider_4
+  - first:
+      213: -1807581826168577814
+    second: Copy for making stair collider_5
+  - first:
+      213: 4112595088700424730
+    second: Copy for making stair collider_6
+  - first:
+      213: -2525452510939872007
+    second: Copy for making stair collider_7
+  - first:
+      213: 4995659725723996759
+    second: Copy for making stair collider_8
+  - first:
+      213: -8909312338682504600
+    second: Copy for making stair collider_9
+  - first:
+      213: -6784657179050949396
+    second: Copy for making stair collider_10
+  - first:
+      213: -5683354145411205458
+    second: Copy for making stair collider_11
+  - first:
+      213: -7534191529005326829
+    second: Copy for making stair collider_12
+  - first:
+      213: 3564468168174186081
+    second: Copy for making stair collider_13
+  - first:
+      213: 8881964738658934687
+    second: Copy for making stair collider_14
+  - first:
+      213: 6614319852514080774
+    second: Copy for making stair collider_15
+  - first:
+      213: -7479421564313256727
+    second: Copy for making stair collider_16
+  - first:
+      213: -6206982477307744486
+    second: Copy for making stair collider_17
+  - first:
+      213: -519543977137885024
+    second: Copy for making stair collider_18
+  - first:
+      213: -4205066143626909418
+    second: StairInvisLeft
+  - first:
+      213: -229349923984207110
+    second: Copy for making stair collider_20
+  - first:
+      213: 1797189765829978920
+    second: Copy for making stair collider_21
+  - first:
+      213: 5772630295462397557
+    second: StairInvisRight
+  - first:
+      213: -5971736092745002452
+    second: Copy for making stair collider_23
+  - first:
+      213: -2173539854454289847
+    second: Copy for making stair collider_24
+  - first:
+      213: 2825633470051631095
+    second: Copy for making stair collider_25
+  - first:
+      213: -3482509196505512606
+    second: Copy for making stair collider_26
+  - first:
+      213: 5246413758994038436
+    second: Copy for making stair collider_27
+  - first:
+      213: -4359207133638509174
+    second: Copy for making stair collider_28
+  - first:
+      213: -3589199430148870693
+    second: Copy for making stair collider_29
+  - first:
+      213: -2301715118877925373
+    second: Copy for making stair collider_30
+  - first:
+      213: 7835283340599601675
+    second: Copy for making stair collider_31
+  - first:
+      213: -2005333383876121112
+    second: Copy for making stair collider_32
+  - first:
+      213: 8145347164055131737
+    second: Copy for making stair collider_33
+  - first:
+      213: 8896987516437205597
+    second: Copy for making stair collider_34
+  - first:
+      213: -7946784957463526767
+    second: Copy for making stair collider_35
+  - first:
+      213: 3481365292723089381
+    second: Copy for making stair collider_36
+  - first:
+      213: 8167806118871052747
+    second: Copy for making stair collider_37
+  - first:
+      213: 7631989314824848195
+    second: Copy for making stair collider_38
+  - first:
+      213: 7997357553677919586
+    second: Copy for making stair collider_39
+  - first:
+      213: -9039040619540038965
+    second: Copy for making stair collider_40
+  - first:
+      213: 6120475641393331804
+    second: Copy for making stair collider_41
+  - first:
+      213: -1236430460667565920
+    second: Copy for making stair collider_42
+  - first:
+      213: 92969235225368413
+    second: Copy for making stair collider_43
+  - first:
+      213: -502703779345901268
+    second: Copy for making stair collider_44
+  - first:
+      213: -7504654816357087223
+    second: Copy for making stair collider_45
+  - first:
+      213: -5915029289222157020
+    second: Copy for making stair collider_46
+  - first:
+      213: -4319163606848407902
+    second: Copy for making stair collider_47
+  - first:
+      213: 5470269295591044974
+    second: Copy for making stair collider_48
+  - first:
+      213: -6782642083652103119
+    second: Copy for making stair collider_49
+  - first:
+      213: -5320764508031316057
+    second: Copy for making stair collider_50
+  - first:
+      213: -4102000048988441972
+    second: Copy for making stair collider_51
+  - first:
+      213: -3721228325163526836
+    second: Copy for making stair collider_52
+  - first:
+      213: -4477190477746257786
+    second: Copy for making stair collider_53
+  - first:
+      213: 5116397426028464790
+    second: Copy for making stair collider_54
+  - first:
+      213: -4687348154194993858
+    second: Copy for making stair collider_55
+  - first:
+      213: -3033415319796517232
+    second: Copy for making stair collider_56
+  - first:
+      213: -6817923164155048855
+    second: Copy for making stair collider_57
+  - first:
+      213: 2603292378099311250
+    second: Copy for making stair collider_58
+  - first:
+      213: 5101947519703915203
+    second: Copy for making stair collider_59
+  - first:
+      213: -2216986910684364206
+    second: Copy for making stair collider_60
+  - first:
+      213: -7125840523885825506
+    second: Copy for making stair collider_61
+  - first:
+      213: 3119344996620529383
+    second: Copy for making stair collider_62
+  - first:
+      213: 628105157070421917
+    second: Copy for making stair collider_63
+  - first:
+      213: -3659176632502811847
+    second: Copy for making stair collider_64
+  - first:
+      213: -9067052686392456811
+    second: Copy for making stair collider_65
+  - first:
+      213: 8551268269974332766
+    second: Copy for making stair collider_66
+  - first:
+      213: 484480544186737020
+    second: Copy for making stair collider_67
+  - first:
+      213: -724668717920224084
+    second: Copy for making stair collider_68
+  - first:
+      213: 5959301949346679589
+    second: Copy for making stair collider_69
+  - first:
+      213: -120363172394715197
+    second: Copy for making stair collider_70
+  - first:
+      213: -4737602065760472405
+    second: Copy for making stair collider_71
+  - first:
+      213: 7125226597146435463
+    second: Copy for making stair collider_72
+  - first:
+      213: -3280615078103754330
+    second: Copy for making stair collider_73
+  - first:
+      213: -6724947373546226867
+    second: Copy for making stair collider_74
+  - first:
+      213: -5804332704645481355
+    second: Copy for making stair collider_75
+  - first:
+      213: 861004596093979698
+    second: Copy for making stair collider_76
+  - first:
+      213: 4355305498228412920
+    second: Copy for making stair collider_77
+  - first:
+      213: -3895537008313662795
+    second: Copy for making stair collider_78
+  - first:
+      213: -4299181709338145952
+    second: Copy for making stair collider_79
+  - first:
+      213: -8299710055711409205
+    second: Copy for making stair collider_80
+  - first:
+      213: -8542158474060437279
+    second: Copy for making stair collider_81
+  - first:
+      213: -4407778407908190592
+    second: Copy for making stair collider_82
+  - first:
+      213: -3793257291821736936
+    second: Copy for making stair collider_83
+  - first:
+      213: 5666083590783780907
+    second: Copy for making stair collider_84
+  - first:
+      213: 6840705963864280223
+    second: Copy for making stair collider_85
+  - first:
+      213: 1160448884505996658
+    second: Copy for making stair collider_86
+  - first:
+      213: 2329798760837552213
+    second: Copy for making stair collider_87
+  - first:
+      213: 4230850986034260972
+    second: Copy for making stair collider_88
+  - first:
+      213: -1142733215791444032
+    second: Copy for making stair collider_89
+  - first:
+      213: 5199424319333819843
+    second: Copy for making stair collider_90
+  - first:
+      213: -341536562908898932
+    second: Copy for making stair collider_91
+  - first:
+      213: 4421098842062765847
+    second: Copy for making stair collider_92
+  - first:
+      213: -1194074885084047969
+    second: Copy for making stair collider_93
+  - first:
+      213: -2598032217608261857
+    second: Copy for making stair collider_94
+  - first:
+      213: -5348169972639667506
+    second: Copy for making stair collider_95
+  - first:
+      213: 4952509217609260340
+    second: Copy for making stair collider_96
+  - first:
+      213: 2117520838449442496
+    second: Copy for making stair collider_97
+  - first:
+      213: 7615316117721642325
+    second: Copy for making stair collider_98
+  - first:
+      213: -5348655620305034398
+    second: Copy for making stair collider_99
+  - first:
+      213: 6236099388818745540
+    second: Copy for making stair collider_100
+  - first:
+      213: -7643854034526500611
+    second: Copy for making stair collider_101
+  - first:
+      213: -7680620580624561856
+    second: Copy for making stair collider_102
+  - first:
+      213: -7535737976942875823
+    second: Copy for making stair collider_103
+  - first:
+      213: -772631527795748075
+    second: Copy for making stair collider_104
+  - first:
+      213: -7480536814533321355
+    second: Copy for making stair collider_105
+  - first:
+      213: -3555881290592835281
+    second: Copy for making stair collider_106
+  - first:
+      213: -6438938598325242297
+    second: Copy for making stair collider_107
+  - first:
+      213: 8835677469648952459
+    second: Copy for making stair collider_108
+  - first:
+      213: -6267465419922861072
+    second: Copy for making stair collider_109
+  - first:
+      213: -7179535995142141089
+    second: Copy for making stair collider_110
+  - first:
+      213: 6937107023076637816
+    second: Copy for making stair collider_111
+  - first:
+      213: 8863804241834058220
+    second: Copy for making stair collider_112
+  - first:
+      213: 5690511918965195454
+    second: Copy for making stair collider_113
+  - first:
+      213: -7000744173768360169
+    second: Copy for making stair collider_114
+  - first:
+      213: 6291310084046921904
+    second: Copy for making stair collider_115
+  - first:
+      213: -8599139314854387261
+    second: Copy for making stair collider_116
+  - first:
+      213: -4362699407445687812
+    second: Copy for making stair collider_117
+  - first:
+      213: -7274118548326252273
+    second: Copy for making stair collider_118
+  - first:
+      213: -7103301265712991929
+    second: Copy for making stair collider_119
+  - first:
+      213: 4639580377557942150
+    second: Copy for making stair collider_120
+  - first:
+      213: -6781253693134369020
+    second: Copy for making stair collider_121
+  - first:
+      213: -2980437992342019539
+    second: Copy for making stair collider_122
+  - first:
+      213: 2699634759924107003
+    second: Copy for making stair collider_123
+  - first:
+      213: 4175897851813840263
+    second: Copy for making stair collider_124
+  - first:
+      213: 5775151147519144343
+    second: Copy for making stair collider_125
+  - first:
+      213: 3626127401290118305
+    second: Copy for making stair collider_126
+  - first:
+      213: -1487233088896091257
+    second: Copy for making stair collider_127
+  - first:
+      213: 8490124749599917897
+    second: Copy for making stair collider_128
+  - first:
+      213: 6963908755212709060
+    second: Copy for making stair collider_129
+  - first:
+      213: 7575743846489229156
+    second: Copy for making stair collider_130
+  - first:
+      213: 3180138477962592612
+    second: Copy for making stair collider_131
+  - first:
+      213: -5501980232180539771
+    second: Copy for making stair collider_132
+  - first:
+      213: 1717998708009315250
+    second: Copy for making stair collider_133
+  - first:
+      213: -3872421502626124886
+    second: Copy for making stair collider_134
+  - first:
+      213: 5382021750902407149
+    second: Copy for making stair collider_135
+  - first:
+      213: -3035643668441901426
+    second: Copy for making stair collider_136
+  - first:
+      213: -9008012848335629852
+    second: Copy for making stair collider_137
+  - first:
+      213: -5347088872668364361
+    second: Copy for making stair collider_138
+  - first:
+      213: 8720492077660197402
+    second: Copy for making stair collider_139
+  - first:
+      213: 5960427916269573599
+    second: Copy for making stair collider_140
+  - first:
+      213: 923268926110419898
+    second: Copy for making stair collider_141
+  - first:
+      213: -1165322500485032493
+    second: Copy for making stair collider_142
+  - first:
+      213: 7839483724580526778
+    second: Copy for making stair collider_143
+  - first:
+      213: 174455717798069223
+    second: Copy for making stair collider_144
+  - first:
+      213: -1412292683424028237
+    second: Copy for making stair collider_145
+  - first:
+      213: -3284058530540658907
+    second: Copy for making stair collider_146
+  - first:
+      213: 5247189793956949113
+    second: Copy for making stair collider_147
+  - first:
+      213: -3199986392513898221
+    second: Copy for making stair collider_148
+  - first:
+      213: -2584869348161839255
+    second: Copy for making stair collider_149
+  - first:
+      213: 6956033978950767074
+    second: Copy for making stair collider_150
+  - first:
+      213: -1493906074060719842
+    second: Copy for making stair collider_151
+  - first:
+      213: -6436340922104587185
+    second: Copy for making stair collider_152
+  - first:
+      213: 2748492926432065741
+    second: Copy for making stair collider_153
+  - first:
+      213: -3265331661981021575
+    second: Copy for making stair collider_154
+  - first:
+      213: -8471837488780879531
+    second: Copy for making stair collider_155
+  - first:
+      213: 9032100560795422442
+    second: Copy for making stair collider_156
+  - first:
+      213: 4135312714709032221
+    second: Copy for making stair collider_157
+  - first:
+      213: -6769250425732596194
+    second: Copy for making stair collider_158
+  - first:
+      213: 2133120845738094479
+    second: Copy for making stair collider_159
+  - first:
+      213: 8919767864228331031
+    second: Copy for making stair collider_160
+  - first:
+      213: -6455230697678978096
+    second: Copy for making stair collider_161
+  - first:
+      213: -10271512407450159
+    second: Copy for making stair collider_162
+  - first:
+      213: 2805779465820509782
+    second: Copy for making stair collider_163
+  - first:
+      213: 7398995801760319917
+    second: Copy for making stair collider_164
+  - first:
+      213: 1338226855602168451
+    second: Copy for making stair collider_165
+  - first:
+      213: -5005033141628179188
+    second: Copy for making stair collider_166
+  - first:
+      213: 8133701437398570887
+    second: Copy for making stair collider_167
+  - first:
+      213: -559641037257484407
+    second: Copy for making stair collider_168
+  - first:
+      213: -796707336491223727
+    second: Copy for making stair collider_169
+  - first:
+      213: -810000220979926927
+    second: Copy for making stair collider_170
+  - first:
+      213: 361734571253308604
+    second: Copy for making stair collider_171
+  - first:
+      213: -2673759074223369971
+    second: Copy for making stair collider_172
+  - first:
+      213: 6153666555454736206
+    second: Copy for making stair collider_173
+  - first:
+      213: -3359370106872065996
+    second: Copy for making stair collider_174
+  - first:
+      213: 8276129483060611479
+    second: Copy for making stair collider_175
+  - first:
+      213: 8551793971441332479
+    second: Copy for making stair collider_176
+  - first:
+      213: 3069890746376353559
+    second: Copy for making stair collider_177
+  - first:
+      213: 1204286440363639826
+    second: Copy for making stair collider_178
+  - first:
+      213: 7058285957775499096
+    second: Copy for making stair collider_179
+  - first:
+      213: -4766319705616511772
+    second: Copy for making stair collider_180
+  - first:
+      213: 8783732718671058290
+    second: Copy for making stair collider_181
+  - first:
+      213: -7708268026634281623
+    second: Copy for making stair collider_182
+  - first:
+      213: -5692216014692652235
+    second: Copy for making stair collider_183
+  - first:
+      213: 7770546855569818674
+    second: Copy for making stair collider_184
+  - first:
+      213: 3553285859772277940
+    second: Copy for making stair collider_185
+  - first:
+      213: -8739370496219251068
+    second: Copy for making stair collider_186
+  - first:
+      213: 6211485609302169814
+    second: Copy for making stair collider_187
+  - first:
+      213: -2558602616457442897
+    second: Copy for making stair collider_188
+  - first:
+      213: 6599374126114917411
+    second: Copy for making stair collider_189
+  - first:
+      213: 4811464982853626765
+    second: Copy for making stair collider_190
+  - first:
+      213: -2932875941427175899
+    second: Copy for making stair collider_191
+  - first:
+      213: -4796461869568307495
+    second: Copy for making stair collider_192
+  - first:
+      213: 4771268093841262046
+    second: Copy for making stair collider_193
+  - first:
+      213: -1347080406188300738
+    second: Copy for making stair collider_194
+  - first:
+      213: -3769148303044155898
+    second: Copy for making stair collider_195
+  - first:
+      213: -2906995729405171636
+    second: Copy for making stair collider_196
+  - first:
+      213: -5202784901400122236
+    second: Copy for making stair collider_197
+  - first:
+      213: 1469083820688655362
+    second: Copy for making stair collider_198
+  - first:
+      213: -4362444344034017536
+    second: Copy for making stair collider_199
+  - first:
+      213: -108875803603013963
+    second: Copy for making stair collider_200
+  - first:
+      213: 7062816927852003631
+    second: Copy for making stair collider_201
+  - first:
+      213: 7104514426954999027
+    second: Copy for making stair collider_202
+  - first:
+      213: 1558833216514517758
+    second: Copy for making stair collider_203
+  - first:
+      213: -1482827777466053204
+    second: Copy for making stair collider_204
+  - first:
+      213: 8468878251254538412
+    second: Copy for making stair collider_205
+  - first:
+      213: -8077043117423120893
+    second: Copy for making stair collider_206
+  - first:
+      213: -4748000461551121782
+    second: Copy for making stair collider_207
+  - first:
+      213: 6888156511823115356
+    second: Copy for making stair collider_208
+  - first:
+      213: 4790193653420549502
+    second: Copy for making stair collider_209
+  - first:
+      213: -4930768562109996862
+    second: Copy for making stair collider_210
+  - first:
+      213: -3691400384411261264
+    second: Copy for making stair collider_211
+  - first:
+      213: -3825408342327774265
+    second: Copy for making stair collider_212
+  - first:
+      213: -5724705929675443444
+    second: Copy for making stair collider_213
+  - first:
+      213: 3846012143017103535
+    second: Copy for making stair collider_214
+  - first:
+      213: 7879595193024909096
+    second: Copy for making stair collider_215
+  - first:
+      213: 7537084597593550448
+    second: Copy for making stair collider_216
+  - first:
+      213: -2440548029960882798
+    second: Copy for making stair collider_217
+  - first:
+      213: -9006212170627045280
+    second: Copy for making stair collider_218
+  - first:
+      213: 4634479259993199633
+    second: Copy for making stair collider_219
+  - first:
+      213: -1455652685665717776
+    second: Copy for making stair collider_220
+  - first:
+      213: 4676150237790894236
+    second: Copy for making stair collider_221
+  - first:
+      213: -3528918470967481964
+    second: Copy for making stair collider_222
+  - first:
+      213: 5902510151533415477
+    second: Copy for making stair collider_223
+  - first:
+      213: -1406992775794729811
+    second: Copy for making stair collider_224
+  - first:
+      213: 4898563002006470172
+    second: Copy for making stair collider_225
+  - first:
+      213: -3605759895428197523
+    second: Copy for making stair collider_226
+  - first:
+      213: -3372373876201326275
+    second: Copy for making stair collider_227
+  - first:
+      213: 1284559804889855797
+    second: Copy for making stair collider_228
+  - first:
+      213: 9202493431570879864
+    second: Copy for making stair collider_229
+  - first:
+      213: 7490415341740921798
+    second: Copy for making stair collider_230
+  - first:
+      213: -8591428972444038893
+    second: Copy for making stair collider_231
+  - first:
+      213: -3694277037845811194
+    second: Copy for making stair collider_232
+  - first:
+      213: 8318176768225105004
+    second: Copy for making stair collider_233
+  - first:
+      213: -6000101460489605416
+    second: Copy for making stair collider_234
+  - first:
+      213: 2346084689508181033
+    second: Copy for making stair collider_235
+  - first:
+      213: 2534527641872093564
+    second: Copy for making stair collider_236
+  - first:
+      213: 1849242530566958776
+    second: Copy for making stair collider_237
+  - first:
+      213: -3715476053864424247
+    second: Copy for making stair collider_238
+  - first:
+      213: -793892146080409712
+    second: Copy for making stair collider_239
+  - first:
+      213: 5745770479898396209
+    second: Copy for making stair collider_240
+  - first:
+      213: -7084175832735418589
+    second: Copy for making stair collider_241
+  - first:
+      213: -4658558155401065885
+    second: Copy for making stair collider_242
+  - first:
+      213: 4049503377162850176
+    second: Copy for making stair collider_243
+  - first:
+      213: 6843699724747663030
+    second: Copy for making stair collider_244
+  - first:
+      213: -5746474494506476320
+    second: Copy for making stair collider_245
+  - first:
+      213: 1808109761060058501
+    second: Copy for making stair collider_246
+  - first:
+      213: 5123420897923385690
+    second: Copy for making stair collider_247
+  - first:
+      213: -2378117214875493135
+    second: Copy for making stair collider_248
+  - first:
+      213: -6491114932798051882
+    second: Copy for making stair collider_249
+  - first:
+      213: -6540143672382910353
+    second: Copy for making stair collider_250
+  - first:
+      213: 4772525018024448342
+    second: Copy for making stair collider_251
+  - first:
+      213: 8732932108074972807
+    second: Copy for making stair collider_252
+  - first:
+      213: 6277077186733099746
+    second: Copy for making stair collider_253
+  - first:
+      213: 1909401724460412030
+    second: Copy for making stair collider_254
+  - first:
+      213: -7451187802722135383
+    second: Copy for making stair collider_255
+  - first:
+      213: -3045005226141429413
+    second: Copy for making stair collider_256
+  - first:
+      213: 3775048503786646777
+    second: Copy for making stair collider_257
+  - first:
+      213: 7259183318434169737
+    second: Copy for making stair collider_258
+  - first:
+      213: 7405066496375579111
+    second: Copy for making stair collider_259
+  - first:
+      213: 2527230829128017667
+    second: Copy for making stair collider_260
+  - first:
+      213: 4780699931216513482
+    second: Copy for making stair collider_261
+  - first:
+      213: -2403051539967984699
+    second: Copy for making stair collider_262
+  - first:
+      213: -7937269988066000438
+    second: Copy for making stair collider_263
+  - first:
+      213: 5724162547885381913
+    second: Copy for making stair collider_264
+  - first:
+      213: 1495029581392098317
+    second: Copy for making stair collider_265
+  - first:
+      213: -676455867816859275
+    second: Copy for making stair collider_266
+  - first:
+      213: -5049048439540745900
+    second: Copy for making stair collider_267
+  - first:
+      213: -1245580407930185040
+    second: Copy for making stair collider_268
+  - first:
+      213: -5355772205712904384
+    second: Copy for making stair collider_269
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StairInvisLeft
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: -8}
+        - {x: 8, y: -2}
+        - {x: 8, y: -8}
+      physicsShape:
+      - - {x: 2, y: -8}
+        - {x: 8, y: -2}
+        - {x: 8, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 619a81c2f9a94a5c0800000000000000
+      internalID: -4205066143626909418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StairInvisRight
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: -8}
+        - {x: -8, y: -2}
+        - {x: -2, y: -8}
+      physicsShape:
+      - - {x: -8, y: -8}
+        - {x: -8, y: -2}
+        - {x: -2, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576c1b44ba08c1050800000000000000
+      internalID: 5772630295462397557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
