@@ -85,7 +85,6 @@ public class PlayerController : MonoBehaviour
         MovePlayer(movementForce);
     }
 
-
     private void MovePlayer(Vector2 movementForce)
     {
         if (grounded)
