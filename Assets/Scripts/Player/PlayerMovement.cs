@@ -11,10 +11,13 @@ public class PlayerMovement : MonoBehaviour
     private float dirX = 0f;
 
     [SerializeField]
+    private float playerSpeed = 4f;
+
+    [SerializeField]
     private float jumpPower = 9f;
 
     private enum MovementState { idle, running, jumping }
-    private MovementState state = MovementState.idle;
+    //private MovementState state = MovementState.idle;
 
     // Start is called before the first frame update
     private void Start()
@@ -30,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxisRaw("Horizontal");
 
-        rb.velocity = new Vector2(dirX * 4f, rb.velocity.y);
+        rb.velocity = new Vector2(dirX * playerSpeed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -43,19 +46,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimationState()
     {
+
+        MovementState state;
+
         if (dirX > 0f)
         {
-            anim.SetBool("isRunning", true);
+            state = MovementState.running;
             sprite.flipX = false;
         }
         else if (dirX < 0f)
         {
-            anim.SetBool("isRunning", true);
+            state = MovementState.running;
             sprite.flipX = true;
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            state = MovementState.idle;
         }
+
+        if (rb.velocity.y > 0.01f)
+        {
+            state = MovementState.jumping;
+        }
+        /* else if (rb.velocity.y > -0.1f)
+        {
+            state = MovementState.jumping;
+        } */
+
+        anim.SetInteger("state", (int)state);
     }
 }
