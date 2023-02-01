@@ -17174,6 +17174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1572706815091448345, guid: 9e103633d185ac944b3bec6298025be8,
         type: 3}
+      propertyPath: jumpPower
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572706815091448345, guid: 9e103633d185ac944b3bec6298025be8,
+        type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}

@@ -8,14 +8,14 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
 
     private SpriteRenderer sprite;
-    /*private float dirX = 0f;*/
+    private float dirX = 0f;
 
     [SerializeField]
     private float jumpPower = 9f;
     /*private float jumpPower = 7f;*/
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         // Search for this component once during start instead of searching every time you want to use it
         rb = GetComponent<Rigidbody2D>();
@@ -24,19 +24,23 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        float dirX = Input.GetAxisRaw("Horizontal");
+        dirX = Input.GetAxisRaw("Horizontal");
 
         rb.velocity = new Vector2(dirX * 4f, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            anim.SetBool("isJumping", true);
         }
 
-        /*UpdateAnimationUpdate();*/
+        UpdateAnimationState();
+    }
 
+    private void UpdateAnimationState()
+    {
         if (dirX > 0f)
         {
             anim.SetBool("isRunning", true);
@@ -52,22 +56,4 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isRunning", false);
         }
     }
-
-    /*void UpdateAnimationUpdate()
-    {
-        if (dirX > 0f)
-        {
-            anim.SetBool("running", true);
-            sprite.flipX = false;
-        }
-        else if (dirX < 0f)
-        {
-            anim.SetBool("running", true);
-            sprite.flipX = true;
-        }
-        else
-        {
-            anim.SetBool("running", false);
-        }
-    }*/
 }
