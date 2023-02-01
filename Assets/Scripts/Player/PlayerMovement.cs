@@ -39,17 +39,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (dirX > 0f)
         {
-            anim.SetBool("running", true);
+            anim.SetBool("isRunning", true);
             sprite.flipX = false;
         }
         else if (dirX < 0f)
         {
-            anim.SetBool("running", true);
+            anim.SetBool("isRunning", true);
             sprite.flipX = true;
         }
         else
         {
-            anim.SetBool("running", false);
+            anim.SetBool("isRunning", false);
         }
     }
 
