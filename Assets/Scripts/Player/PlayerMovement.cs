@@ -12,7 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private float jumpPower = 9f;
-    /*private float jumpPower = 7f;*/
+
+    private enum MovementState { idle, running, jumping }
+    private MovementState state = MovementState.idle;
 
     // Start is called before the first frame update
     private void Start()
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            anim.SetBool("isJumping", true);
+            //anim.SetBool("isJumping", true);
         }
 
         UpdateAnimationState();
