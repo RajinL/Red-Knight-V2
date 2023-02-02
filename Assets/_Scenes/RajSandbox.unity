@@ -17265,7 +17265,7 @@ PrefabInstance:
     - target: {fileID: 6327389927046495398, guid: 9e103633d185ac944b3bec6298025be8,
         type: 3}
       propertyPath: m_Mass
-      value: 0.7104282
+      value: 0.71306616
       objectReference: {fileID: 0}
     - target: {fileID: 6489766818394774437, guid: 9e103633d185ac944b3bec6298025be8,
         type: 3}
@@ -17766,6 +17766,7 @@ GameObject:
   - component: {fileID: 694777395}
   - component: {fileID: 694777394}
   - component: {fileID: 694777396}
+  - component: {fileID: 694777393}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -17773,6 +17774,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &694777393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694777392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6c92ca7840f9a44ae863199cd305c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &694777394
 SpriteRenderer:
   m_ObjectHideFlags: 0
