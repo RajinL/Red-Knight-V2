@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float jumpPower = 9f;
 
-    private enum MovementState { idle, running, jumping }
+    private enum MovementState { idle, running, jumping, falling }
     //private MovementState state = MovementState.idle;
 
     // Start is called before the first frame update
@@ -64,14 +64,14 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        if (rb.velocity.y > 0.01f)
+        if (rb.velocity.y > .1f)
         {
             state = MovementState.jumping;
         }
-        /* else if (rb.velocity.y > -0.1f)
+        else if (rb.velocity.y < -.01f)
         {
-            state = MovementState.jumping;
-        } */
+            state = MovementState.falling;
+        } 
 
         anim.SetInteger("state", (int)state);
     }
