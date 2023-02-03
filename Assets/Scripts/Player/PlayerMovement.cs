@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+    public bool facingRight = true;
+
     private SpriteRenderer sprite;
     private float dirX = 0f;
 
@@ -32,36 +34,49 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
+        Debug.Log(dirX);
 
         rb.velocity = new Vector2(dirX * playerSpeed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            //anim.SetBool("isJumping", true);
         }
 
         UpdateAnimationState();
     }
 
-    private void UpdateAnimationState()
+    void UpdateAnimationState()
     {
 
         MovementState state;
 
+        //if (dirX > 0f && !facingRight)
         if (dirX > 0f)
         {
             state = MovementState.running;
             sprite.flipX = false;
+
+            //Flip();
+
+            //state = MovementState.running;
+            //Debug.Log(state);
         }
+        //else if (dirX < 0f && facingRight)
         else if (dirX < 0f)
         {
             state = MovementState.running;
             sprite.flipX = true;
+
+            //Flip();
+
+            //state = MovementState.running;
+            //Debug.Log(state);
         }
         else
         {
             state = MovementState.idle;
+            //Debug.Log(state);
         }
 
         if (rb.velocity.y > .1f)
@@ -75,4 +90,15 @@ public class PlayerMovement : MonoBehaviour
 
         anim.SetInteger("state", (int)state);
     }
+
+    void Flip()
+    {
+        transform.Rotate(0f, 180f, 0f);
+
+        //Vector3 currentScale = gameObject.transform.localScale;
+        //currentScale.x *= -1;
+        //gameObject.transform.localScale = currentScale;
+
+        facingRight = !facingRight;
+    } 
 }
