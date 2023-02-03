@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidbody = null;
     public float movementSpeed = 4.0f;
 
+    //[SerializeField]
+    //private float jumpPower = 9.0f;
+
     public bool grounded
     {
         get
@@ -81,7 +84,6 @@ public class PlayerController : MonoBehaviour
         }
         MovePlayer(movementForce);
     }
-
 
     private void MovePlayer(Vector2 movementForce)
     {
