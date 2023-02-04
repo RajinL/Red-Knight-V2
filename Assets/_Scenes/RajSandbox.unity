@@ -17595,6 +17595,7 @@ GameObject:
   - component: {fileID: 649389602}
   - component: {fileID: 649389601}
   - component: {fileID: 649389600}
+  - component: {fileID: 649389604}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -17713,6 +17714,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649389604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649389599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ddb677f1a89de45bb729581176a5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 150
+  deathEffect: {fileID: 0}
 --- !u!1 &706193862
 GameObject:
   m_ObjectHideFlags: 0
@@ -24267,6 +24282,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235967003491384808, guid: 3c58ce87b09c73449a2db6cc28e41119,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c58ce87b09c73449a2db6cc28e41119, type: 3}
