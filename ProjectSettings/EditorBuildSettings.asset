@@ -9,8 +9,17 @@ EditorBuildSettings:
     path: Assets/_Scenes/SamSandbox.unity
     guid: a5757dd9fd4221b4c84f3c8a51bf9695
   - enabled: 1
+    path: Assets/_Scenes/OutsideScene.unity
+    guid: 1f352598b1861ba4788cbd923746b84a
+  - enabled: 1
     path: Assets/_Scenes/Level1part1.unity
     guid: f520dd43778cde14fad04d8bab2a6e56
+  - enabled: 1
+    path: Assets/_Scenes/Level1part2.unity
+    guid: 5fb2c179c3913304d91abf1778f3b5cb
+  - enabled: 1
+    path: Assets/_Scenes/Level1part3.unity
+    guid: 397b3aa6b69fb2448864ee553c22ce27
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2a17fde44e54d06418db3b241c8452ce,
       type: 2}
