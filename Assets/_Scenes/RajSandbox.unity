@@ -18069,6 +18069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba948d58e5026f42b6e2203c2c003e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombTrail: {fileID: 2121751594}
   bombDrop: {fileID: 275035248}
   bombPrefab: {fileID: 2319702314299648014, guid: 0ba5318d5c832bd459c0c45262a3882a,
     type: 3}
@@ -29351,6 +29352,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &2121751594 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2832559034119023659, guid: 0ba5318d5c832bd459c0c45262a3882a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2319702314263451489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1156970149574866888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29586,6 +29593,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garlic Bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648014, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
         type: 3}
       propertyPath: m_RootOrder
@@ -29639,6 +29651,51 @@ PrefabInstance:
     - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832559034119023659, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832559034119023659, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832559034119023659, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832559034119023659, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108298659823113398, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108298659823113398, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156955481615423995, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156955481615423995, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156955481615423995, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
