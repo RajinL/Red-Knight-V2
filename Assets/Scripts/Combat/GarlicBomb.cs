@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GarlicBomb : MonoBehaviour
 {
+    //public ParticleSystem bombTrail;
     public Transform bombDrop;
     public GameObject bombPrefab;
 
@@ -16,8 +17,14 @@ public class GarlicBomb : MonoBehaviour
         }
     }
 
+    //void CreateBombTrail()
+    //{
+    //    bombTrail.Play();
+    //}
+
     void DropBomb()
     {
+        //CreateBombTrail();
         Instantiate(bombPrefab, bombDrop.position, bombDrop.rotation);
     }
 }
