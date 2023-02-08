@@ -18,6 +18,8 @@ public class PlayerMovementV2 : MonoBehaviour
     [SerializeField]
     private float jumpPower = 9f;
 
+    public ParticleSystem dust;
+
     private enum MovementState { idle, running, jumping, falling }
     //private MovementState state = MovementState.idle;
 
@@ -33,6 +35,7 @@ public class PlayerMovementV2 : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        //dirX = Input.GetAxis("Horizontal");
         dirX = Input.GetAxisRaw("Horizontal");
         //Debug.Log(dirX);
 
@@ -61,7 +64,7 @@ public class PlayerMovementV2 : MonoBehaviour
         }
 
         if (dirX > 0f)
-        {
+        { 
             state = MovementState.running;
         }
         else if (dirX < 0f)
@@ -79,6 +82,7 @@ public class PlayerMovementV2 : MonoBehaviour
         }
         else if (rb.velocity.y < -.01f)
         {
+            CreateDustTrail();
             state = MovementState.falling;
         }
 
@@ -87,6 +91,7 @@ public class PlayerMovementV2 : MonoBehaviour
 
     void Flip()
     {
+        //CreateDustTrail();
         transform.Rotate(0f, 180f, 0f);
 
         //Vector3 currentScale = gameObject.transform.localScale;
@@ -94,5 +99,10 @@ public class PlayerMovementV2 : MonoBehaviour
         //gameObject.transform.localScale = currentScale;
 
         facingRight = !facingRight;
+    }
+
+    void CreateDustTrail()
+    {
+        dust.Play();
     }
 }

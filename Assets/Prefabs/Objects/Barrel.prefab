@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1408235391936448388}
   - component: {fileID: 1408235391936448389}
   - component: {fileID: 1408235391936448385}
+  - component: {fileID: -4196004901004988753}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -144,4 +145,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
+  damageEffect: {fileID: -4196004901004988753}
   deathEffect: {fileID: 0}
+--- !u!114 &-4196004901004988753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408235391936448442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725b0d5d7d7b86043af48cb4e428dd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageMaterial: {fileID: 2100000, guid: 69a4f99c49c2a534ba92a3efa0bf619d, type: 2}
+  duration: 0.07
