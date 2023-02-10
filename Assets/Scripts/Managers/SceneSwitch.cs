@@ -26,9 +26,13 @@ public class SceneSwitch : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Player")
+        {
+            SceneManager.LoadScene(sceneNumber);
+
+        }
         //StartCoroutine(ExecuteAfterTime(1));
         //StartCoroutine(ExecuteAfterTime(0));
-        SceneManager.LoadScene(sceneNumber);
 
     }
 }
