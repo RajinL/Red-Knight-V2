@@ -24715,7 +24715,7 @@ PrefabInstance:
     - target: {fileID: 1156970150312423441, guid: 5df468513fb10ff4e93b598c68a76bbb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.12
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 1156970150312423441, guid: 5df468513fb10ff4e93b598c68a76bbb,
         type: 3}
@@ -25109,6 +25109,11 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 939888226}
+    - target: {fileID: 5773234081951711043, guid: 7823d34312bee9946b63bc3989216e8d,
+        type: 3}
+      propertyPath: jumpPower
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5773234081951711043, guid: 7823d34312bee9946b63bc3989216e8d,
         type: 3}
       propertyPath: jumpableGround.m_Bits
