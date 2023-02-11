@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1156970150312423454}
   - component: {fileID: 1156970150312423453}
   - component: {fileID: -7086116954931361942}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   damageEffect: {fileID: -7086116954931361942}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 1860957981043368082, guid: b0efe8e169625204ab18081859c6da75,
+    type: 3}
 --- !u!114 &-7086116954931361942
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -24,5 +24,14 @@ public class DestructibleObject : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(forceDirection);
         rb.AddTorque(randomTorque);
+
+        Invoke("DestroySelf", Random.Range(1f, 3f));
+    }
+
+    void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 }
+
+
