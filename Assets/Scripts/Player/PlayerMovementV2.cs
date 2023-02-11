@@ -6,6 +6,10 @@ public class PlayerMovementV2 : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private BoxCollider2D coll;
+
+    [SerializeField]
+    private LayerMask jumpableGround;
 
     public bool facingRight = true;
 
@@ -28,6 +32,7 @@ public class PlayerMovementV2 : MonoBehaviour
     {
         // Search for this component once during start instead of searching every time you want to use it
         rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
@@ -41,7 +46,7 @@ public class PlayerMovementV2 : MonoBehaviour
 
         rb.velocity = new Vector2(dirX * playerSpeed, rb.velocity.y);
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
@@ -87,6 +92,11 @@ public class PlayerMovementV2 : MonoBehaviour
         }
 
         anim.SetInteger("state", (int)state);
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround);
     }
 
     void Flip()

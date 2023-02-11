@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -18315,7 +18315,7 @@ GameObject:
   - component: {fileID: 1036565671}
   - component: {fileID: 1036565675}
   - component: {fileID: 1036565674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25109,6 +25109,11 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 939888226}
+    - target: {fileID: 5773234081951711043, guid: 7823d34312bee9946b63bc3989216e8d,
+        type: 3}
+      propertyPath: jumpableGround.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5773234082267917961, guid: 7823d34312bee9946b63bc3989216e8d,
         type: 3}
       propertyPath: bombTrail

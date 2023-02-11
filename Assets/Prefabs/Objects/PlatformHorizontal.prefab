@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8404450058891266889}
   - component: {fileID: 8404450058891266888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlatformHorizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
