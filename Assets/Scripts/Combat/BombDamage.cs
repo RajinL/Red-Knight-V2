@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BombDamage : MonoBehaviour
 {
+    //public ParticleSystem explosion;
+
     public float speed = 10f;
     public int damage = 50;
     public Rigidbody2D rb;
@@ -27,6 +29,7 @@ public class BombDamage : MonoBehaviour
         if (DetonationTime <= 0)
         {
             Detonate();
+            //CreateExplosionEffect();
         }
 
         if (DetonationTime > 0)
@@ -61,6 +64,11 @@ public class BombDamage : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, ExplodeRange);
     }
+
+    //void CreateExplosionEffect()
+    //{
+    //    explosion.Play();
+    //}
 
     //private void OnCollisionEnter2D(Collision2D hitInfo)
     //{

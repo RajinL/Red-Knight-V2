@@ -4930,12 +4930,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfa7a99490b7a54e868715b117e5170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 2449265144588065078, guid: f3ebec0cc122bee4286f68c980e79777,
+    type: 3}
   speed: 10
   damage: 100
   rb: {fileID: 2319702314299648021}
   ExplodeRange: 2
   DetonationTime: 2
-  TimeToDestroy: 0.05
+  TimeToDestroy: 0.02
   WhatToDestroy:
     serializedVersion: 2
     m_Bits: 3072
