@@ -339,7 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpableGround:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1280
   facingRight: 1
   playerSpeed: 4
   jumpPower: 7
