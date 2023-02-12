@@ -155,7 +155,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4707590706219672144}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6eee83e7ac2af2d4282f973b30318de5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
     m_Bits: 1
   facingRight: 1
   playerSpeed: 4
-  jumpPower: 6
+  jumpPower: 7
   dust: {fileID: 5773234081040054141}
 --- !u!114 &5773234082267917961
 MonoBehaviour:
