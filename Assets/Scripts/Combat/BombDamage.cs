@@ -15,6 +15,8 @@ public class BombDamage : MonoBehaviour
     public float TimeToDestroy;
     float ActualTimeToDestroy;
 
+    public ParticleSystem explosionEffect;
+
     public LayerMask WhatToDestroy;
 
     void Start()
@@ -28,6 +30,7 @@ public class BombDamage : MonoBehaviour
     {
         if (DetonationTime <= 0)
         {
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Detonate();
             //CreateExplosionEffect();
         }
