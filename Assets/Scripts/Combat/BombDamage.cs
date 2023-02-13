@@ -26,11 +26,19 @@ public class BombDamage : MonoBehaviour
         ActualTimeToDestroy = DetonationTime + TimeToDestroy;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (DetonationTime <= 0)
         {
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void Update()
+    {
+        if (DetonationTime <= 0)
+        {
+            //Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Detonate();
             //CreateExplosionEffect();
         }
