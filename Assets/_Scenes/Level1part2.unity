@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -132,7 +132,7 @@ PrefabInstance:
         type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 588683741}
+      objectReference: {fileID: 696362848}
     - target: {fileID: 931267214371631840, guid: 06ddae5572e6c9249b7f1b60cf075b2d,
         type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -4744,6 +4744,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &696362848 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5773234081951711102, guid: 7823d34312bee9946b63bc3989216e8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1727134737}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &706193862
 GameObject:
   m_ObjectHideFlags: 0
@@ -15285,7 +15291,7 @@ PrefabInstance:
         type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 588683741}
+      objectReference: {fileID: 696362848}
     - target: {fileID: 931267214371631840, guid: 06ddae5572e6c9249b7f1b60cf075b2d,
         type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -15621,7 +15627,7 @@ PrefabInstance:
         type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 588683741}
+      objectReference: {fileID: 696362848}
     - target: {fileID: 931267214371631840, guid: 06ddae5572e6c9249b7f1b60cf075b2d,
         type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

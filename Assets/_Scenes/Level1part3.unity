@@ -1697,6 +1697,12 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!95 &383430756 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5773234081951711102, guid: 7823d34312bee9946b63bc3989216e8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 767899662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &403750855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9037,7 +9043,7 @@ PrefabInstance:
         type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 588683741}
+      objectReference: {fileID: 383430756}
     - target: {fileID: 931267214371631840, guid: 06ddae5572e6c9249b7f1b60cf075b2d,
         type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -10276,7 +10282,12 @@ PrefabInstance:
         type: 3}
       propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 588683741}
+      objectReference: {fileID: 383430756}
+    - target: {fileID: 931267214371631840, guid: 06ddae5572e6c9249b7f1b60cf075b2d,
+        type: 3}
+      propertyPath: myEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 931267214371631841, guid: 06ddae5572e6c9249b7f1b60cf075b2d,
         type: 3}
       propertyPath: m_Name
