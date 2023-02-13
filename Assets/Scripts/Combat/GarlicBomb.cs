@@ -8,6 +8,11 @@ public class GarlicBomb : MonoBehaviour
     public Transform bombDrop;
     public GameObject bombPrefab;
 
+    void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {

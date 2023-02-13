@@ -4767,6 +4767,7 @@ GameObject:
   - component: {fileID: 2319702314299648018}
   - component: {fileID: 2319702314299648019}
   - component: {fileID: 8174452677234264856}
+  - component: {fileID: 4724322853697227640}
   m_Layer: 0
   m_Name: Garlic Bomb
   m_TagString: Untagged
@@ -4909,7 +4910,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2319702314299648014}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c9b87657eb4e34408f10e2a1a808903, type: 3}
   m_Name: 
@@ -4917,3 +4918,26 @@ MonoBehaviour:
   speed: 10
   damage: 150
   rb: {fileID: 2319702314299648021}
+--- !u!114 &4724322853697227640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319702314299648014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbfa7a99490b7a54e868715b117e5170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 2449265144588065078, guid: f3ebec0cc122bee4286f68c980e79777,
+    type: 3}
+  speed: 10
+  damage: 100
+  rb: {fileID: 2319702314299648021}
+  ExplodeRange: 2
+  DetonationTime: 2
+  TimeToDestroy: 0.02
+  WhatToDestroy:
+    serializedVersion: 2
+    m_Bits: 3072
