@@ -23,7 +23,11 @@ public class OpenChest : MonoBehaviour
     {
         //StartCoroutine(ExecuteAfterTime(1));
         //StartCoroutine(ExecuteAfterTime(0));
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = ChestOpened;
+        if (collision.tag == "Player")
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = ChestOpened;
 
+
+        }
     }
 }

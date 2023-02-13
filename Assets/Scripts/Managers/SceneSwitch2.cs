@@ -31,8 +31,6 @@ public class SceneSwitch2 : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (collision.tag == "Player")
-            {
                 if (checkKey.hasKey)
                 {
                     SceneManager.LoadScene(sceneNumber);
@@ -43,7 +41,6 @@ public class SceneSwitch2 : MonoBehaviour
                     //"oh no, the door is seems to be locked!"
                 }
 
-            }
         }
         //StartCoroutine(ExecuteAfterTime(1));
         //StartCoroutine(ExecuteAfterTime(0));
