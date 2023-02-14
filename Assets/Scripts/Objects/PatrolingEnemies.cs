@@ -12,6 +12,8 @@ public class PatrolingEnemies : MonoBehaviour
     /*[SerializeField]
     private GameObject enemySprite;*/
 
+    public bool facingRight = true;
+
     private void Update()
     {
         MoveToNextPoint();
@@ -44,12 +46,26 @@ public class PatrolingEnemies : MonoBehaviour
             if (goalPoint == points.Count - 1)
             {
                 goalPoint = 0;
+                Flip();
             }
             else
             {
                 goalPoint++;
+                Flip();
             }
         }
 
+    }
+
+    void Flip()
+    {
+        //CreateDustTrail();
+        transform.Rotate(0f, 180f, 0f);
+
+        //Vector3 currentScale = gameObject.transform.localScale;
+        //currentScale.x *= -1;
+        //gameObject.transform.localScale = currentScale;
+
+        facingRight = !facingRight;
     }
 }
