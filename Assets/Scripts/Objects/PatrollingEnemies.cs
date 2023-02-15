@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolingEnemies : MonoBehaviour
+public class PatrollingEnemies : MonoBehaviour
 {
     public List<Transform> points;
     //public Transform enemy;
