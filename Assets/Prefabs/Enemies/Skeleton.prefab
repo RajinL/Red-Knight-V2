@@ -183,6 +183,8 @@ MonoBehaviour:
   health: 100
   damageEffect: {fileID: 6361923892610812661}
   deathEffect: {fileID: 0}
+  deathEffectOn: 0
+  animator: {fileID: 6361923892610812650}
 --- !u!114 &6361923892610812663
 MonoBehaviour:
   m_ObjectHideFlags: 0

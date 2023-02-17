@@ -17627,8 +17627,8 @@ MonoBehaviour:
   health: 150
   damageEffect: {fileID: 0}
   deathEffect: {fileID: 0}
-  attackDamage: 10
-  attackSpeed: 1
+  deathEffectOn: 1
+  animator: {fileID: 0}
 --- !u!50 &533607200
 Rigidbody2D:
   serializedVersion: 4
@@ -23361,6 +23361,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5df468513fb10ff4e93b598c68a76bbb, type: 3}
+--- !u!95 &1221641562 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2208523762993049656, guid: 0c68df67368780b478c48dee08c7d854,
+    type: 3}
+  m_PrefabInstance: {fileID: 2208523762752040821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1231352316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23475,8 +23481,8 @@ MonoBehaviour:
   health: 150
   damageEffect: {fileID: 0}
   deathEffect: {fileID: 0}
-  attackDamage: 10
-  attackSpeed: 1
+  deathEffectOn: 1
+  animator: {fileID: 0}
 --- !u!50 &1295450910
 Rigidbody2D:
   serializedVersion: 4
@@ -23941,8 +23947,8 @@ MonoBehaviour:
   health: 150
   damageEffect: {fileID: 0}
   deathEffect: {fileID: 0}
-  attackDamage: 10
-  attackSpeed: 1
+  deathEffectOn: 1
+  animator: {fileID: 0}
 --- !u!50 &1538923356
 Rigidbody2D:
   serializedVersion: 4
@@ -25485,6 +25491,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2208523762993049636, guid: 0c68df67368780b478c48dee08c7d854,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1221641562}
     - target: {fileID: 2208523762993049636, guid: 0c68df67368780b478c48dee08c7d854,
         type: 3}
       propertyPath: deathEffect
