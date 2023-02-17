@@ -17629,6 +17629,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   deathEffectOn: 1
   animator: {fileID: 0}
+  enemyPatrol: {fileID: 0}
 --- !u!50 &533607200
 Rigidbody2D:
   serializedVersion: 4
@@ -23483,6 +23484,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   deathEffectOn: 1
   animator: {fileID: 0}
+  enemyPatrol: {fileID: 0}
 --- !u!50 &1295450910
 Rigidbody2D:
   serializedVersion: 4
@@ -23949,6 +23951,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   deathEffectOn: 1
   animator: {fileID: 0}
+  enemyPatrol: {fileID: 0}
 --- !u!50 &1538923356
 Rigidbody2D:
   serializedVersion: 4
@@ -26015,6 +26018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707590706219672144, guid: 7823d34312bee9946b63bc3989216e8d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5029893286453781810, guid: 7823d34312bee9946b63bc3989216e8d,
         type: 3}
