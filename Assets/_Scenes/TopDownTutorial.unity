@@ -2086,36 +2086,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vampire Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 6122029534284867864, guid: d91c16bffe93774418af88e246e001c2,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.7850338
-      objectReference: {fileID: 0}
-    - target: {fileID: 6122029534284867864, guid: d91c16bffe93774418af88e246e001c2,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.6463915
-      objectReference: {fileID: 0}
-    - target: {fileID: 6122029534284867864, guid: d91c16bffe93774418af88e246e001c2,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.038857892
-      objectReference: {fileID: 0}
-    - target: {fileID: 6122029534284867864, guid: d91c16bffe93774418af88e246e001c2,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.017270148
-      objectReference: {fileID: 0}
-    - target: {fileID: 6122029534284867865, guid: d91c16bffe93774418af88e246e001c2,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6122029534284867865, guid: d91c16bffe93774418af88e246e001c2,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6122029534284867866, guid: d91c16bffe93774418af88e246e001c2,
         type: 3}
       propertyPath: m_SortingOrder
@@ -2125,16 +2095,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6122029534284867867, guid: d91c16bffe93774418af88e246e001c2,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6122029534284867867, guid: d91c16bffe93774418af88e246e001c2,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6122029534284867867, guid: d91c16bffe93774418af88e246e001c2,
         type: 3}
