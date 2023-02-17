@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5666577244238993577}
   - component: {fileID: 4213328217213932222}
   - component: {fileID: 736528194681393929}
+  - component: {fileID: -9017469914124437791}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -160,4 +161,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMaterial: {fileID: 2100000, guid: d5773d4bcfd1341488725434db1f9a19, type: 2}
-  duration: 0
+  duration: 0.07
+--- !u!114 &-9017469914124437791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157244836311377835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7863d59877aa2479eab8bfd27ef61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 20
+  attackSpeed: 0.5

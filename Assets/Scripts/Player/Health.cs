@@ -4,21 +4,42 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int currentHealth = 3;
-    public int maximumHealth = 3;
+    public float currentHealth = 0f;
+    public float maximumHealth = 100f;
 
-    public int currentLives = 3;
-    public int maximumLives = 5;
+    public float currentLives = 3f;
+    public float maximumLives = 5f;
+
+    [SerializeField] private DamageEffect damageEffect;
+    //[SerializeField] private DamageEffect positiveEffect;
+    //public GameObject deathEffect;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = maximumHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateHealth(float modifier)
     {
-        
+        currentHealth += modifier;
+
+        damageEffect.Damage();
+
+        //if (currentHealth + modifier < currentHealth)
+        //{
+        //    damageEffect.Damage();
+        //} else if (currentHealth + modifier > currentHealth)
+        //{
+        //    positiveEffect.Damage();
+        //}
+
+        if (currentHealth > maximumHealth)
+        {
+            currentHealth = maximumHealth;
+        } else if (currentHealth <= 0f)
+        {
+            currentHealth = 0f;
+        }
     }
 }

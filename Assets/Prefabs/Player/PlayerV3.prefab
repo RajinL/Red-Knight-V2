@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 1247528983866588592}
   - component: {fileID: 5773234081951711103}
   - component: {fileID: 5773234081951711102}
+  - component: {fileID: 5147518992519147172}
   - component: {fileID: 5773234081951711099}
   - component: {fileID: 5773234081951711100}
   - component: {fileID: 5773234081951711043}
@@ -222,10 +223,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1539d7a99745a54d85432c3f4d98b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 3
-  maximumHealth: 3
+  currentHealth: 0
+  maximumHealth: 100
   currentLives: 3
   maximumLives: 5
+  damageEffect: {fileID: 5147518992519147172}
+  myEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5773234081951711102}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isDead
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &5773234081951711103
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -295,6 +311,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5147518992519147172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707590706219672144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725b0d5d7d7b86043af48cb4e428dd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageMaterial: {fileID: 2100000, guid: d0bcde3456cd86942990a1b68b789d70, type: 2}
+  duration: 0.07
 --- !u!114 &5773234081951711099
 MonoBehaviour:
   m_ObjectHideFlags: 0

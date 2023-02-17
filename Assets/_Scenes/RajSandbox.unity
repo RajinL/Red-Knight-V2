@@ -17627,6 +17627,8 @@ MonoBehaviour:
   health: 150
   damageEffect: {fileID: 0}
   deathEffect: {fileID: 0}
+  attackDamage: 10
+  attackSpeed: 1
 --- !u!50 &533607200
 Rigidbody2D:
   serializedVersion: 4
@@ -23473,6 +23475,8 @@ MonoBehaviour:
   health: 150
   damageEffect: {fileID: 0}
   deathEffect: {fileID: 0}
+  attackDamage: 10
+  attackSpeed: 1
 --- !u!50 &1295450910
 Rigidbody2D:
   serializedVersion: 4
@@ -23937,6 +23941,8 @@ MonoBehaviour:
   health: 150
   damageEffect: {fileID: 0}
   deathEffect: {fileID: 0}
+  attackDamage: 10
+  attackSpeed: 1
 --- !u!50 &1538923356
 Rigidbody2D:
   serializedVersion: 4
@@ -25933,6 +25939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mass
       value: 0.59947187
+      objectReference: {fileID: 0}
+    - target: {fileID: 1247528983866588592, guid: 7823d34312bee9946b63bc3989216e8d,
+        type: 3}
+      propertyPath: currentHealth
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
         type: 3}

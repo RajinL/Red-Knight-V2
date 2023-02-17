@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4289047426694273140}
   - component: {fileID: 4289047426694273143}
   - component: {fileID: 4289047426694273136}
+  - component: {fileID: 7740390158245729708}
   m_Layer: 11
   m_Name: Vampire
   m_TagString: Untagged
@@ -182,3 +183,17 @@ MonoBehaviour:
   damageEffect: {fileID: 4289047426694273143}
   deathEffect: {fileID: 6831827930727456335, guid: 90442d2c161e3524e942a06384789785,
     type: 3}
+--- !u!114 &7740390158245729708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4289047426694273142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7863d59877aa2479eab8bfd27ef61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 20
+  attackSpeed: 0.5
