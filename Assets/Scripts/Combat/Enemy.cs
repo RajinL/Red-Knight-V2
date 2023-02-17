@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     [SerializeField] private DamageEffect damageEffect;
     public GameObject deathEffect;
+    public bool deathEffectOn = true;
+    public Animator animator;
 
     public void TakeDamage(int damage)
     {
@@ -21,7 +23,16 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        if (deathEffectOn == true)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        else
+        {
+            animator.SetTrigger("isDead");
+            Destroy(gameObject, 5);
+        }   
+        
     }
 }
