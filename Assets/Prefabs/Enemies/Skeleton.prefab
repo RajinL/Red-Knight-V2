@@ -185,6 +185,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   deathEffectOn: 0
   animator: {fileID: 6361923892610812650}
+  enemyPatrol: {fileID: 6361923892610812663}
 --- !u!114 &6361923892610812663
 MonoBehaviour:
   m_ObjectHideFlags: 0

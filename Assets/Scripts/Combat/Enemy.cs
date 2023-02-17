@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     public bool deathEffectOn = true;
     public Animator animator;
 
+    public PatrollingEnemies enemyPatrol;
+    //public GameObject enemyObject;
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -31,6 +34,8 @@ public class Enemy : MonoBehaviour
         else
         {
             animator.SetTrigger("isDead");
+            enemyPatrol.moveSpeed = 0;
+            gameObject.layer = LayerMask.NameToLayer("DestroyedObjects");
             Destroy(gameObject, 5);
         }   
         
