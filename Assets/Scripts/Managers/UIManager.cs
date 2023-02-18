@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
 
     public void setScoreCount(int score)
     {
-        scoreUI.text = score.ToString();
+        scoreUI.text = ("Score: " + score.ToString());
     }
 
     private void OnEnable()
