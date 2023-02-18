@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 1156970150312423440}
   - component: {fileID: 1156970150312423455}
   - component: {fileID: 1156970150312423454}
-  - component: {fileID: 1156970150312423453}
   - component: {fileID: -7086116954931361942}
+  - component: {fileID: 690264490482220633}
   m_Layer: 10
   m_Name: Crate
-  m_TagString: Untagged
+  m_TagString: shootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.06, y: -3.513, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6585652726298744475}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,22 +134,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1156970150312423453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156970150312423452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4ddb677f1a89de45bb729581176a5e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 200
-  damageEffect: {fileID: -7086116954931361942}
-  deathEffect: {fileID: 1860957981043368082, guid: b0efe8e169625204ab18081859c6da75,
-    type: 3}
 --- !u!114 &-7086116954931361942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,3 +148,84 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMaterial: {fileID: 2100000, guid: 69a4f99c49c2a534ba92a3efa0bf619d, type: 2}
   duration: 0.07
+--- !u!114 &690264490482220633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156970150312423452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1539d7a99745a54d85432c3f4d98b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 4
+  currentHealth: 4
+  maxHealth: 4
+  invincibilityTime: 0
+  isInvincible: 0
+  initialLives: 0
+  currentLives: 0
+  maximumLives: 0
+  respawnWaitTime: 0
+  scoreValue: 1
+  damageEffect: {fileID: -7086116954931361942}
+  enemyDeathEffect: {fileID: 0}
+--- !u!1 &4982720903415269914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6585652726298744475}
+  - component: {fileID: 5890409576684821434}
+  m_Layer: 10
+  m_Name: TriggerCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6585652726298744475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982720903415269914}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1156970150312423441}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &5890409576684821434
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982720903415269914}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

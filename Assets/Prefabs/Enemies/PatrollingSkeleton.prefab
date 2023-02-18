@@ -100,6 +100,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2208523763063578761}
     m_Modifications:
+    - target: {fileID: 105671855, guid: 997203060e8a1744783c91209e091d30, type: 3}
+      propertyPath: damageEffect
+      value: 
+      objectReference: {fileID: 2208523762993049639}
     - target: {fileID: 6361923892610812651, guid: 997203060e8a1744783c91209e091d30,
         type: 3}
       propertyPath: m_RootOrder
@@ -160,6 +164,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 6361923892610812653, guid: 997203060e8a1744783c91209e091d30,
+        type: 3}
+      propertyPath: m_TagString
+      value: shootable
+      objectReference: {fileID: 0}
     - target: {fileID: 6361923892610812662, guid: 997203060e8a1744783c91209e091d30,
         type: 3}
       propertyPath: deathEffect
@@ -183,3 +192,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5110557239624006354}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2208523762993049639 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6361923892610812661, guid: 997203060e8a1744783c91209e091d30,
+    type: 3}
+  m_PrefabInstance: {fileID: 5110557239624006354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725b0d5d7d7b86043af48cb4e428dd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

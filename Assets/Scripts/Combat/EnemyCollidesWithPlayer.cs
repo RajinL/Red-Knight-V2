@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyCollidesWithPlayer : MonoBehaviour
 {
     // Enemy attack
-    [SerializeField] private float attackDamage = 20f;
+    [SerializeField] private int attackDamage = 20;
     [SerializeField] private float attackSpeed = 0.5f;
     private float allowAttack;
     private Transform target;
@@ -16,7 +16,7 @@ public class EnemyCollidesWithPlayer : MonoBehaviour
         {
             if (attackSpeed <= allowAttack)
             {
-                collision.gameObject.GetComponent<Health>().UpdateHealth(-attackDamage);
+                collision.gameObject.GetComponent<Health>().TakeDamage(attackDamage);
                 allowAttack = 0f;
             }
             else

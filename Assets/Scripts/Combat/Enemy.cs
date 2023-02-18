@@ -6,13 +6,13 @@ public class Enemy : MonoBehaviour
 {
     // Enemy health
     public int health = 100;
-    [SerializeField] private DamageEffect damageEffect;
-    public GameObject deathEffect;
+    //[SerializeField] private DamageEffect damageEffect;
+    //public GameObject deathEffect;
 
     public void TakeDamage(int damage)
     {
         health -= damage;
-        damageEffect.Damage();
+        //damageEffect.Damage();
         if (health <= 0)
         {
             Die();
@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        //Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

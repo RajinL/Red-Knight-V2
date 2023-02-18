@@ -5,34 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    /*void OnTriggerEnter(Collider other)
-    {
-        SceneManager.LoadScene(1);
-    }*/
-
-    [SerializeField]
-    public int sceneNumber;
-
+    [SerializeField] public string sceneName;
 
     //if we want the scene to load with a delay
-    IEnumerator ExecuteAfterTime(float time)
+    IEnumerator ExecuteAfterTime(Collider2D collision, float time)
     {
         yield return new WaitForSeconds(time);
 
         // Code to execute after the delay
-        SceneManager.LoadScene(1);
-
+        if (collision.tag == "Player")
+        {
+            // CREATE FADE TRANSITION AND PLACE HERE - CONTROLS SHOULD BE LOCKED
+            LoadNextScene();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            SceneManager.LoadScene(sceneNumber);
+            LoadNextScene();
 
+            //SceneManager.LoadScene(sceneName);
         }
-        //StartCoroutine(ExecuteAfterTime(1));
-        //StartCoroutine(ExecuteAfterTime(0));
-
+        StartCoroutine(ExecuteAfterTime(collision, 1));
+        //StartCoroutine(ExecuteAfterTime(collision, 0));
+    }
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -1,5 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &533566750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533566751}
+  - component: {fileID: 533566753}
+  - component: {fileID: 533566752}
+  m_Layer: 8
+  m_Name: Damage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &533566751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533566750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8157244836311377828}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &533566753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533566750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28b13e61b33a5f4faa1d3a9987f03ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
+  dealDamageOnTriggerEnter: 1
+  dealDamageOnTriggerStay: 0
+--- !u!61 &533566752
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533566750}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 0.64}
+  m_EdgeRadius: 0
 --- !u!1 &8157244836311377835
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,12 +85,12 @@ GameObject:
   - component: {fileID: 8157244836311377829}
   - component: {fileID: 8157244836311377834}
   - component: {fileID: 5666577244238993577}
-  - component: {fileID: 4213328217213932222}
   - component: {fileID: 736528194681393929}
   - component: {fileID: -9017469914124437791}
+  - component: {fileID: 9749548}
   m_Layer: 0
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: shootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +105,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.455198, y: -2.3478312, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 533566751}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -132,22 +206,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &4213328217213932222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8157244836311377835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4ddb677f1a89de45bb729581176a5e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  damageEffect: {fileID: 736528194681393929}
-  deathEffect: {fileID: 5638641230803131695, guid: 95f62d3c76ea77d49b9ad677a84e72a4,
-    type: 3}
 --- !u!114 &736528194681393929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +234,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 20
   attackSpeed: 0.5
+--- !u!114 &9749548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157244836311377835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1539d7a99745a54d85432c3f4d98b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 1
+  currentHealth: 1
+  maxHealth: 5
+  invincibilityTime: 1
+  isInvincible: 0
+  initialLives: 3
+  currentLives: 0
+  maximumLives: 0
+  respawnWaitTime: 0
+  scoreValue: 1
+  damageEffect: {fileID: 736528194681393929}
+  enemyDeathEffect: {fileID: 0}

@@ -7,13 +7,37 @@ public class GarlicBomb : MonoBehaviour
     public ParticleSystem bombTrail;
     public Transform bombDrop;
     public GameObject bombPrefab;
+    public UIManager uiManager;
+
+    private void Awake()
+    {
+        if (GameObject.FindGameObjectWithTag("ui_manager") != null)
+        {
+            uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
+        }
+    }
+
+    private void Start()
+    {
+        if (uiManager != null)
+        {
+            uiManager.setBombCount(GameManager.currentGarlicBombCount);
+        }
+        else
+        {
+            Debug.LogWarning("UI Manager cannot be found. Make sure that a UI Canvas tagged with \"ui_manager\" is present");
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire2"))
         {
-            DropBomb();
+            if (GameManager.currentGarlicBombCount > 0)
+            {
+                DropBomb();
+            }
         }
     }
 
@@ -21,9 +45,14 @@ public class GarlicBomb : MonoBehaviour
     {
         Instantiate(bombPrefab, bombDrop.position, bombDrop.rotation);
         CreateBombTrail();
+        GameManager.currentGarlicBombCount--;
+        uiManager.setBombCount(GameManager.currentGarlicBombCount);
     }
     void CreateBombTrail()
     {
-        bombTrail.Play();
+        if (bombTrail != null)
+        {
+            bombTrail.Play();
+        }
     }
 }

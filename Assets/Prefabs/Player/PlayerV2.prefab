@@ -11,11 +11,9 @@ GameObject:
   - component: {fileID: 1066851027466498565}
   - component: {fileID: 5418552745381121181}
   - component: {fileID: 5192202965397828616}
-  - component: {fileID: 725763501735629495}
   - component: {fileID: 6813865164686314037}
   - component: {fileID: 2288126076267694330}
   - component: {fileID: 2288126076267694331}
-  - component: {fileID: 2288126076267694334}
   - component: {fileID: 2288126076267694329}
   - component: {fileID: 2288126076267694278}
   m_Layer: 0
@@ -24,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1066851027466498565
 Transform:
   m_ObjectHideFlags: 0
@@ -34,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1047952823514371541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.817, y: -3, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7429165411137194090}
   - {fileID: 887026950298764221}
@@ -80,7 +78,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.71306616
+  m_Mass: 1.3248357
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -89,23 +87,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &725763501735629495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047952823514371541}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 509f3d5d4ee3f3440baa4bac36e8194c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
-  groundCheck: {fileID: 2608944008954623642}
-  spriteRenderer: {fileID: 4284644451042743215}
-  playerHealth: {fileID: 6813865164686314037}
-  movementSpeed: 4
 --- !u!114 &6813865164686314037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,10 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1539d7a99745a54d85432c3f4d98b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 3
-  maximumHealth: 3
+  initialHealth: 1
+  currentHealth: 1
+  invincibilityTime: 3
+  isInvincible: 0
   currentLives: 3
-  maximumLives: 5
+  maximumLives: 10
+  respawnWaitTime: 3
 --- !u!212 &2288126076267694330
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -191,21 +175,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2288126076267694334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047952823514371541}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a5bf5bc0d5bd5a49b596cc645b8e073, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  facingRight: 1
-  playerSpeed: 4
-  jumpPower: 5
 --- !u!114 &2288126076267694329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,9 +202,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79bc7b18d27904429190a532502c209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpableGround:
+    serializedVersion: 2
+    m_Bits: 1280
   facingRight: 1
   playerSpeed: 4
-  jumpPower: 6
+  jumpPower: 8
+  dust: {fileID: 0}
 --- !u!1 &2288126076095245751
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +284,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000597449, y: -0.1432417}
+  m_Offset: {x: 0.0033454895, y: -0.6943823}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -322,7 +295,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.076719224, y: 0.026649058}
+  m_Size: {x: 0.36483192, y: 0.16228557}
   m_EdgeRadius: 0
 --- !u!114 &2608944008954623642
 MonoBehaviour:
