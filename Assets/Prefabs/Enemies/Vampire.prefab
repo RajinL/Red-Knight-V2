@@ -183,6 +183,9 @@ MonoBehaviour:
   damageEffect: {fileID: 4289047426694273143}
   deathEffect: {fileID: 6831827930727456335, guid: 90442d2c161e3524e942a06384789785,
     type: 3}
+  deathEffectOn: 1
+  animator: {fileID: 0}
+  enemyPatrol: {fileID: 0}
 --- !u!114 &7740390158245729708
 MonoBehaviour:
   m_ObjectHideFlags: 0

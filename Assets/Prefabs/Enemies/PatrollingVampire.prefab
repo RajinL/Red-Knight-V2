@@ -181,8 +181,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   damageEffect: {fileID: 457633913787605570}
-  deathEffect: {fileID: 5638641230803131695, guid: 95f62d3c76ea77d49b9ad677a84e72a4,
+  deathEffect: {fileID: 6831827930727456335, guid: 90442d2c161e3524e942a06384789785,
     type: 3}
+  deathEffectOn: 1
+  animator: {fileID: 0}
+  enemyPatrol: {fileID: 0}
 --- !u!114 &457633913787605577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +202,7 @@ MonoBehaviour:
   - {fileID: 2336593282549119699}
   - {fileID: 2336593282563917858}
   moveSpeed: 2
+  facingRight: 1
 --- !u!1 &2336593281234003128
 GameObject:
   m_ObjectHideFlags: 0
