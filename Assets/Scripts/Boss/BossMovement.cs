@@ -32,6 +32,7 @@ public class BossMovement : StateMachineBehaviour
         {
             animator.SetTrigger("Attack");
         }
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
