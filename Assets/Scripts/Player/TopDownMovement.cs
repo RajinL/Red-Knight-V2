@@ -13,7 +13,7 @@ public class TopDownMovement : MonoBehaviour
 
     private int isRunning;
     private bool isFlipped = false;
-    private Transform boss;
+    public Transform target;
 
     [SerializeField]
     float moveSpeed;
@@ -29,7 +29,8 @@ public class TopDownMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        boss = GameObject.FindGameObjectWithTag("Boss").transform;
+
+        UpdateTarget();
     }
 
     // Update is called once per frame
@@ -53,6 +54,18 @@ public class TopDownMovement : MonoBehaviour
 
     }
 
+    private void UpdateTarget()
+    {
+        if (GameObject.FindGameObjectsWithTag("Boss").Length == 1)
+        {
+            target = GameObject.FindGameObjectWithTag("Boss").transform;
+        }
+        else
+        {
+            target = GameObject.FindGameObjectWithTag("Finish").transform;
+        }
+    }
+
     public void LookAtBoss()
     {
         // Fetch the mouse position and work out the angle
@@ -61,7 +74,7 @@ public class TopDownMovement : MonoBehaviour
         Vector3 gunFlipped = playerGun.transform.localScale;
 
         // If the player is on the left of the boss
-        if (transform.position.x < boss.position.x)
+        if (transform.position.x < target.position.x)
         {
             // Ensure the gun is the right way up
             gunFlipped.y = 1f;
@@ -75,7 +88,7 @@ public class TopDownMovement : MonoBehaviour
             }
         }
         // If the player is on the right of the booss
-        else if (transform.position.x > boss.position.x)
+        else if (transform.position.x > target.position.x)
         {
             // Flip the gun sprint
             gunFlipped.y = -1f;
