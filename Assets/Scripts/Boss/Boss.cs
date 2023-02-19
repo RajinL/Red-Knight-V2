@@ -5,9 +5,25 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
 
-    public Transform player;
+    public GameObject projectile;
+    public Transform firePoint;
 
-    public bool isFlipped = false;
+    private bool isFlipped = false;
+
+    private Transform player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    private void Update()
+    {
+        //Vector3 dir = player.transform.position - transform.position;
+        //dir = player.transform.InverseTransformDirection(dir);
+        //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        //firePoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    }
 
     public void LookAtPlayer()
     {
@@ -30,6 +46,11 @@ public class Boss : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
         isFlipped = !isFlipped;
 
+    }
+
+    public void Attack()
+    {
+        Instantiate(projectile, firePoint.position, firePoint.rotation);
     }
 
 }
