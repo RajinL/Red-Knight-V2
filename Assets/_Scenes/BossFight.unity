@@ -121,12 +121,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34423681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6692592620862092942, guid: 53241bbc018f64fb8b5d9038c991d019,
+    type: 3}
+  m_PrefabInstance: {fileID: 1303510715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &34423682
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34423681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d967b7d1af6b13409fd6797c606daa0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &34423688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6692592620862092914, guid: 53241bbc018f64fb8b5d9038c991d019,
     type: 3}
   m_PrefabInstance: {fileID: 1303510715}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &34423689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34423681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f074fa1874cac4948b752ba78125bf36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 329982458}
+  playerGun: {fileID: 619560416}
+  isFlipped: 0
 --- !u!1 &76851453
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +290,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1943831273}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &329982458 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6122029534284867867, guid: d91c16bffe93774418af88e246e001c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1943831273}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &329982459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +310,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 34423688}
   isFlipped: 0
+--- !u!4 &619560416 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6692592622423376088, guid: 53241bbc018f64fb8b5d9038c991d019,
+    type: 3}
+  m_PrefabInstance: {fileID: 1303510715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &821829216
 GameObject:
   m_ObjectHideFlags: 0
