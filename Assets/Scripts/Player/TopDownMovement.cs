@@ -8,11 +8,12 @@ public class TopDownMovement : MonoBehaviour
     public GameObject playerGun;
 
     private Rigidbody2D rb;
-    private Animator anim;
+    private Animator animator;
     private Vector2 movement;
 
-    private float dirX = 0f;
-    private float dirY = 0f;
+    private int isRunning;
+    private bool isFlipped = false;
+    private Transform boss;
 
     [SerializeField]
     float moveSpeed;
@@ -23,56 +24,91 @@ public class TopDownMovement : MonoBehaviour
     [SerializeField]
     float angle;
 
-    private enum MovementState { idle, running }
-
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        boss = GameObject.FindGameObjectWithTag("Boss").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Fetch the direction keys
-        //movement.x = Input.GetAxisRaw("Horizontal");
-        //movement.y = Input.GetAxisRaw("Vertical");
-
-        dirX = Input.GetAxisRaw("Horizontal");
-        dirY = Input.GetAxisRaw("Vertical");
-
-        UpdateAnimationState();
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate()
     {
         // Move the player
-        rb.velocity = new Vector2(dirX * moveSpeed, dirY * moveSpeed);
+        rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
 
-        // Look towards the mouse
+        isRunning = movement.x != 0 || movement.y != 0 ? 1 : 0;
+
+        animator.SetInteger("state", isRunning);
+
+        LookAtBoss();
+
+    }
+
+    public void LookAtBoss()
+    {
+        // Fetch the mouse position and work out the angle
         dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        angle = Mathf.Clamp(Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg, -45, 45);
+        float preAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        Vector3 gunFlipped = playerGun.transform.localScale;
+
+        // If the player is on the left of the boss
+        if (transform.position.x < boss.position.x)
+        {
+            // Ensure the gun is the right way up
+            gunFlipped.y = 1f;
+
+            angle = Mathf.Clamp(preAngle, -45, 45);
+
+            // Flip the sprint
+            if (isFlipped)
+            {
+                Flip();
+            }
+        }
+        // If the player is on the right of the booss
+        else if (transform.position.x > boss.position.x)
+        {
+            // Flip the gun sprint
+            gunFlipped.y = -1f;
+
+            // If the mouse is in the top left quadrant of the screen
+            if (preAngle > 0)
+            {
+                angle = Mathf.Clamp(preAngle, 135, 180);
+            } else // The mouse is in the bottom right of the screen
+            {
+                angle = Mathf.Clamp(preAngle, -180, -135);
+            }
+
+            // Flip the sprit
+            if (!isFlipped)
+            {
+                Flip();
+            }
+        }
+        playerGun.transform.localScale = gunFlipped;
         playerGun.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
-    void UpdateAnimationState()
+    private void Flip()
     {
-        MovementState state;
+ 
+        Vector3 playerFlipped = transform.localScale;
+        playerFlipped.z *= -1f;
+        transform.localScale = playerFlipped;
+        transform.Rotate(0f, 180f, 0f);
 
-        if (dirX > 0f || dirX < 0)
-        {
-            state = MovementState.running;
-        }
-        else if (dirY < 0f || dirY > 0f)
-        {
-            state = MovementState.running;
-        }
-        else
-        {
-            state = MovementState.idle;
-        }
+        isFlipped = !isFlipped;
 
-        anim.SetInteger("state", (int)state);
     }
+
 }
