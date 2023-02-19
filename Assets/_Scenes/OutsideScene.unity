@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123155303}
   - component: {fileID: 123155302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 140231331}
   - component: {fileID: 140231332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 237630188}
   - component: {fileID: 237630189}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 284194569
   m_SortingLayer: -1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 77adc8bfe31a0412fb512e6d9c444330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -445,6 +445,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &375209652
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3685435292458904097, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702081000879476209, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15203709396f0b944bd2ee8322fce885, type: 3}
 --- !u!1 &409309463
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +583,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 284194569
   m_SortingLayer: -1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: a08a37b3e8fd348a6aa32f11d3a65b29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -536,7 +605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 431071015}
   - component: {fileID: 431071016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +687,7 @@ GameObject:
   - component: {fileID: 472447249}
   - component: {fileID: 472447250}
   - component: {fileID: 472447251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,13 +776,13 @@ EdgeCollider2D:
   m_Points:
   - {x: -1.9099712, y: 11.935288}
   - {x: -1.8199654, y: 0.95129776}
-  - {x: 13.0941105, y: 0.79844666}
+  - {x: 13.0941105, y: 0.9512978}
   - {x: 15.347653, y: 2.0451388}
-  - {x: 18.341557, y: 2.0470195}
+  - {x: 18.341557, y: 2.045139}
   - {x: 19.752165, y: 2.8712473}
-  - {x: 22.404732, y: 3.0351362}
+  - {x: 22.404732, y: 2.871247}
   - {x: 25.328701, y: 1.690114}
-  - {x: 36.497543, y: 1.664587}
+  - {x: 36.497543, y: 1.690114}
   - {x: 36.471622, y: 16.580055}
 --- !u!1 &505741516
 GameObject:
@@ -840,7 +909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 691512697}
   - component: {fileID: 691512696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +1049,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 284194569
   m_SortingLayer: -1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e3309b7d2ebaf41fa87c88817dbec1f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1083,7 +1152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 826038684}
   - component: {fileID: 826038685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1164,7 +1233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 982651093}
   - component: {fileID: 982651094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1245,7 +1314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1048871469}
   - component: {fileID: 1048871470}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1316,75 +1385,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1189009246
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4707590706219672144, guid: 7823d34312bee9946b63bc3989216e8d,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerV3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7823d34312bee9946b63bc3989216e8d, type: 3}
 --- !u!1 &1304677605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1304677606}
   - component: {fileID: 1304677607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1739,7 +1739,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 284194569
   m_SortingLayer: -1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 85e2e5d9c081f4980b3f2730fe87dfd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1761,7 +1761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1633967180}
   - component: {fileID: 1633967181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1980,7 +1980,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 284194569
   m_SortingLayer: -1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 85e2e5d9c081f4980b3f2730fe87dfd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2002,7 +2002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1928324274}
   - component: {fileID: 1928324275}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tileset-sliced_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2082,7 +2082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1943895353}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
