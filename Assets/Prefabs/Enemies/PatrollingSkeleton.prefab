@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 2208523763063578761}
   m_Layer: 0
   m_Name: PatrollingSkeleton
-  m_TagString: Untagged
+  m_TagString: non_player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,9 +101,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 2208523763063578761}
     m_Modifications:
     - target: {fileID: 105671855, guid: 997203060e8a1744783c91209e091d30, type: 3}
+      propertyPath: objectType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 105671855, guid: 997203060e8a1744783c91209e091d30, type: 3}
       propertyPath: damageEffect
       value: 
       objectReference: {fileID: 2208523762993049639}
+    - target: {fileID: 855187421, guid: 997203060e8a1744783c91209e091d30, type: 3}
+      propertyPath: objectType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6361923892610812651, guid: 997203060e8a1744783c91209e091d30,
         type: 3}
       propertyPath: m_RootOrder
@@ -167,7 +175,7 @@ PrefabInstance:
     - target: {fileID: 6361923892610812653, guid: 997203060e8a1744783c91209e091d30,
         type: 3}
       propertyPath: m_TagString
-      value: shootable
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6361923892610812662, guid: 997203060e8a1744783c91209e091d30,
         type: 3}

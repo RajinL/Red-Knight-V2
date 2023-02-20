@@ -49,8 +49,11 @@ public class Damage : MonoBehaviour
         Health collidedHealth = collisionGameObject.GetComponent<Health>();
         if (collidedHealth != null)
         {
-            if (canOneShot) collidedHealth.TakeDamage(collidedHealth.GetCurrentHealth());
-            else collidedHealth.TakeDamage(damageAmount);
+            if (!collisionGameObject.CompareTag(gameObject.tag))
+            {
+                if (canOneShot) collidedHealth.TakeDamage(collidedHealth.GetCurrentHealth());
+                else collidedHealth.TakeDamage(damageAmount);
+            }
         }
     }
 

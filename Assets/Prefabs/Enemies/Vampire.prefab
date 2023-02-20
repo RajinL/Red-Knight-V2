@@ -17,10 +17,9 @@ GameObject:
   - component: {fileID: 4289047426694273136}
   - component: {fileID: 7740390158245729708}
   - component: {fileID: 7987922839953681693}
-  - component: {fileID: 7087781679896899230}
   m_Layer: 11
   m_Name: Vampire
-  m_TagString: shootable
+  m_TagString: non_player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +181,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ddb677f1a89de45bb729581176a5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  initialHealth: 3
+  currentHealth: 3
+  damageEffect: {fileID: 4289047426694273143}
+  deathEffect: {fileID: 0}
+  scoreValue: 1
+  enemyPatrol: {fileID: 0}
 --- !u!114 &7740390158245729708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,30 +215,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMaterial: {fileID: 2100000, guid: d5773d4bcfd1341488725434db1f9a19, type: 2}
   duration: 0.07
---- !u!114 &7087781679896899230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4289047426694273142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1539d7a99745a54d85432c3f4d98b80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 1
-  currentHealth: 1
-  maxHealth: 5
-  invincibilityTime: 1
-  isInvincible: 0
-  initialLives: 3
-  currentLives: 0
-  maximumLives: 0
-  respawnWaitTime: 0
-  scoreValue: 1
-  damageEffect: {fileID: 4289047426694273143}
-  enemyDeathEffect: {fileID: 0}
 --- !u!1 &5424616078488485975
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,9 +259,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28b13e61b33a5f4faa1d3a9987f03ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canDamage: 1
+  canOneShot: 0
   damageAmount: 1
   dealDamageOnTriggerEnter: 1
-  dealDamageOnTriggerStay: 0
+  dealDamageOnTriggerStay: 1
 --- !u!61 &169986611771240868
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1026,6 +1026,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 8157244836311377835, guid: b7b2aa057a060894789033f6fdf611fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7b2aa057a060894789033f6fdf611fc, type: 3}
 --- !u!4 &461750969 stripped
@@ -1769,6 +1774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bat (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157244836311377835, guid: b7b2aa057a060894789033f6fdf611fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7b2aa057a060894789033f6fdf611fc, type: 3}
@@ -33553,7 +33563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1776034829
 Transform:
   m_ObjectHideFlags: 0
@@ -33679,6 +33689,10 @@ PrefabInstance:
       propertyPath: attackDamage
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 533566750, guid: b7b2aa057a060894789033f6fdf611fc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8157244836311377828, guid: b7b2aa057a060894789033f6fdf611fc,
         type: 3}
       propertyPath: m_RootOrder
@@ -33748,6 +33762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bat (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157244836311377835, guid: b7b2aa057a060894789033f6fdf611fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7b2aa057a060894789033f6fdf611fc, type: 3}
@@ -34297,7 +34316,7 @@ GameObject:
   - component: {fileID: 2057264483}
   m_Layer: 0
   m_Name: ForegroundDamaging
-  m_TagString: Untagged
+  m_TagString: non_player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47287,7 +47306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8906833487380620636
 Transform:
   m_ObjectHideFlags: 0

@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Health
+public class EnemyHealth : Health
 {
     [Header("Score Value")]
     [Tooltip("The score amount this object awards.")]
     [SerializeField] private int scoreValue = 1;
 
-    [SerializeField] private bool deathEffectOn = true;
     [SerializeField] private PatrollingEnemies enemyPatrol;
 
     protected override void Die()
@@ -24,7 +23,7 @@ public class Enemy : Health
 
     private void KillEnemy()
     {
-        if (deathEffectOn == true && deathEffect)
+        if (deathEffect)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);

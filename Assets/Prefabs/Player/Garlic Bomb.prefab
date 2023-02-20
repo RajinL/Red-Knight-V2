@@ -4769,7 +4769,7 @@ GameObject:
   - component: {fileID: 4724322853697227640}
   m_Layer: 0
   m_Name: Garlic Bomb
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4915,7 +4915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 2
+  damage: 100
   rb: {fileID: 2319702314299648021}
   ExplodeRange: 2
   DetonationTime: 2

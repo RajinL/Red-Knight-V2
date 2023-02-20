@@ -13,7 +13,7 @@ public class SceneSwitch : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         // Code to execute after the delay
-        if (collision.tag == "Player")
+        if (collision.GetComponent<PlayerHealth>())
         {
             // CREATE FADE TRANSITION AND PLACE HERE - CONTROLS SHOULD BE LOCKED
             LoadNextSceneInBuild();
@@ -22,7 +22,7 @@ public class SceneSwitch : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.GetComponent<PlayerHealth>())
         {
             LoadNextSceneInBuild();
 

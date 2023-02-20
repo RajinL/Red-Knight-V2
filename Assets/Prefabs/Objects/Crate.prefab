@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 690264490482220633}
   m_Layer: 10
   m_Name: Crate
-  m_TagString: shootable
+  m_TagString: non_player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1539d7a99745a54d85432c3f4d98b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectType: 2
   initialHealth: 4
   currentHealth: 4
   damageEffect: {fileID: -7086116954931361942}
@@ -176,7 +175,7 @@ GameObject:
   - component: {fileID: 6585652726298744475}
   - component: {fileID: 5890409576684821434}
   m_Layer: 10
-  m_Name: TriggerCollider
+  m_Name: Crate TriggerCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -64,9 +64,9 @@ public class BombDamage : MonoBehaviour
         Collider2D[] ObjectsToDestroy = Physics2D.OverlapCircleAll(transform.position, ExplodeRange, WhatToDestroy);
         for (int i=0; i < ObjectsToDestroy.Length; i++)
         {
-            ObjectsToDestroy[i].GetComponent<Enemy>().TakeDamage(damage);
+            ObjectsToDestroy[i].GetComponent<Health>().TakeDamage(damage);
         }
-        Debug.Log("I'm exploding!");
+        //Debug.Log("I'm exploding!");
 
     }
 

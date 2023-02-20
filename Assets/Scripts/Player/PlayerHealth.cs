@@ -114,7 +114,7 @@ public class PlayerHealth : Health
             {
                 updateUI();
             }
-            CheckIfPlayerIsDead();
+            CheckIfObjectIsDead();
         }
     }
 

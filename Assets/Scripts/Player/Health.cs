@@ -21,11 +21,33 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        InitializeUISettings();
+    }
+
+    private void InitializeUISettings()
+    {
+        if (GameObject.FindGameObjectWithTag("ui_manager") != null)
+        {
+            uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
+        }
+        else
+        {
+            Debug.LogWarning("UI Manager cannot be found. Make sure that a UI Canvas tagged with \"ui_manager\" is present");
+        }
     }
 
     private void Start()
     {
         currentHealth = initialHealth;
+        SetAllChildrenToParentTag();
+    }
+
+    private void SetAllChildrenToParentTag()
+    {
+        foreach (Transform t in gameObject.transform)
+        {
+            t.tag = gameObject.tag;
+        }
     }
 
     public int GetCurrentHealth()
@@ -36,12 +58,15 @@ public class Health : MonoBehaviour
     public virtual void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        damageEffect.Damage();
+        if (damageEffect != null)
+        {
+            damageEffect.Damage();
+        }
 
-        CheckIfPlayerIsDead();
+        CheckIfObjectIsDead();
     }
 
-    protected virtual bool CheckIfPlayerIsDead()
+    protected virtual bool CheckIfObjectIsDead()
     {
         if (currentHealth <= 0)
         {
