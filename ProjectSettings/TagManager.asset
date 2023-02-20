@@ -6,6 +6,8 @@ TagManager:
   tags:
   - enemy
   - Boss
+  - FinishDoor
+  - Trigger
   layers:
   - Default
   - TransparentFX

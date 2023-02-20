@@ -13,5 +13,11 @@ public class FinishGame : MonoBehaviour
         TopDownMovement tdm = player.GetComponent<TopDownMovement>();
         Transform finishPoint = GameObject.FindGameObjectWithTag("Finish").transform;
         tdm.target = finishPoint;
+
+        GameObject frontDoor = GameObject.FindGameObjectWithTag("FinishDoor");
+
+        Animator doorAnimator = frontDoor.GetComponent<Animator>();
+
+        doorAnimator.SetBool("Closed", false);
     }
 }
