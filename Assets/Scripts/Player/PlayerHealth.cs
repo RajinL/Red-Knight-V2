@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PlayerHealth : Health
 {
-    [Header("Additional Player Health Info")]
-    [Tooltip("The max health the object has.")]
-    [SerializeField] private int maxHealth = 5;
-
     [Header("Invincibility Info")]
     [Tooltip("The time the player is invincible for after being damaged.")]
     [SerializeField] private float invincibilityTime = 3f;
@@ -37,8 +33,8 @@ public class PlayerHealth : Health
         if (GameObject.FindGameObjectWithTag("ui_manager") != null)
         {
             uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
-            uiManager.SetMaxHealth(maxHealth);
-            uiManager.SetLifeCount(initialLives);
+            uiManager.SetPlayerMaxHealth(initialHealth);
+            uiManager.SetPlayerLifeCount(initialLives);
         }
         else
         {
@@ -72,8 +68,8 @@ public class PlayerHealth : Health
 
     private void updateUI()
     {
-        uiManager.SetHealth(currentHealth);
-        uiManager.SetLifeCount(currentLives);
+        uiManager.SetPlayerHealth(currentHealth);
+        uiManager.SetPlayerLifeCount(currentLives);
     }
 
     void Respawn()

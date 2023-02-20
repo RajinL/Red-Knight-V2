@@ -21,7 +21,7 @@ public class GarlicBomb : MonoBehaviour
     {
         if (uiManager != null)
         {
-            uiManager.setBombCount(GameManager.currentGarlicBombCount);
+            uiManager.SetPlayerBombCount(GameManager.currentGarlicBombCount);
         }
         else
         {
@@ -46,7 +46,7 @@ public class GarlicBomb : MonoBehaviour
         Instantiate(bombPrefab, bombDrop.position, bombDrop.rotation);
         CreateBombTrail();
         GameManager.currentGarlicBombCount--;
-        uiManager.setBombCount(GameManager.currentGarlicBombCount);
+        uiManager.SetPlayerBombCount(GameManager.currentGarlicBombCount);
     }
     void CreateBombTrail()
     {

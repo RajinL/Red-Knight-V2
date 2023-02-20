@@ -10,7 +10,8 @@ public class UIManager : MonoBehaviour
 {
     public static bool allowPause; // set to false across classes if you need to prevent pausing
     private bool isPaused = false;
-    [SerializeField] private Slider healthSlider;
+    [SerializeField] private Slider playerHealthSlider;
+    [SerializeField] private Slider bossHealthSlider;
     [SerializeField] private TextMeshProUGUI lifeCount;
     [SerializeField] private TextMeshProUGUI bombCount;
     [SerializeField] private TextMeshProUGUI scoreUI;
@@ -36,28 +37,39 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void SetMaxHealth(int health)
+    /// <summary>
+    /// Sets the player healthbar slider's max value to match with the player's health settings.
+    /// Useful for when a scene first starts, and the slider's max value matches the player's
+    /// max health.
+    /// </summary>
+    /// <param name="health"></param>
+    public void SetPlayerMaxHealth(int health)
     {
-        healthSlider.maxValue = health;
-        healthSlider.value = health;
+        playerHealthSlider.maxValue = health;
+        playerHealthSlider.value = health;
     }
 
-    public void SetHealth(int health)
+    public void SetPlayerHealth(int health)
     {
-        healthSlider.value = health;
+        playerHealthSlider.value = health;
     }
 
-    public void SetLifeCount(int lives)
+    public void SetBossHealth(int health)
+    {
+        bossHealthSlider.value = health;
+    }
+
+    public void SetPlayerLifeCount(int lives)
     {
         lifeCount.text = (": " + lives.ToString());
     }
 
-    public void setBombCount(int bombs)
+    public void SetPlayerBombCount(int bombs)
     {
         bombCount.text = (": " + bombs.ToString());
     }
 
-    public void setScoreCount(int score)
+    public void SetScoreCount(int score)
     {
         scoreUI.text = ("Score: " + score.ToString());
     }

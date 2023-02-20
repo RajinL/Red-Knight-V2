@@ -10,12 +10,27 @@ public class EnemyHealth : Health
 
     [SerializeField] private PatrollingEnemies enemyPatrol;
 
+    public override void TakeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+        if (damageEffect != null)
+        {
+            damageEffect.Damage();
+        }
+
+        if (uiManager != null && gameObject.name == "Vampire Boss")
+        {
+            uiManager.SetBossHealth(currentHealth);
+        }
+        CheckIfObjectIsDead();
+    }
+
     protected override void Die()
     {
         if (uiManager != null)
         {
             GameManager.currentScoreCount += scoreValue;
-            uiManager.setScoreCount(GameManager.currentScoreCount);
+            uiManager.SetScoreCount(GameManager.currentScoreCount);
         }
         GetComponentInChildren<Damage>().StopDamaging();
         KillEnemy();
@@ -30,7 +45,8 @@ public class EnemyHealth : Health
         }
         else
         {
-            animator.SetTrigger("isDead");
+            if (animator.GetBool("IsDead")) animator.SetTrigger("isDead");
+
             if (enemyPatrol != null)
             {
                 enemyPatrol.moveSpeed = 0;

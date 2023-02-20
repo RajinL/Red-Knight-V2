@@ -78,7 +78,6 @@ public class Health : MonoBehaviour
 
     protected virtual void Die()
     {
-        Debug.Log(gameObject.name + " has " + currentHealth + " current health. Destroying...");
         Destroy(gameObject);
     }
 }

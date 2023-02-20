@@ -192,7 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4724e768edaca6c41bd20dd6435325da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSlider: {fileID: 8799496483279310613}
+  playerHealthSlider: {fileID: 8799496483279310613}
+  bossHealthSlider: {fileID: 0}
   lifeCount: {fileID: 5365026044294279159}
   bombCount: {fileID: 866026104609343177}
   scoreUI: {fileID: 409836112903279751}
@@ -283,7 +284,7 @@ GameObject:
   - component: {fileID: 409836111833242956}
   - component: {fileID: 409836111833242959}
   m_Layer: 5
-  m_Name: Life Img
+  m_Name: Player Life Img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,7 +840,7 @@ GameObject:
   - component: {fileID: 3985830575725994023}
   - component: {fileID: 5365026044294279159}
   m_Layer: 5
-  m_Name: Life Count Text (TMP)
+  m_Name: Player Life Count Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1178,7 +1179,7 @@ GameObject:
   - component: {fileID: 3403024021742989152}
   - component: {fileID: 8799496483279310613}
   m_Layer: 5
-  m_Name: Health Bar
+  m_Name: Player Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
