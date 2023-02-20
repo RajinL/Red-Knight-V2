@@ -237,11 +237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbea67e96e0b5844c89612460f5e9c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectType: 1
   initialHealth: 5
   currentHealth: 5
-  maxHealth: 5
   damageEffect: {fileID: 5147518992519147172}
-  enemyDeathEffect: {fileID: 0}
+  deathEffect: {fileID: 0}
+  maxHealth: 5
   invincibilityTime: 3
   isInvincible: 0
   initialLives: 3

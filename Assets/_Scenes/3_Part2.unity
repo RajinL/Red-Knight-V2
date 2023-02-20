@@ -2375,7 +2375,7 @@ PrefabInstance:
     - target: {fileID: 8686783132974874326, guid: 83e3c27f0b4d7814399f3d6cf30b858c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8686783132974874326, guid: 83e3c27f0b4d7814399f3d6cf30b858c,
         type: 3}
@@ -14463,6 +14463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canDamage: 1
+  canOneShot: 1
   damageAmount: 1
   dealDamageOnTriggerEnter: 1
   dealDamageOnTriggerStay: 1

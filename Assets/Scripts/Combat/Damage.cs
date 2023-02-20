@@ -7,11 +7,17 @@ using UnityEngine;
 /// </summary>
 public class Damage : MonoBehaviour
 {
-    public bool canDamage = true;
-    public int damageAmount = 1;
-    public bool dealDamageOnTriggerEnter = false;
-    public bool dealDamageOnTriggerStay = false;
+    [SerializeField] private bool canDamage = true;
+    [Tooltip("Can this object kill another object instantly upon colliding?")]
+    [SerializeField] private bool canOneShot = false;
+    [SerializeField] private int damageAmount = 1;
+    [SerializeField] private bool dealDamageOnTriggerEnter = false;
+    [SerializeField] private bool dealDamageOnTriggerStay = false;
 
+    /// <summary>
+    /// When this object collides with another object
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (canDamage)
@@ -23,6 +29,10 @@ public class Damage : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When this object collides with another object and stays next to it
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (canDamage)
@@ -39,8 +49,8 @@ public class Damage : MonoBehaviour
         Health collidedHealth = collisionGameObject.GetComponent<Health>();
         if (collidedHealth != null)
         {
-
-            collidedHealth.TakeDamage(damageAmount);
+            if (canOneShot) collidedHealth.TakeDamage(collidedHealth.GetCurrentHealth());
+            else collidedHealth.TakeDamage(damageAmount);
         }
     }
 

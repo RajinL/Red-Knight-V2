@@ -34328,6 +34328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28b13e61b33a5f4faa1d3a9987f03ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canDamage: 1
+  canOneShot: 1
   damageAmount: 1
   dealDamageOnTriggerEnter: 1
   dealDamageOnTriggerStay: 1

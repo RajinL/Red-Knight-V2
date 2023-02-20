@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    protected UIManager uiManager;
-
     [Header("Health Info")]
     [Tooltip("The health the object starts with after dying")]
     [SerializeField] protected int initialHealth = 3;
@@ -17,6 +15,7 @@ public class Health : MonoBehaviour
     [SerializeField] protected DamageEffect damageEffect;
     [SerializeField] protected GameObject deathEffect;
 
+    protected UIManager uiManager;
     protected Animator animator;
 
     private void Awake()
@@ -27,6 +26,11 @@ public class Health : MonoBehaviour
     private void Start()
     {
         currentHealth = initialHealth;
+    }
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
     }
 
     public virtual void TakeDamage(int damageAmount)
