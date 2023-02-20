@@ -8,6 +8,7 @@ TagManager:
   - Boss
   - FinishDoor
   - Trigger
+  - Waypoint
   layers:
   - Default
   - TransparentFX
