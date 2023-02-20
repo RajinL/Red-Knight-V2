@@ -7,22 +7,30 @@ using UnityEngine;
 /// </summary>
 public class Damage : MonoBehaviour
 {
+    public bool canDamage = true;
     public int damageAmount = 1;
     public bool dealDamageOnTriggerEnter = false;
     public bool dealDamageOnTriggerStay = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (dealDamageOnTriggerEnter)
+        if (canDamage)
         {
-            DealDamage(collision.gameObject);
+            if (dealDamageOnTriggerEnter)
+            {
+                DealDamage(collision.gameObject);
+            }
         }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (dealDamageOnTriggerStay)
+        if (canDamage)
         {
-            DealDamage(collision.gameObject);
+            if (dealDamageOnTriggerStay)
+            {
+                DealDamage(collision.gameObject);
+            }
         }
     }
 
@@ -34,5 +42,11 @@ public class Damage : MonoBehaviour
 
             collidedHealth.TakeDamage(damageAmount);
         }
+    }
+
+    public void StopDamaging()
+    {
+        canDamage = false;
+        Debug.Log("canDamage: " + canDamage);
     }
 }

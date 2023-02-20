@@ -16,7 +16,7 @@ public class SceneSwitch : MonoBehaviour
         if (collision.tag == "Player")
         {
             // CREATE FADE TRANSITION AND PLACE HERE - CONTROLS SHOULD BE LOCKED
-            LoadNextScene();
+            LoadNextSceneInBuild();
         }
     }
 
@@ -24,14 +24,18 @@ public class SceneSwitch : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            LoadNextScene();
+            LoadNextSceneInBuild();
 
             //SceneManager.LoadScene(sceneName);
         }
         StartCoroutine(ExecuteAfterTime(collision, 1));
         //StartCoroutine(ExecuteAfterTime(collision, 0));
     }
-    public void LoadNextScene()
+
+    /// <summary>
+    /// Loads the next scene in the build.
+    /// </summary>
+    public void LoadNextSceneInBuild()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

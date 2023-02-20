@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4688700344877761920}
   - component: {fileID: 355004023255776024}
   - component: {fileID: 563445086656005005}
-  - component: {fileID: 1247528983866588592}
   - component: {fileID: 5773234081951711103}
   - component: {fileID: 5773234081951711102}
   - component: {fileID: 5147518992519147172}
   - component: {fileID: 5773234081951711100}
   - component: {fileID: 5773234081951711043}
   - component: {fileID: 5773234082267917961}
+  - component: {fileID: 6421746134898268615}
   m_Layer: 0
   m_Name: PlayerV3
   m_TagString: Player
@@ -89,30 +89,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1247528983866588592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4707590706219672144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1539d7a99745a54d85432c3f4d98b80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 5
-  currentHealth: 5
-  maxHealth: 5
-  invincibilityTime: 2
-  isInvincible: 0
-  initialLives: 3
-  currentLives: 3
-  maximumLives: 10
-  respawnWaitTime: 3
-  scoreValue: 1
-  damageEffect: {fileID: 5147518992519147172}
-  enemyDeathEffect: {fileID: 0}
 --- !u!212 &5773234081951711103
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -249,6 +225,29 @@ MonoBehaviour:
   bombPrefab: {fileID: 2319702314299648014, guid: 0ba5318d5c832bd459c0c45262a3882a,
     type: 3}
   uiManager: {fileID: 0}
+--- !u!114 &6421746134898268615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707590706219672144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbea67e96e0b5844c89612460f5e9c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 5
+  currentHealth: 5
+  maxHealth: 5
+  damageEffect: {fileID: 5147518992519147172}
+  enemyDeathEffect: {fileID: 0}
+  invincibilityTime: 3
+  isInvincible: 0
+  initialLives: 3
+  currentLives: 3
+  maximumLives: 5
+  respawnWaitTime: 3
 --- !u!1 &5773234081040054142
 GameObject:
   m_ObjectHideFlags: 0

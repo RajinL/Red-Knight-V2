@@ -2,26 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Health
 {
-    // Enemy health
-    public int health = 100;
-    //[SerializeField] private DamageEffect damageEffect;
-    //public GameObject deathEffect;
+    [Header("Score Value")]
+    [Tooltip("The score amount this object awards.")]
+    [SerializeField] private int scoreValue = 1;
 
-    public void TakeDamage(int damage)
+    [SerializeField] private bool deathEffectOn = true;
+    [SerializeField] private PatrollingEnemies enemyPatrol;
+
+    protected override void Die()
     {
-        health -= damage;
-        //damageEffect.Damage();
-        if (health <= 0)
+        if (uiManager != null)
         {
-            Die();
+            GameManager.currentScoreCount += scoreValue;
+            uiManager.setScoreCount(GameManager.currentScoreCount);
         }
+        GetComponentInChildren<Damage>().StopDamaging();
+        KillEnemy();
     }
 
-    void Die()
+    private void KillEnemy()
     {
-        //Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        if (deathEffectOn == true && deathEffect)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        else
+        {
+            animator.SetTrigger("isDead");
+            if (enemyPatrol != null)
+            {
+                enemyPatrol.moveSpeed = 0;
+
+            }
+            else
+            {
+                Debug.LogWarning("Trying to set enemyPatrol.moveSpeed to 0, but " + gameObject.name + " at " + transform.position + " does not have a reference to PatrollingEnemies::enemyPatrol. " +
+                    "If this object requres a patrol, make a reference.");
+            }
+            gameObject.layer = LayerMask.NameToLayer("DestroyedObjects");
+            Destroy(gameObject, 5);
+        }
     }
 }
