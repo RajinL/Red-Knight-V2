@@ -8,7 +8,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [SerializeField] private bool canDamage = true;
-    [Tooltip("Can this object kill another object instantly upon colliding?")]
+    [Tooltip("Allows for this object to kill another object instantly. Damage Amount will be ignored.")]
     [SerializeField] private bool canOneShot = false;
     [SerializeField] private int damageAmount = 1;
     [SerializeField] private bool dealDamageOnTriggerEnter = false;

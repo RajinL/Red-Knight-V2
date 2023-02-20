@@ -28,6 +28,7 @@ public class PlayerHealth : Health
 
     private void Awake()
     {
+        currentLives = initialLives;
         InitializeUISettings();
     }
 
@@ -36,19 +37,12 @@ public class PlayerHealth : Health
         if (GameObject.FindGameObjectWithTag("ui_manager") != null)
         {
             uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
+            uiManager.SetMaxHealth(maxHealth);
+            uiManager.SetLifeCount(initialLives);
         }
-
-        if (gameObject.CompareTag("Player"))
+        else
         {
-            if (uiManager != null)
-            {
-                uiManager.SetMaxHealth(maxHealth);
-                uiManager.SetLifeCount(3);
-            }
-            else
-            {
-                Debug.LogWarning("UI Manager cannot be found. Make sure that a UI Canvas tagged with \"ui_manager\" is present");
-            }
+            Debug.LogWarning("UI Manager cannot be found. Make sure that a UI Canvas tagged with \"ui_manager\" is present");
         }
     }
     void Update()
@@ -76,6 +70,12 @@ public class PlayerHealth : Health
         }
     }
 
+    private void updateUI()
+    {
+        uiManager.SetHealth(currentHealth);
+        uiManager.SetLifeCount(currentLives);
+    }
+
     void Respawn()
     {
         // ******************************************************************************//////                
@@ -83,20 +83,17 @@ public class PlayerHealth : Health
 
         transform.position = GameManager.instance.gmRespawnLocation.transform.position;
         currentHealth = initialHealth;
+        updateUI();
     }
 
     public void AddLives(int additionalLife)
     {
         // *******************************************************************************
         //if score reaches threshold
-
-        if (gameObject.CompareTag("Player"))
+        currentLives += additionalLife;
+        if (currentLives > maximumLives)
         {
-            currentLives += additionalLife;
-            if (currentLives > maximumLives)
-            {
-                currentLives = maximumLives;
-            }
+            currentLives = maximumLives;
         }
     }
 
@@ -113,12 +110,9 @@ public class PlayerHealth : Health
             currentHealth -= damageAmount;
             damageEffect.Damage();
 
-            if (gameObject.CompareTag("Player"))
+            if (uiManager != null)
             {
-                if (uiManager != null)
-                {
-                    uiManager.SetHealth(currentHealth);
-                }
+                updateUI();
             }
             CheckIfPlayerIsDead();
         }
@@ -128,17 +122,10 @@ public class PlayerHealth : Health
     {
         if (uiManager != null)
         {
-            if (gameObject.CompareTag("Player"))
-            {
-                currentLives -= 1;
-                uiManager.SetLifeCount(currentLives);
-            }
+            currentLives -= 1;
+            updateUI();
         }
 
-        //if (uiManager != null)
-        //{
-        //    uiManager.SetLifeCount(currentLives);
-        //}
         if (currentLives > 0)
         {
             if (respawnWaitTime == 0)
@@ -156,12 +143,9 @@ public class PlayerHealth : Health
         // no lives left
         else
         {
-            if (CompareTag("Player"))
+            if (uiManager != null)
             {
-                if (uiManager != null)
-                {
-                    GameOver();
-                }
+                GameOver();
             }
         }
     }
