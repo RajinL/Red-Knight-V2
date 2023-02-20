@@ -10,11 +10,17 @@ public class PlayerDetector : MonoBehaviour
     private void Awake()
     {
         col = GetComponent<Collider2D>();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        detectedColliders.Add(collision);
+        if (collision.tag == "Player")
+        {
+            detectedColliders.Add(collision);
+
+        }
+         
     }
 
     private void OnTriggerExit2D(Collider2D collision)

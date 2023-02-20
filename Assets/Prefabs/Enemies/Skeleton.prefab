@@ -290,6 +290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectedColliders: []
+  bulletPrefab: {fileID: 5220940643781314383, guid: 3c58ce87b09c73449a2db6cc28e41119,
+    type: 3}
 --- !u!114 &7284215747683595126
 MonoBehaviour:
   m_ObjectHideFlags: 0
