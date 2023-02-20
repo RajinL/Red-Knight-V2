@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private string mainMenuScene;
     [SerializeField] private GameObject gameUICanvas = null;
-    [SerializeField] public GameObject gmRespawnLocation = null;
+    public GameObject gmRespawnLocation = null;
 
     public bool gameIsOver = false;
 
@@ -30,35 +30,35 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int gmCurrentGarlicBombCount = 0;
     [SerializeField] private int gmMaxGarlicBombCount = 10;
 
-    public static int currentGarlicBombCount
+    public static int CurrentGarlicBombCount
     {
         get { return instance.gmCurrentGarlicBombCount; }
         set { instance.gmCurrentGarlicBombCount = value; }
     }
 
-    public static GameObject respawnLocation
+    public static GameObject RespawnLocation
     {
         get { return instance.gmRespawnLocation; }
         set { instance.gmRespawnLocation = value; }
     }
-    public static int maxGarlicBombCount
+    public static int MaxGarlicBombCount
     {
         get { return instance.gmMaxGarlicBombCount; }
         set { instance.gmMaxGarlicBombCount = value; }
     }
 
-    public static int currentLifeCount
+    public static int CurrentLifeCount
     {
         get { return instance.gmLifeCount; }
         set { instance.gmLifeCount = value; }
     }
-    public static int currentScoreCount
+    public static int CurrentScoreCount
     {
         get { return instance.gmScoreCount; }
         set { instance.gmScoreCount = value; }
     }
 
-    public static int scoreLifeThreshold
+    public static int ScoreLifeThreshold
     {
         get { return instance.gmScoreLifeThreshold; }
         set { instance.gmScoreLifeThreshold = value; }
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
         if (!IsMainMenuScene())
         {
-            SetupGameParamaters();
+            SetupGameParameters();
         }
     }
 
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
     /// Initializes and sets up settings for the game levels that are played, and not for the main menu.
     /// Anything that should be initialized before the level starts should be put in here.
     /// </summary>
-    private void SetupGameParamaters()
+    private void SetupGameParameters()
     {
         InitializePlayer();
         InitializeAmmoCount();

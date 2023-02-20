@@ -12,7 +12,7 @@ public class EnemyCollidesWithPlayer : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (attackSpeed <= allowAttack)
             {
@@ -28,7 +28,7 @@ public class EnemyCollidesWithPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             target = collision.transform;
         }
@@ -36,7 +36,7 @@ public class EnemyCollidesWithPlayer : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             target = null;
         }

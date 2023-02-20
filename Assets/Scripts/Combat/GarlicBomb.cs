@@ -21,7 +21,7 @@ public class GarlicBomb : MonoBehaviour
     {
         if (uiManager != null)
         {
-            uiManager.SetPlayerBombCount(GameManager.currentGarlicBombCount);
+            uiManager.SetPlayerBombCount(GameManager.CurrentGarlicBombCount);
         }
         else
         {
@@ -34,7 +34,7 @@ public class GarlicBomb : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2"))
         {
-            if (GameManager.currentGarlicBombCount > 0)
+            if (GameManager.CurrentGarlicBombCount > 0)
             {
                 DropBomb();
             }
@@ -45,8 +45,8 @@ public class GarlicBomb : MonoBehaviour
     {
         Instantiate(bombPrefab, bombDrop.position, bombDrop.rotation);
         CreateBombTrail();
-        GameManager.currentGarlicBombCount--;
-        uiManager.SetPlayerBombCount(GameManager.currentGarlicBombCount);
+        GameManager.CurrentGarlicBombCount--;
+        uiManager.SetPlayerBombCount(GameManager.CurrentGarlicBombCount);
     }
     void CreateBombTrail()
     {

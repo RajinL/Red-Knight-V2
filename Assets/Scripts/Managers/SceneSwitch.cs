@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    [SerializeField] public string sceneName;
+    [SerializeField] private string sceneName;
 
     //if we want the scene to load with a delay
     IEnumerator ExecuteAfterTime(Collider2D collision, float time)

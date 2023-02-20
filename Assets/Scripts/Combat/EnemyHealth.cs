@@ -29,8 +29,8 @@ public class EnemyHealth : Health
     {
         if (uiManager != null)
         {
-            GameManager.currentScoreCount += scoreValue;
-            uiManager.SetScoreCount(GameManager.currentScoreCount);
+            GameManager.CurrentScoreCount += scoreValue;
+            uiManager.SetScoreCount(GameManager.CurrentScoreCount);
         }
         GetComponentInChildren<Damage>().StopDamaging();
         KillEnemy();

@@ -19,7 +19,6 @@ public class PlayerHealth : Health
     [SerializeField] private float respawnWaitTime = 3f;
     private float respawnTime;
     private float timeToBecomeHurtAgain = 0;
-    private GameObject respawnLocation;
 
 
     private void Awake()
@@ -66,7 +65,7 @@ public class PlayerHealth : Health
         }
     }
 
-    private void updateUI()
+    private void UpdateUI()
     {
         uiManager.SetPlayerHealth(currentHealth);
         uiManager.SetPlayerLifeCount(currentLives);
@@ -79,7 +78,7 @@ public class PlayerHealth : Health
 
         transform.position = GameManager.instance.gmRespawnLocation.transform.position;
         currentHealth = initialHealth;
-        updateUI();
+        UpdateUI();
     }
 
     public void AddLives(int additionalLife)
@@ -108,7 +107,7 @@ public class PlayerHealth : Health
 
             if (uiManager != null)
             {
-                updateUI();
+                UpdateUI();
             }
             CheckIfObjectIsDead();
         }
@@ -119,7 +118,7 @@ public class PlayerHealth : Health
         if (uiManager != null)
         {
             currentLives -= 1;
-            updateUI();
+            UpdateUI();
         }
 
         if (currentLives > 0)
