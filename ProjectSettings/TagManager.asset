@@ -19,8 +19,8 @@ TagManager:
   - DestroyedObjects
   - Objects
   - Enemies
-  - 
-  - 
+  - Player
+  - EnemyHitbox
   - 
   - 
   - 
