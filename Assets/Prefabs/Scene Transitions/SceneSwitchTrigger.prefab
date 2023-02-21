@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8468527930222063682}
   - component: {fileID: 8468527930222063687}
-  - component: {fileID: 8468527930222063686}
+  - component: {fileID: 6796039474908558131}
   m_Layer: 0
   m_Name: SceneSwitchTrigger
-  m_TagString: Untagged
+  m_TagString: Ignore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8468527930222063686
+--- !u!114 &6796039474908558131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,7 +67,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8468527930222063737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77e0aa294d8d9ec459313e6dc03b0dbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d7913519d7912e48af730912a30e9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 1
+  requiresKey: 0
+  checkKey: {fileID: 0}
+  sceneName: 

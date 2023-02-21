@@ -6,18 +6,11 @@ public class CameraFollowRushScene : MonoBehaviour
 {
     //NEW SCRIPT
 
-    private GameObject batwall;
+    [SerializeField] private GameObject batwall;
     public float xMin;
     public float xMax;
     public float yMin;
     public float yMax;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        batwall = GameObject.Find("BatWall2");
-    }
 
     // Update is called once per frame
     void Update()
