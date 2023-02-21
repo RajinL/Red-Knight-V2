@@ -106,7 +106,7 @@ public class PlayerMovementV2 : MonoBehaviour
         {
             state = MovementState.jumping;
         }
-        else if (rb.velocity.y < -.01f)
+        else if (rb.velocity.y < -.15f)
         {
             CreateDustTrail();
             state = MovementState.falling;

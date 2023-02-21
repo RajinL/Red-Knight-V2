@@ -8,6 +8,7 @@ public class EnemyHealth : Health
     [Tooltip("The score amount this object awards.")]
     [SerializeField] private int scoreValue = 1;
 
+    public bool deathEffectOn = true;
     [SerializeField] private PatrollingEnemies enemyPatrol;
     public Animator deathAnimation;
 
@@ -39,7 +40,7 @@ public class EnemyHealth : Health
 
     private void KillEnemy()
     {
-        if (deathEffect)
+        if (deathEffectOn == true)
         {
             // Instead of instantiating and destroying particle effect, stop particle system, and reactivate it when needed
             // to improve performance
@@ -50,19 +51,20 @@ public class EnemyHealth : Health
         }
         else
         {
-            if (deathAnimation.GetBool("IsDead")) deathAnimation.SetTrigger("isDead");
+            //if (deathAnimation.GetBool("IsDead")) deathAnimation.SetTrigger("isDead");
 
-            if (enemyPatrol != null)
-            {
-                enemyPatrol.moveSpeed = 0;
-
-            }
-            else
-            {
-                Debug.LogWarning("Trying to set enemyPatrol.moveSpeed to 0, but " + gameObject.name + " at " +
-                    transform.position + " does not have a reference to PatrollingEnemies::enemyPatrol. " +
-                    "If this object requres a patrol, make a reference.");
-            }
+            //if (enemyPatrol != null)
+            //{
+            //    enemyPatrol.moveSpeed = 0; 
+            //}
+            //else
+            //{
+            //    Debug.LogWarning("Trying to set enemyPatrol.moveSpeed to 0, but " + gameObject.name + " at " +
+            //        transform.position + " does not have a reference to PatrollingEnemies::enemyPatrol. " +
+            //        "If this object requres a patrol, make a reference.");
+            //}
+            deathAnimation.SetTrigger("isDead");
+            enemyPatrol.moveSpeed = 0;
             gameObject.layer = LayerMask.NameToLayer("DestroyedObjects");
             Destroy(gameObject, 5);
         }
