@@ -7,27 +7,22 @@ public class OpenChest : MonoBehaviour
 {
     public Sprite ChestOpened;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// If an object with a PlayerHealth component (i.e. the Player) collides with this chest,
+    /// then the chest will animate to appear as if it is opening, and bomb ammo will drop for
+    /// the player to collect. However, if anything else such as a bullet or garlic bomb collides
+    /// with it, then it will not execute.
+    /// </summary>
+    /// <param name="collision"></param>
     void OnTriggerEnter2D(Collider2D collision)
     {
         //StartCoroutine(ExecuteAfterTime(1));
         //StartCoroutine(ExecuteAfterTime(0));
-        if (collision.tag == "Player")
+        if (collision.GetComponent<PlayerHealth>())
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = ChestOpened;
-
-
+            // TO DO
+            // Instantiate a bomb for player to collect
         }
     }
 }

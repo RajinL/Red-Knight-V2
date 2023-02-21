@@ -55,6 +55,6 @@ MonoBehaviour:
   gmInitialScoreCount: 0
   gmScoreLifeThreshold: 10
   highScore: 0
-  gmInitialGarlicBombCount: 3
-  gmCurrentGarlicBombCount: 3
-  gmMaxGarlicBombCount: 10
+  gmInitialGarlicBombCount: 100
+  gmCurrentGarlicBombCount: 100
+  gmMaxGarlicBombCount: 100

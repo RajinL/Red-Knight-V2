@@ -112,6 +112,11 @@ PrefabInstance:
       propertyPath: objectType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2264048106620015372, guid: 997203060e8a1744783c91209e091d30,
+        type: 3}
+      propertyPath: timeForDeathEffectToDestroy
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6361923892610812651, guid: 997203060e8a1744783c91209e091d30,
         type: 3}
       propertyPath: m_RootOrder

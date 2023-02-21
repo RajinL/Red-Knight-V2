@@ -20,7 +20,7 @@ public class Damage : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (canDamage)
+        if (canDamage && !collision.CompareTag("Ignore"))
         {
             if (dealDamageOnTriggerEnter)
             {
@@ -35,7 +35,7 @@ public class Damage : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (canDamage)
+        if (canDamage && !collision.CompareTag("Ignore"))
         {
             if (dealDamageOnTriggerStay)
             {

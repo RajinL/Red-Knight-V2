@@ -40,8 +40,12 @@ public class EnemyHealth : Health
     {
         if (deathEffect)
         {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            // Instead of instantiating and destroying particle effect, stop particle system, and reactivate it when needed
+            // to improve performance
+            // https://answers.unity.com/questions/1558312/how-to-destroy-particle-system-after-instantiating.html
+            GameObject deathEffectInstance = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            Destroy(deathEffectInstance, timeForDeathEffectToDestroy);
         }
         else
         {
@@ -54,7 +58,8 @@ public class EnemyHealth : Health
             }
             else
             {
-                Debug.LogWarning("Trying to set enemyPatrol.moveSpeed to 0, but " + gameObject.name + " at " + transform.position + " does not have a reference to PatrollingEnemies::enemyPatrol. " +
+                Debug.LogWarning("Trying to set enemyPatrol.moveSpeed to 0, but " + gameObject.name + " at " +
+                    transform.position + " does not have a reference to PatrollingEnemies::enemyPatrol. " +
                     "If this object requres a patrol, make a reference.");
             }
             gameObject.layer = LayerMask.NameToLayer("DestroyedObjects");

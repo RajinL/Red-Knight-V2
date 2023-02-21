@@ -163,7 +163,8 @@ MonoBehaviour:
   initialHealth: 4
   currentHealth: 4
   damageEffect: {fileID: -7086116954931361942}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 1860957981043368082, guid: b0efe8e169625204ab18081859c6da75,
+    type: 3}
 --- !u!1 &4982720903415269914
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6585652726298744475}
   - component: {fileID: 5890409576684821434}
+  - component: {fileID: 832602506}
   m_Layer: 10
   m_Name: Crate TriggerCollider
   m_TagString: Untagged
@@ -202,7 +204,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4982720903415269914}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -221,3 +223,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &832602506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982720903415269914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28b13e61b33a5f4faa1d3a9987f03ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDamage: 1
+  canOneShot: 0
+  damageAmount: 1
+  dealDamageOnTriggerEnter: 0
+  dealDamageOnTriggerStay: 0

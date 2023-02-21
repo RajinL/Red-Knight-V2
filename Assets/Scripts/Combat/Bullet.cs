@@ -12,9 +12,18 @@ public class Bullet : MonoBehaviour
         rb.velocity = transform.right * speed;
     }
 
+    /// <summary>
+    /// The bullet will be destroyed if it hits any object with a collider2D.
+    /// However, if the object with the collider2D has a tag of "Ignore",
+    /// then the bullet should pass through. Put an "Ignore" tag on an object
+    /// if you want the bullet to pass through.
+    /// </summary>
+    /// <param name="hitInfo"></param>
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        //Debug.Log(hitInfo.name);
-        Destroy(gameObject);
+        if (!hitInfo.CompareTag("Ignore"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 2828732092374185781}
   - component: {fileID: 5966441589736763787}
   - component: {fileID: 1842711571958713331}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vampire-old
   m_TagString: non_player
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2828732092374185777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.937, y: -1.244, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 151406453}
@@ -258,5 +258,6 @@ MonoBehaviour:
   currentHealth: 3
   damageEffect: {fileID: 5966441589736763787}
   deathEffect: {fileID: 0}
+  timeForDeathEffectToDestroy: 1
   scoreValue: 1
   enemyPatrol: {fileID: 0}

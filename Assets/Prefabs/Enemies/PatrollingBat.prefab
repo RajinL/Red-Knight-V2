@@ -316,7 +316,8 @@ MonoBehaviour:
   initialHealth: 3
   currentHealth: 3
   damageEffect: {fileID: 805510655734386383}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 5638641230803131695, guid: 95f62d3c76ea77d49b9ad677a84e72a4,
+    type: 3}
   scoreValue: 1
   enemyPatrol: {fileID: 0}
 --- !u!1 &2486158460806598165

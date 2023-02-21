@@ -10,7 +10,7 @@ public class EnemyCollidesWithPlayer : MonoBehaviour
     private float allowAttack;
     private Transform target;
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {

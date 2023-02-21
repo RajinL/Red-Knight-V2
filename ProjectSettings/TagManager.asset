@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ui_manager
   - non_player
+  - shootable
+  - Ignore
   layers:
   - Default
   - TransparentFX

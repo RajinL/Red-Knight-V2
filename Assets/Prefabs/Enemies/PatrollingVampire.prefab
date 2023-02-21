@@ -200,9 +200,9 @@ MonoBehaviour:
   initialHealth: 3
   currentHealth: 3
   damageEffect: {fileID: 457633913787605570}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 6831827930727456335, guid: 90442d2c161e3524e942a06384789785,
+    type: 3}
   scoreValue: 1
-  deathEffectOn: 1
   enemyPatrol: {fileID: 0}
 --- !u!1 &2336593281234003128
 GameObject:
@@ -228,7 +228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2336593281234003128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13, y: -0.16, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 457633913787605568}
@@ -261,7 +261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2336593282549119700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.45, y: -0.072114, z: 0}
+  m_LocalPosition: {x: 0.668545, y: -0.072114, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2336593281234003111}
@@ -291,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2336593282563917859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.26, y: -0.072114, z: 0}
+  m_LocalPosition: {x: -3.681455, y: -0.072114, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2336593281234003111}

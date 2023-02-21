@@ -59,21 +59,21 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009606838, y: 0.08065832}
+  m_Offset: {x: 0.00012941658, y: -0.0010223389}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.42, y: 0.28}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.42865086, y: 0.29048038}
+  m_Size: {x: 0.42504486, y: 0.28140473}
   m_EdgeRadius: 0
 --- !u!1 &8157244836311377835
 GameObject:
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 736528194681393929}
   - component: {fileID: -9017469914124437791}
   - component: {fileID: 5096708109859753634}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bat
   m_TagString: non_player
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8157244836311377835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.455198, y: -2.3478312, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 533566751}
@@ -195,18 +195,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009606838, y: 0.08065832}
+  m_Offset: {x: 0.00012941658, y: -0.0010223389}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.42, y: 0.28}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.42865086, y: 0.29048038}
+  m_Size: {x: 0.42504486, y: 0.28140473}
   m_EdgeRadius: 0
 --- !u!114 &736528194681393929
 MonoBehaviour:
@@ -251,6 +251,8 @@ MonoBehaviour:
   initialHealth: 3
   currentHealth: 3
   damageEffect: {fileID: 736528194681393929}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 5638641230803131695, guid: 95f62d3c76ea77d49b9ad677a84e72a4,
+    type: 3}
+  timeForDeathEffectToDestroy: 1
   scoreValue: 1
   enemyPatrol: {fileID: 0}

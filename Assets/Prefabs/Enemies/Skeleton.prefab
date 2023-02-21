@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6361923892610812653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.882305, y: -1.1091918, z: 278.13257}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 855187419}
@@ -291,5 +291,6 @@ MonoBehaviour:
   currentHealth: 3
   damageEffect: {fileID: 6361923892610812661}
   deathEffect: {fileID: 0}
+  timeForDeathEffectToDestroy: 1
   scoreValue: 1
   enemyPatrol: {fileID: 0}
