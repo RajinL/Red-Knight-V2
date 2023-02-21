@@ -58,6 +58,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4194804554793667817}
+  - component: {fileID: 8153682207000150360}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -80,6 +81,21 @@ Transform:
   m_Father: {fileID: 4688700344877761920}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8153682207000150360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622389308742375488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e106988211541804c852e774cb043961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunBarrel: {fileID: 5773234082223839793}
+  bulletPrefab: {fileID: 8235967003491384808, guid: 3c58ce87b09c73449a2db6cc28e41119,
+    type: 3}
 --- !u!1 &4707590706219672144
 GameObject:
   m_ObjectHideFlags: 0
@@ -5056,7 +5072,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5773234082223839793}
-  - component: {fileID: 9117405485631806835}
   m_Layer: 0
   m_Name: GunBarrel
   m_TagString: Untagged
@@ -5078,21 +5093,6 @@ Transform:
   m_Father: {fileID: 4194804554793667817}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9117405485631806835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5773234082223839794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e106988211541804c852e774cb043961, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunBarrel: {fileID: 5773234082223839793}
-  bulletPrefab: {fileID: 8235967003491384808, guid: 3c58ce87b09c73449a2db6cc28e41119,
-    type: 3}
 --- !u!1 &5773234082701562572
 GameObject:
   m_ObjectHideFlags: 0
