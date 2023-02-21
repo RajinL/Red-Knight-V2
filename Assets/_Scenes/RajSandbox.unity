@@ -17391,12 +17391,12 @@ PrefabInstance:
     - target: {fileID: 2336593281234003111, guid: 7ed867e702041f3439cdfe035b786fe7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.94
+      value: 3.77
       objectReference: {fileID: 0}
     - target: {fileID: 2336593281234003111, guid: 7ed867e702041f3439cdfe035b786fe7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.25
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 2336593281234003111, guid: 7ed867e702041f3439cdfe035b786fe7,
         type: 3}
@@ -17624,11 +17624,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ddb677f1a89de45bb729581176a5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  initialHealth: 3
+  currentHealth: 3
   damageEffect: {fileID: 0}
   deathEffect: {fileID: 0}
-  attackDamage: 10
-  attackSpeed: 1
+  timeForDeathEffectToDestroy: 1
+  scoreValue: 1
+  enemyPatrol: {fileID: 0}
 --- !u!50 &533607200
 Rigidbody2D:
   serializedVersion: 4
@@ -18670,6 +18672,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1165238352}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1015447633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1400557063}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1400557064}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1023150309
 GameObject:
   m_ObjectHideFlags: 0
@@ -23361,6 +23379,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5df468513fb10ff4e93b598c68a76bbb, type: 3}
+--- !u!114 &1192764209 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2208523762993049637, guid: 0c68df67368780b478c48dee08c7d854,
+    type: 3}
+  m_PrefabInstance: {fileID: 2208523762752040821}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f60d91c87366104f859c801ed70368e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1231352316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23472,11 +23502,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ddb677f1a89de45bb729581176a5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  initialHealth: 3
+  currentHealth: 3
   damageEffect: {fileID: 0}
   deathEffect: {fileID: 0}
-  attackDamage: 10
-  attackSpeed: 1
+  timeForDeathEffectToDestroy: 1
+  scoreValue: 1
+  enemyPatrol: {fileID: 0}
 --- !u!50 &1295450910
 Rigidbody2D:
   serializedVersion: 4
@@ -23663,18 +23695,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bc50dd541d3e9942902b3815486c34a, type: 3}
---- !u!4 &1400557064 stripped
+--- !u!4 &1400557064
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 6850889440708737700, guid: 3bc50dd541d3e9942902b3815486c34a,
     type: 3}
   m_PrefabInstance: {fileID: 1400557063}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1400557065 stripped
+  m_GameObject: {fileID: 1015447633}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1951977403}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1400557065
 GameObject:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 6850889440708737698, guid: 3bc50dd541d3e9942902b3815486c34a,
     type: 3}
   m_PrefabInstance: {fileID: 1400557063}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1400557067}
+  - component: {fileID: 1400557066}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!114 &1400557066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23687,6 +23740,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4724e768edaca6c41bd20dd6435325da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealthSlider: {fileID: 0}
+  bossHealthSlider: {fileID: 0}
+  lifeCount: {fileID: 0}
+  bombCount: {fileID: 0}
+  scoreUI: {fileID: 0}
+--- !u!4 &1400557067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1400557063}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400557065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1951977403}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1408455036
 GameObject:
   m_ObjectHideFlags: 0
@@ -23938,11 +24010,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ddb677f1a89de45bb729581176a5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  initialHealth: 3
+  currentHealth: 3
   damageEffect: {fileID: 0}
   deathEffect: {fileID: 0}
-  attackDamage: 10
-  attackSpeed: 1
+  timeForDeathEffectToDestroy: 1
+  scoreValue: 1
+  enemyPatrol: {fileID: 0}
 --- !u!50 &1538923356
 Rigidbody2D:
   serializedVersion: 4
@@ -24355,6 +24429,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 956954518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1951977402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1400557063}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1951977403}
+  m_Layer: 0
+  m_Name: UIManager (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1951977403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1400557063}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951977402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1400557067}
+  - {fileID: 1400557064}
+  m_Father: {fileID: 2077674006}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1952772196
 GameObject:
   m_ObjectHideFlags: 0
@@ -25216,7 +25322,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1515148987}
-  - {fileID: 1400557064}
+  - {fileID: 1951977403}
   - {fileID: 939888227}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -25550,6 +25656,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrollingSkeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 6451366309965703646, guid: 0c68df67368780b478c48dee08c7d854,
+        type: 3}
+      propertyPath: enemyPatrol
+      value: 
+      objectReference: {fileID: 1192764209}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c68df67368780b478c48dee08c7d854, type: 3}
 --- !u!1001 &2319702314263451489

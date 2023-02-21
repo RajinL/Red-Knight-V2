@@ -9,6 +9,7 @@ public class EnemyHealth : Health
     [SerializeField] private int scoreValue = 1;
 
     [SerializeField] private PatrollingEnemies enemyPatrol;
+    public Animator deathAnimation;
 
     public override void TakeDamage(int damageAmount)
     {
@@ -49,7 +50,7 @@ public class EnemyHealth : Health
         }
         else
         {
-            if (animator.GetBool("IsDead")) animator.SetTrigger("isDead");
+            if (deathAnimation.GetBool("IsDead")) deathAnimation.SetTrigger("isDead");
 
             if (enemyPatrol != null)
             {
