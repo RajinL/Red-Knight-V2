@@ -293,4 +293,6 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   timeForDeathEffectToDestroy: 1
   scoreValue: 1
-  enemyPatrol: {fileID: 0}
+  deathEffectOn: 0
+  enemyPatrol: {fileID: 6361923892610812663}
+  deathAnimation: {fileID: 6361923892610812650}

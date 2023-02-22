@@ -163,3 +163,4 @@ MonoBehaviour:
   damageEffect: {fileID: -4196004901004988753}
   deathEffect: {fileID: 5234152342694737289, guid: 03191315b1ab462449d8d56b5525cbdf,
     type: 3}
+  timeForDeathEffectToDestroy: 3
