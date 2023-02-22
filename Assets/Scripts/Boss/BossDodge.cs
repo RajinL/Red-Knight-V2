@@ -38,12 +38,8 @@ public class BossDodge : StateMachineBehaviour
         Vector2 newPos = Vector2.MoveTowards(rb.position, targetPos, speed * Time.deltaTime);
         rb.MovePosition(newPos);
 
-
-        Debug.Log(Vector2.Distance(rb.position, newPos));
-
         if (Vector2.Distance(rb.position, newPos) < 0.01f)
         {
-            Debug.Log("CHANGE PLACES!");
             randomPoint = randomPoint == 1 ? 0:1;
             target = waypoints[randomPoint];
             targetPos = new Vector2(target.position.x + Random.Range(-10, 5), target.position.y);

@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/TopDownTutorial.unity
     guid: 9deeee0a25f9aee48a5f95eda934de07
+  - enabled: 1
+    path: Assets/_Scenes/BossFight.unity
+    guid: 87b352f5f7d874ecf949eab69003aa4f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2a17fde44e54d06418db3b241c8452ce,
       type: 2}
