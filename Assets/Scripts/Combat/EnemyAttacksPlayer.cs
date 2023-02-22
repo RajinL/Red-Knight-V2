@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class EnemyAttacksPlayer : MonoBehaviour
 {
-    //public PlayerDetector playerDetect;
+    public PlayerDetector playerDetect;
 
-    //public bool _hasTarget = false;
+    public bool _hasTarget = false;
 
-    //Animator anim;
+    Animator anim;
 
-    //internal static string hasTarget = "hasTarget";
+    internal static string hasTarget = "hasTarget";
 
-    //private void Awake()
-    //{
-    //    anim = GetComponent<Animator>();
-    //}
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
-    //public bool HasTarget 
-    //    { get { return _hasTarget; } 
-    //    private set
-    //    {
-    //        _hasTarget = value;
-    //        anim.SetBool(hasTarget, value);
-    //    }
-    //}
+    public bool HasTarget
+    {
+        get { return _hasTarget; }
+        private set
+        {
+            _hasTarget = value;
+            anim.SetBool(hasTarget, value);
+        }
+    }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    HasTarget = playerDetect.detectedColliders.Count > 0;
-    //}
+    // Update is called once per frame
+    void Update()
+    {
+        HasTarget = playerDetect.detectedColliders.Count > 0;
+    }
 }
