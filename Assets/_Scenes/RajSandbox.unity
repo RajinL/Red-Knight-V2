@@ -17532,7 +17532,7 @@ PrefabInstance:
     - target: {fileID: 1156970150312423441, guid: 5df468513fb10ff4e93b598c68a76bbb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.68
+      value: 13.57
       objectReference: {fileID: 0}
     - target: {fileID: 1156970150312423441, guid: 5df468513fb10ff4e93b598c68a76bbb,
         type: 3}
@@ -25730,6 +25730,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PatrollingSkeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5110557240477082888, guid: 0c68df67368780b478c48dee08c7d854,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6451366309965703646, guid: 0c68df67368780b478c48dee08c7d854,
         type: 3}
