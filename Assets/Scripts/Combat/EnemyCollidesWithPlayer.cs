@@ -10,6 +10,9 @@ public class EnemyCollidesWithPlayer : MonoBehaviour
     private float allowAttack;
     private Transform target;
 
+    public AudioSource enemyHitAudioSource;
+
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -31,6 +34,7 @@ public class EnemyCollidesWithPlayer : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             target = collision.transform;
+            enemyHitAudioSource.Play();
         }
     }
 

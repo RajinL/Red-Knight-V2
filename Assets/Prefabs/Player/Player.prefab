@@ -5093,6 +5093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMaterial: {fileID: 2100000, guid: d0bcde3456cd86942990a1b68b789d70, type: 2}
   duration: 0.07
+  enemyHitAudioSource: {fileID: 0}
 --- !u!114 &2481297432168429325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5107,6 +5108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunBarrel: {fileID: 2481297431954018880}
   bulletPrefab: {fileID: 8235967003491384808, guid: 3c58ce87b09c73449a2db6cc28e41119,
+    type: 3}
+  shootAudioSource: {fileID: 2824098034618252116, guid: ce9526b4b4205a24286d07718e8c53d9,
     type: 3}
 --- !u!114 &2481297432168429362
 MonoBehaviour:
@@ -5127,6 +5130,8 @@ MonoBehaviour:
   playerSpeed: 4
   jumpPower: 8
   dust: {fileID: 2481297433133727500}
+  jumpAudioSource: {fileID: 9136742110061229078, guid: 5fd64cf891449ee40b07b17e36df1461,
+    type: 3}
 --- !u!114 &2481297431981319928
 MonoBehaviour:
   m_ObjectHideFlags: 0

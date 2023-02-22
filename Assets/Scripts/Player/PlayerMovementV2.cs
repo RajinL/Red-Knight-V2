@@ -24,6 +24,9 @@ public class PlayerMovementV2 : MonoBehaviour
 
     public ParticleSystem dust;
 
+    public AudioSource jumpAudioSource;
+
+
     private enum MovementState { idle, running, jumping, falling }
     //private MovementState state = MovementState.idle;
 
@@ -48,8 +51,14 @@ public class PlayerMovementV2 : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            jumpAudioSource.gameObject.SetActive(true);
+            jumpAudioSource.Play();
+
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+
         }
+
+        
 
         UpdateAnimationState();
     }

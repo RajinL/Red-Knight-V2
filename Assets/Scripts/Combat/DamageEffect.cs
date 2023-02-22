@@ -13,6 +13,9 @@ public class DamageEffect : MonoBehaviour
 
     private Coroutine damageRoutine;
 
+    public AudioSource enemyHitAudioSource;
+
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -28,6 +31,7 @@ public class DamageEffect : MonoBehaviour
         }
 
         damageRoutine = StartCoroutine(DamageRoutine());
+        enemyHitAudioSource.Play();
     }
 
     private IEnumerator DamageRoutine()

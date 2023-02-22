@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
 
     public PatrollingEnemies enemyPatrol;
     //public GameObject enemyObject;
+    public AudioSource enemyDeadAudioSource;
+
 
     public void TakeDamage(int damage)
     {
@@ -28,11 +30,13 @@ public class Enemy : MonoBehaviour
     {
         if (deathEffectOn == true)
         {
+            enemyDeadAudioSource.Play();
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         else
         {
+            enemyDeadAudioSource.Play();
             animator.SetTrigger("isDead");
             enemyPatrol.moveSpeed = 0;
             gameObject.layer = LayerMask.NameToLayer("DestroyedObjects");
