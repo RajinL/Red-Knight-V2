@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1403088836711450310}
   - component: {fileID: 5640019813484159091}
+  - component: {fileID: 4715312035141319650}
   m_Layer: 0
   m_Name: BombThrower
   m_TagString: Untagged
@@ -24,8 +25,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2181034638286290317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.424, y: -0.132, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5773234082701562579}
@@ -46,9 +47,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombTrail: {fileID: 0}
   bombDrop: {fileID: 5773234082701562579}
-  bombPrefab: {fileID: 2319702314299648014, guid: 0ba5318d5c832bd459c0c45262a3882a,
+--- !u!114 &4715312035141319650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2181034638286290317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ac0102c8549e540917c734f23d719a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 2319702314299648014, guid: 0ba5318d5c832bd459c0c45262a3882a,
     type: 3}
-  uiManager: {fileID: 0}
+  amountToPool: 20
+  parentObject: {fileID: 0}
 --- !u!1 &2622389308742375488
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,6 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4194804554793667817}
   - component: {fileID: 8153682207000150360}
+  - component: {fileID: 1051632641202575796}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -73,8 +89,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2622389308742375488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.424, y: -0.132, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5773234082223839793}
@@ -94,8 +110,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunBarrel: {fileID: 5773234082223839793}
-  bulletPrefab: {fileID: 8235967003491384808, guid: 3c58ce87b09c73449a2db6cc28e41119,
+--- !u!114 &1051632641202575796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622389308742375488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ac0102c8549e540917c734f23d719a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 8235967003491384808, guid: 3c58ce87b09c73449a2db6cc28e41119,
     type: 3}
+  amountToPool: 20
+  parentObject: {fileID: 0}
 --- !u!1 &4707590706219672144
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,10 +182,10 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.019768625, y: -0.038042784}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.3375, y: 0.0375, z: 0.1875, w: 0.112500004}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.2, y: 1.2}
-    newSize: {x: 1.6, y: 1.6}
+    newSize: {x: 1.2, y: 1.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -227,7 +258,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.6, y: 1.6}
+  m_Size: {x: 1.2, y: 1.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5086,8 +5117,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5773234082223839794}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.424, y: -0.132, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4194804554793667817}
@@ -5116,8 +5147,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5773234082701562572}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.424, y: -0.132, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1403088836711450310}

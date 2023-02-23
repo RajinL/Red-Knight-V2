@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// TO DO
+// Update this class and integrate object pooling similar to GarBombExplosion.cs
+
 public class DestroyGameObject : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private int lifetime = 3;
     void Start()
     {
-        Destroy(gameObject, 5f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Destroy(gameObject, lifetime);
     }
 }

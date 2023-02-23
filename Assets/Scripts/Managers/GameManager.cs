@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
     {
         if (player == null)
         {
-            Debug.Log("Initializing Game Manager's \"player\" reference.");
+            //Debug.Log("Initializing Game Manager's \"player\" reference.");
             player = GameObject.FindGameObjectWithTag("Player");
         }
     }

@@ -7,11 +7,15 @@ using UnityEngine;
 /// </summary>
 public class Damage : MonoBehaviour
 {
+    [Tooltip("Allows for this object to deal damage.")]
     [SerializeField] private bool canDamage = true;
     [Tooltip("Allows for this object to kill another object instantly. Damage Amount will be ignored.")]
     [SerializeField] private bool canOneShot = false;
+    [Tooltip("The amount of damage this object does.")]
     [SerializeField] private int damageAmount = 1;
+    [Tooltip("Allows for this object to deal damage upon colliding with a trigger.")]
     [SerializeField] private bool dealDamageOnTriggerEnter = false;
+    [Tooltip("Allows for this object to deal damage upon colliding with a trigger, and stays next to it.")]
     [SerializeField] private bool dealDamageOnTriggerStay = false;
 
     /// <summary>
@@ -57,9 +61,12 @@ public class Damage : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// A public function that stops an object from being able to damage.
+    /// </summary>
     public void StopDamaging()
     {
         canDamage = false;
-        Debug.Log("canDamage: " + canDamage);
+        //Debug.Log("canDamage: " + canDamage);
     }
 }
