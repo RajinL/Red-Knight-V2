@@ -983,5 +983,5 @@ SpriteAtlas:
   - stone-2
   - graveyard
   - tree-3
-  m_Tag: Castle Scene
+  m_Tag: Outside Scene Sprite Atlas
   m_IsVariant: 0
