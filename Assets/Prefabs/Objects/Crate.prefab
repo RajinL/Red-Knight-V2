@@ -165,6 +165,7 @@ MonoBehaviour:
   damageEffect: {fileID: -7086116954931361942}
   deathEffect: {fileID: 1860957981043368082, guid: b0efe8e169625204ab18081859c6da75,
     type: 3}
+  timeForDeathEffectToDestroy: 3
 --- !u!1 &4982720903415269914
 GameObject:
   m_ObjectHideFlags: 0

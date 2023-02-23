@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     [Header("Effects")]
     [SerializeField] protected DamageEffect damageEffect;
     [SerializeField] protected GameObject deathEffect;
-    [SerializeField][Range(0, 2)] protected float timeForDeathEffectToDestroy = 1;
+    [SerializeField][Range(0, 5)] protected float timeForDeathEffectToDestroy = 1;
 
     protected UIManager uiManager;
     protected Animator animator;

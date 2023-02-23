@@ -35,7 +35,7 @@ public class PlayerMovementV2 : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
-    
+
     // Update is called once per frame
     private void Update()
     {
@@ -55,8 +55,6 @@ public class PlayerMovementV2 : MonoBehaviour
         UpdateAnimationState();
     }
 
-
-
     /// <summary>
     /// https://www.youtube.com/watch?v=7KiK0Aqtmzc
     /// </summary>
@@ -65,13 +63,13 @@ public class PlayerMovementV2 : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = Vector2.up * jumpPower;
-            if (rb.velocity.y < 0 && IsGrounded())
+            if (rb.velocity.y < 0.1 && IsGrounded())
             {
                 rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
         }
 
-        if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (rb.velocity.y > 0.1 && !Input.GetButton("Jump"))
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
