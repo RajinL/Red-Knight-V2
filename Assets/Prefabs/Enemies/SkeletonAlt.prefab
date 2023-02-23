@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -6626587792616128517}
   m_Layer: 11
   m_Name: SkeletonAlt
-  m_TagString: Untagged
+  m_TagString: non_player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
