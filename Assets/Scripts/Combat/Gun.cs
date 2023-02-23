@@ -6,7 +6,6 @@ public class Gun : MonoBehaviour
 {
     public Transform gunBarrel;
     public GameObject bulletPrefab;
-    public AudioSource shootAudioSource;
 
 
     // Update is called once per frame
@@ -20,7 +19,8 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        AudioManagerScript.PlaySound("shoot");
+
         Instantiate(bulletPrefab, gunBarrel.position, gunBarrel.rotation);
-        shootAudioSource.Play();
     }
 }

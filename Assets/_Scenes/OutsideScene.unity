@@ -525,12 +525,12 @@ PrefabInstance:
         type: 3}
       propertyPath: shootAudioSource
       value: 
-      objectReference: {fileID: 1445125456}
+      objectReference: {fileID: 0}
     - target: {fileID: 2481297432168429362, guid: 15203709396f0b944bd2ee8322fce885,
         type: 3}
       propertyPath: jumpAudioSource
       value: 
-      objectReference: {fileID: 1373603023}
+      objectReference: {fileID: 0}
     - target: {fileID: 3685435292458904097, guid: 15203709396f0b944bd2ee8322fce885,
         type: 3}
       propertyPath: m_Name
@@ -1545,12 +1545,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!82 &1373603023 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2668986459663169334, guid: 1b14cc6e5c8d2bd4d9bc45171d98607c,
-    type: 3}
-  m_PrefabInstance: {fileID: 15522134}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1378253480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,12 +1583,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1445125456 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3170472323064778954, guid: 1b14cc6e5c8d2bd4d9bc45171d98607c,
-    type: 3}
-  m_PrefabInstance: {fileID: 15522134}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1591568979
 GameObject:
   m_ObjectHideFlags: 0

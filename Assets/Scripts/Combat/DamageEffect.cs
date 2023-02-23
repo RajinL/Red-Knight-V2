@@ -13,8 +13,6 @@ public class DamageEffect : MonoBehaviour
 
     private Coroutine damageRoutine;
 
-    public AudioSource enemyHitAudioSource;
-
 
     void Start()
     {
@@ -30,8 +28,8 @@ public class DamageEffect : MonoBehaviour
             StopCoroutine(damageRoutine);
         }
 
+
         damageRoutine = StartCoroutine(DamageRoutine());
-        enemyHitAudioSource.Play();
     }
 
     private IEnumerator DamageRoutine()

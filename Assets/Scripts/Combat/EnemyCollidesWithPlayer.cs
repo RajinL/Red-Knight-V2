@@ -34,7 +34,7 @@ public class EnemyCollidesWithPlayer : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             target = collision.transform;
-            enemyHitAudioSource.Play();
+            //enemyHitAudioSource.Play();
         }
     }
 
