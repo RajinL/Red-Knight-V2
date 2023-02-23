@@ -19,12 +19,12 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         damageEffect.Damage();
-        AudioManagerScript.PlaySound("enemyHurtSound");
+        AudioManagerScript.PlaySound("enemyHit");
 
         if (health <= 0)
         {
             Die();
-            AudioManagerScript.PlaySound("enemyDeathSound");
+            AudioManagerScript.PlaySound("enemyDead");
 
         }
     }
@@ -38,7 +38,6 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            //enemyDeadAudioSource.Play();
             animator.SetTrigger("isDead");
             enemyPatrol.moveSpeed = 0;
             gameObject.layer = LayerMask.NameToLayer("DestroyedObjects");
