@@ -46,5 +46,9 @@ public class BoneProjectile : MonoBehaviour
             Debug.Log("Colliding with player");
             Destroy(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

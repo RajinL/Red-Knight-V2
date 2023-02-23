@@ -162,3 +162,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 5
   speed: 5
+  rotationSpeed: 10
+  attackDamage: 1
