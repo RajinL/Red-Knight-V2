@@ -26,6 +26,7 @@ public class OpenChest : MonoBehaviour
         if (collision.tag == "Player")
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = ChestOpened;
+            AudioManagerScript.PlaySound("treasureChest");
 
 
         }

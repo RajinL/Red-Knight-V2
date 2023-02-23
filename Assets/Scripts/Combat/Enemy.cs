@@ -33,7 +33,6 @@ public class Enemy : MonoBehaviour
     {
         if (deathEffectOn == true)
         {
-            //enemyDeadAudioSource.Play();
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

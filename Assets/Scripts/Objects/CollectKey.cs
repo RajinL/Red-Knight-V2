@@ -25,8 +25,10 @@ public class CollectKey : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             hasKey = true;
+            AudioManagerScript.PlaySound("treasureChest");
+
         }
-               
+
 
     }
 }
