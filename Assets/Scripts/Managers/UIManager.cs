@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
     {
         if (allowPause)
         {
-            CheckPauseInput();
+            //CheckPauseInput();
         }
     }
 
@@ -87,28 +87,28 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void CheckPauseInput()
-    {
+    //private void CheckPauseInput()
+    //{
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            TogglePause();
-        }
-    }
+    //    if (Input.GetKeyDown("Menu"))
+    //    {
+    //        PauseMenu.GameIsPaused = true;
+    //    }
+    //}
 
-    public void TogglePause()
-    {
-        if (isPaused)
-        {
-            Time.timeScale = 1;
-            isPaused = false;
-        }
-        else
-        {
-            Time.timeScale = 0;
-            isPaused = true;
-        }
-    }
+    //public void TogglePause()
+    //{
+    //    if (isPaused)
+    //    {
+    //        Time.timeScale = 1;
+    //        isPaused = false;
+    //    }
+    //    else
+    //    {
+    //        Time.timeScale = 0;
+    //        isPaused = true;
+    //    }
+    //}
 
     /// <summary>
     /// //https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadScene.html
