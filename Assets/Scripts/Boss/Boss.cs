@@ -12,9 +12,12 @@ public class Boss : MonoBehaviour
 
     private Transform player;
 
+
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
 
     private void Update()
@@ -53,4 +56,5 @@ public class Boss : MonoBehaviour
         Instantiate(projectile, firePoint.position, firePoint.rotation);
     }
 
+    
 }

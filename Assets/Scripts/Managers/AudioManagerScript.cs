@@ -18,6 +18,8 @@ public class AudioManagerScript : MonoBehaviour
         treasureChestSound = Resources.Load<AudioClip>("treasureChestOpenSound");
         garlicBombExplosion = Resources.Load<AudioClip>("garlicBombExplosion");
 
+        //bigBossAttackSound = Resources.Load<AudioClip>("bigBossLaugh");
+
         audioSource = GetComponent<AudioSource>();
 
 
@@ -63,6 +65,7 @@ public class AudioManagerScript : MonoBehaviour
                 audioSource.pitch = 0.5f;
                 audioSource.PlayOneShot(garlicBombExplosion);
                 break;
+            
         }
     }
 }
