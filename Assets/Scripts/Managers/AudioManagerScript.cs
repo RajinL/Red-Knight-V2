@@ -31,9 +31,13 @@ public class AudioManagerScript : MonoBehaviour
         switch (clip)
         {
             case "shoot":
+                audioSource.volume = 0.5f;
+                audioSource.pitch = 1.8f;
                 audioSource.PlayOneShot(shootSound);
                 break;
             case "jump":
+                audioSource.volume = 0.3f;
+                audioSource.pitch = 1.8f;
                 audioSource.PlayOneShot(jumpSound);
                 break;
             case "enemyHit":
