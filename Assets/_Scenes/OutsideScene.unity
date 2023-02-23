@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -195,6 +195,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b14cc6e5c8d2bd4d9bc45171d98607c, type: 3}
+--- !u!1001 &54847900
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2319702314299648014, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_Name
+      value: Garlic Bomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648014, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.114
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319702314299648016, guid: 0ba5318d5c832bd459c0c45262a3882a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ba5318d5c832bd459c0c45262a3882a, type: 3}
 --- !u!1 &123155301
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +600,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2481297431981319928, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: bombTrail
+      value: 
+      objectReference: {fileID: 815573600}
     - target: {fileID: 2481297432168429325, guid: 15203709396f0b944bd2ee8322fce885,
         type: 3}
       propertyPath: shootAudioSource
@@ -1226,6 +1305,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!198 &815573600 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2832559034119023659, guid: 0ba5318d5c832bd459c0c45262a3882a,
+    type: 3}
+  m_PrefabInstance: {fileID: 54847900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &826038683
 GameObject:
   m_ObjectHideFlags: 0

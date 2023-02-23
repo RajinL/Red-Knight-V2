@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -244,6 +244,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2481297431981319928, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: bombTrail
+      value: 
+      objectReference: {fileID: 1575166518}
     - target: {fileID: 2481297432168429325, guid: 15203709396f0b944bd2ee8322fce885,
         type: 3}
       propertyPath: shootAudioSource
@@ -9447,6 +9452,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8404450058891266889, guid: 80866e44a51999f4e9d63abcba690d4c,
     type: 3}
   m_PrefabInstance: {fileID: 1533940866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1575166518 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2832559034119023659, guid: 0ba5318d5c832bd459c0c45262a3882a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1774945402}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1579078496
 GameObject:

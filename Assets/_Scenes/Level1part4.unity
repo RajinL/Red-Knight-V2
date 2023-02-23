@@ -1771,6 +1771,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ba5318d5c832bd459c0c45262a3882a, type: 3}
+--- !u!198 &858235965 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2832559034119023659, guid: 0ba5318d5c832bd459c0c45262a3882a,
+    type: 3}
+  m_PrefabInstance: {fileID: 852955691}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &898259083
 GameObject:
   m_ObjectHideFlags: 0
@@ -35088,6 +35094,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2481297431981319928, guid: 15203709396f0b944bd2ee8322fce885,
+        type: 3}
+      propertyPath: bombTrail
+      value: 
+      objectReference: {fileID: 858235965}
     - target: {fileID: 2481297432168429325, guid: 15203709396f0b944bd2ee8322fce885,
         type: 3}
       propertyPath: shootAudioSource
