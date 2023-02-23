@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 931267214371631846}
   - component: {fileID: 931267214371631847}
   - component: {fileID: 931267214371631840}
+  - component: {fileID: 3630930543091998483}
   m_Layer: 0
   m_Name: SpikeCollider
   m_TagString: Untagged
@@ -122,7 +123,8 @@ MonoBehaviour:
   myEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2481297432168429327, guid: 15203709396f0b944bd2ee8322fce885,
+          type: 3}
         m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
@@ -133,3 +135,17 @@ MonoBehaviour:
           m_StringArgument: isDead
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3630930543091998483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931267214371631841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7863d59877aa2479eab8bfd27ef61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 100
+  attackSpeed: 0.5

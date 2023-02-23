@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 805510655734386382}
   - component: {fileID: 805510655734386383}
   - component: {fileID: 805510655734386380}
+  - component: {fileID: 1161535604833736050}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -208,6 +209,9 @@ MonoBehaviour:
   damageEffect: {fileID: 805510655734386383}
   deathEffect: {fileID: 5638641230803131695, guid: 95f62d3c76ea77d49b9ad677a84e72a4,
     type: 3}
+  deathEffectOn: 1
+  animator: {fileID: 0}
+  enemyPatrol: {fileID: 0}
 --- !u!114 &805510655734386383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +244,21 @@ MonoBehaviour:
   - {fileID: 805510654674251963}
   - {fileID: 805510655209351847}
   moveSpeed: 1.5
+  facingRight: 1
+--- !u!114 &1161535604833736050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805510655734386378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7863d59877aa2479eab8bfd27ef61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 20
+  attackSpeed: 0.5
 --- !u!1 &2486158460806598165
 GameObject:
   m_ObjectHideFlags: 0

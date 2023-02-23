@@ -4942,7 +4942,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.024692565, y: -0.045093536}
+  m_Offset: {x: -0.008276299, y: -0.027106166}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4953,7 +4953,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7537684, y: 1.411154}
+  m_Size: {x: 0.87964904, y: 1.4471288}
   m_EdgeRadius: 0
 --- !u!50 &8475828663768976380
 Rigidbody2D:
@@ -4967,7 +4967,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.59947187
+  m_Mass: 0.71719307
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -5093,7 +5093,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMaterial: {fileID: 2100000, guid: d0bcde3456cd86942990a1b68b789d70, type: 2}
   duration: 0.07
-  enemyHitAudioSource: {fileID: 0}
 --- !u!114 &2481297432168429325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5108,8 +5107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunBarrel: {fileID: 2481297431954018880}
   bulletPrefab: {fileID: 8235967003491384808, guid: 3c58ce87b09c73449a2db6cc28e41119,
-    type: 3}
-  shootAudioSource: {fileID: 2824098034618252116, guid: ce9526b4b4205a24286d07718e8c53d9,
     type: 3}
 --- !u!114 &2481297432168429362
 MonoBehaviour:
@@ -5130,8 +5127,6 @@ MonoBehaviour:
   playerSpeed: 4
   jumpPower: 8
   dust: {fileID: 2481297433133727500}
-  jumpAudioSource: {fileID: 9136742110061229078, guid: 5fd64cf891449ee40b07b17e36df1461,
-    type: 3}
 --- !u!114 &2481297431981319928
 MonoBehaviour:
   m_ObjectHideFlags: 0

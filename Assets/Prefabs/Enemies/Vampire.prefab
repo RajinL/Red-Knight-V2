@@ -140,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.020699918}
+  m_Offset: {x: 0.0037653446, y: 0.016962767}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -151,7 +151,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.1556855}
+  m_Size: {x: 0.79036784, y: 1.2310109}
   m_EdgeRadius: 0
 --- !u!114 &4289047426694273143
 MonoBehaviour:
@@ -167,8 +167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMaterial: {fileID: 2100000, guid: d5773d4bcfd1341488725434db1f9a19, type: 2}
   duration: 0.07
-  enemyHitAudioSource: {fileID: 5829044418524579469, guid: 2b77738fff14dbf4583e113bf9efaec6,
-    type: 3}
 --- !u!114 &4289047426694273136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +186,6 @@ MonoBehaviour:
   deathEffectOn: 1
   animator: {fileID: 0}
   enemyPatrol: {fileID: 0}
-  enemyDeadAudioSource: {fileID: 7359095444882717841, guid: 5fc8f5bc33fa89c40b33f8940ceef877,
-    type: 3}
 --- !u!114 &7740390158245729708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,5 +200,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 20
   attackSpeed: 0.5
-  enemyHitAudioSource: {fileID: 5829044418524579469, guid: 2b77738fff14dbf4583e113bf9efaec6,
-    type: 3}
