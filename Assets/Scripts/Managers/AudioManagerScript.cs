@@ -44,15 +44,23 @@ public class AudioManagerScript : MonoBehaviour
                 audioSource.PlayOneShot(jumpSound);
                 break;
             case "enemyHit":
+                audioSource.volume = 1;
+                audioSource.pitch = 1;
                 audioSource.PlayOneShot(enemyHurtSound);
                 break;
             case "enemyDead":
+                audioSource.volume = 1;
+                audioSource.pitch = 1;
                 audioSource.PlayOneShot(enemyDeathSound);
                 break;
             case "treasureChest":
+                audioSource.volume = 1;
+                audioSource.pitch = 1;
                 audioSource.PlayOneShot(treasureChestSound);
                 break;
             case "garlicBomb":
+                audioSource.volume = 0.05f;
+                audioSource.pitch = 0.5f;
                 audioSource.PlayOneShot(garlicBombExplosion);
                 break;
         }

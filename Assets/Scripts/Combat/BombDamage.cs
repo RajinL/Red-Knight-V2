@@ -67,6 +67,7 @@ public class BombDamage : MonoBehaviour
             ObjectsToDestroy[i].GetComponent<Enemy>().TakeDamage(damage);
         }
         Debug.Log("I'm exploding!");
+        AudioManagerScript.PlaySound("garlicBomb");
 
     }
 
