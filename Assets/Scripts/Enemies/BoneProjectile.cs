@@ -43,6 +43,7 @@ public class BoneProjectile : MonoBehaviour
         if (hitInfo.gameObject.tag == "Player")
         {
             hitInfo.gameObject.GetComponent<Health>().TakeDamage(attackDamage);
+            Debug.Log("Colliding with player");
             Destroy(gameObject);
         }
     }
