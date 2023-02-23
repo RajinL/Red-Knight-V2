@@ -25,11 +25,15 @@ public class DestructibleObject : MonoBehaviour
         rb.AddForce(forceDirection);
         rb.AddTorque(randomTorque);
 
+
+        AudioManagerScript.PlaySound("barrelBreaks");
+
         Invoke("DestroySelf", Random.Range(1f, 3f));
     }
 
     void DestroySelf()
     {
+
         Destroy(gameObject);
     }
 }

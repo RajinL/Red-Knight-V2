@@ -13,6 +13,7 @@ public class DamageEffect : MonoBehaviour
 
     private Coroutine damageRoutine;
 
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -26,6 +27,7 @@ public class DamageEffect : MonoBehaviour
         {
             StopCoroutine(damageRoutine);
         }
+
 
         damageRoutine = StartCoroutine(DamageRoutine());
     }

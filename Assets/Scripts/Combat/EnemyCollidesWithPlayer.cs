@@ -18,6 +18,8 @@ public class EnemyCollidesWithPlayer : MonoBehaviour
             {
                 collision.gameObject.GetComponent<Health>().TakeDamage(attackDamage);
                 allowAttack = 0f;
+                AudioManagerScript.PlaySound("enemyCollidesWithPlayer");
+
             }
             else
             {
