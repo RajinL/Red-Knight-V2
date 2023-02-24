@@ -6,7 +6,7 @@ public class BoneProjectile : MonoBehaviour
 {
     private GameObject player;
     private Rigidbody2D rb;
-    public float force;
+    //public float force;
     public float speed = 10f;
     public float rotationSpeed = 10f;
     [SerializeField] private int attackDamage = 1;
@@ -25,18 +25,20 @@ public class BoneProjectile : MonoBehaviour
         if (player.transform.position.x < this.transform.position.x)
         {
             rb.velocity = -transform.right * speed;
+            rb.angularVelocity = rotationSpeed;
         }
         else
         {
             rb.velocity = transform.right * speed;
+            rb.angularVelocity = -rotationSpeed;
         }
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    //void Update()
+    //{
 
-    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
