@@ -20,6 +20,7 @@ public class CollectKey : MonoBehaviour
             // update the game manager that a key has been collected
             // and update the UI with the gm
             hasKey = true;
+            AudioManagerScript.PlaySound("treasureChest");
             this.gameObject.SetActive(false);
         }
     }

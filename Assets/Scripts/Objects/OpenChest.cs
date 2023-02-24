@@ -21,6 +21,7 @@ public class OpenChest : MonoBehaviour
         if (collision.GetComponent<PlayerHealth>())
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = ChestOpened;
+            AudioManagerScript.PlaySound("treasureChest");
             // TO DO
             // Instantiate a bomb for player to collect
         }

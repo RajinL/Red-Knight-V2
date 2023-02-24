@@ -18,6 +18,7 @@ public class EnemyHealth : Health
         if (damageEffect != null)
         {
             damageEffect.Damage();
+            AudioManagerScript.PlaySound("enemyHit");
         }
 
         if (uiManager != null && gameObject.name == "Vampire Boss")
@@ -35,6 +36,7 @@ public class EnemyHealth : Health
             uiManager.SetScoreCount(GameManager.CurrentScoreCount);
         }
         GetComponentInChildren<Damage>().StopDamaging();
+        AudioManagerScript.PlaySound("enemyDead");
         KillEnemy();
     }
 
