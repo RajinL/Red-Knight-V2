@@ -40,15 +40,11 @@ public class BoneProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.gameObject.tag == "Player")
+        if (hitInfo.GetComponent<PlayerHealth>() != null)
         {
-            hitInfo.gameObject.GetComponent<Health>().TakeDamage(attackDamage);
+            hitInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
             Debug.Log("Colliding with player");
-            Destroy(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

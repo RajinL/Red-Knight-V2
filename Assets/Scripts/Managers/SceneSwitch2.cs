@@ -45,7 +45,7 @@ public class SceneSwitch2 : MonoBehaviour
                 // try to make it where it says if (player.hasKey)
                 if (checkKey != null && checkKey.hasKey)
                 {
-                    LoadNextSceneInBuild();
+                    CheckForSceneName();
                 }
                 else
                 {
@@ -54,11 +54,23 @@ public class SceneSwitch2 : MonoBehaviour
                     //"oh no, the door seems to be locked!"
                 }
             }
-            else LoadNextSceneInBuild();
+            else CheckForSceneName();
         }
         //StartCoroutine(ExecuteAfterTime(1));
         //StartCoroutine(ExecuteAfterTime(0));
 
+    }
+
+    private void CheckForSceneName()
+    {
+        if (sceneName != "")
+        {
+            LoadSceneByName(sceneName);
+        }
+        else
+        {
+            LoadNextSceneInBuild();
+        }
     }
 
     /// <summary>
@@ -67,5 +79,10 @@ public class SceneSwitch2 : MonoBehaviour
     public void LoadNextSceneInBuild()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadSceneByName(string buildNumber)
+    {
+        SceneManager.LoadScene(buildNumber);
     }
 }

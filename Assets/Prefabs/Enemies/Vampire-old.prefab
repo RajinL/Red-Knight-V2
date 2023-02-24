@@ -150,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 2388dec0f24a8144e96a675f875e27fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -260,4 +260,6 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   timeForDeathEffectToDestroy: 1
   scoreValue: 1
+  deathEffectOn: 1
   enemyPatrol: {fileID: 0}
+  deathAnimation: {fileID: 0}

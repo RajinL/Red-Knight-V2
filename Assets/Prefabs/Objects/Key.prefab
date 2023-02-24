@@ -8,19 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<<< HEAD:Assets/Prefabs/Objects/Key.prefab
   - component: {fileID: 8928583432532855228}
   - component: {fileID: 8928583432532855229}
   - component: {fileID: 8928583432532855230}
   - component: {fileID: 8928583432532855231}
-========
-  - component: {fileID: 931267214371631844}
-  - component: {fileID: 931267214371631845}
-  - component: {fileID: 931267214371631846}
-  - component: {fileID: 931267214371631847}
-  - component: {fileID: 931267214371631840}
-  - component: {fileID: 3630930543091998483}
->>>>>>>> main:Assets/Prefabs/Objects/SpikeCollider.prefab
   m_Layer: 0
   m_Name: Key
   m_TagString: Ignore
@@ -131,36 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964b0326c5b818d42b91d214c2392eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<<< HEAD:Assets/Prefabs/Objects/Key.prefab
   hasKey: 0
-========
-  myEvents:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2481297432168429327, guid: 15203709396f0b944bd2ee8322fce885,
-          type: 3}
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: isDead
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &3630930543091998483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931267214371631841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7863d59877aa2479eab8bfd27ef61d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage: 100
-  attackSpeed: 0.5
->>>>>>>> main:Assets/Prefabs/Objects/SpikeCollider.prefab

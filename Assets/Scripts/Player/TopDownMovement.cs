@@ -50,8 +50,7 @@ public class TopDownMovement : MonoBehaviour
 
         animator.SetInteger("state", isRunning);
 
-        LookAtBoss();
-
+        FindTarget();
     }
 
     private void UpdateTarget()
@@ -60,7 +59,7 @@ public class TopDownMovement : MonoBehaviour
         {
             target = GameObject.FindGameObjectWithTag("Boss").transform;
         }
-        else
+        else if (GameObject.FindGameObjectWithTag("Finish"))
         {
             target = GameObject.FindGameObjectWithTag("Finish").transform;
         }
@@ -124,4 +123,31 @@ public class TopDownMovement : MonoBehaviour
 
     }
 
+
+    /// <summary>
+    /// If the boss exists and has not been destroyed
+    /// </summary>
+    private bool CheckIfBossExists()
+    {
+        if (target != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void FindTarget()
+    {
+        if (CheckIfBossExists())
+        {
+            LookAtBoss();
+        }
+        else if (GameObject.FindGameObjectWithTag("Finish"))
+        {
+            target = GameObject.FindGameObjectWithTag("Finish").transform;
+        }
+    }
 }

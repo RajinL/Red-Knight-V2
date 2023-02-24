@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8468527930222063682}
   - component: {fileID: 8468527930222063687}
-  - component: {fileID: 6796039474908558131}
+  - component: {fileID: 996142496198584952}
   m_Layer: 0
   m_Name: SceneSwitchTrigger
   m_TagString: Ignore
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8468527930222063737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.75, y: -0.25, z: -5.7044806}
-  m_LocalScale: {x: 0.6135937, y: 3.1250901, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.625}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,9 +56,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.7401962}
   m_EdgeRadius: 0
---- !u!114 &6796039474908558131
+--- !u!114 &996142496198584952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,9 +67,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8468527930222063737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7913519d7912e48af730912a30e9c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 77e0aa294d8d9ec459313e6dc03b0dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   requiresKey: 0
-  checkKey: {fileID: 0}
+  checkKey: {fileID: 8928583432532855231, guid: 9b62947556ffdcb40aadcc979516ff5c,
+    type: 3}
   sceneName: 
