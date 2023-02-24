@@ -86,39 +86,9 @@ public class PauseMenu : MonoBehaviour
         Resume();
     }
 
-    public void LoadScene1()
+    public void LoadScene(int buildNumber)
     {
-        SceneManager.LoadScene(1);
-        Resume();
-    }
-
-    public void LoadScene2()
-    {
-        SceneManager.LoadScene(2);
-        Resume();
-    }
-
-    public void LoadScene3()
-    {
-        SceneManager.LoadScene(3);
-        Resume();
-    }
-
-    public void LoadScene4()
-    {
-        SceneManager.LoadScene(4);
-        Resume();
-    }
-
-    public void LoadScene5()
-    {
-        SceneManager.LoadScene(5);
-        Resume();
-    }
-
-    public void LoadScene6()
-    {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(buildNumber);
         Resume();
     }
 }
