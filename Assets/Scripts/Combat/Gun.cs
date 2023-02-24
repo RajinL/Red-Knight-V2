@@ -31,6 +31,7 @@ public class Gun : MonoBehaviour
         GameObject bullet = GetComponent<ObjectPool>().GetPooledObject();
         if (bullet != null)
         {
+            AudioManagerScript.PlaySound("shoot");
             bullet.transform.SetPositionAndRotation(gunBarrel.transform.position, gunBarrel.transform.rotation);
             bullet.SetActive(true);
         }
