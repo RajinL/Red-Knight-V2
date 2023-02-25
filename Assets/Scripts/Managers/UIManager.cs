@@ -15,6 +15,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI lifeCount;
     [SerializeField] private TextMeshProUGUI bombCount;
     [SerializeField] private TextMeshProUGUI scoreUI;
+    [SerializeField] private GameObject crossFade;
+    [SerializeField] private Animator sceneTransition;
+    [SerializeField] private float transitionTime = 1f;
+
+    private void Awake()
+    {
+        crossFade.SetActive(true);
+    }
 
     private void Start()
     {
@@ -35,6 +43,7 @@ public class UIManager : MonoBehaviour
         {
             //CheckPauseInput();
         }
+        // TESTING WITH KEY CLICK FIRST
     }
 
     /// <summary>
@@ -47,6 +56,12 @@ public class UIManager : MonoBehaviour
     {
         playerHealthSlider.maxValue = health;
         playerHealthSlider.value = health;
+    }
+
+    public void SetBossMaxHealth(int health)
+    {
+        bossHealthSlider.maxValue = health;
+        bossHealthSlider.value = health;
     }
 
     public void SetPlayerHealth(int health)
@@ -113,9 +128,9 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// //https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadScene.html
     /// </summary>
-    public void LoadScene(string sceneName)
+    public void LoadSceneByName(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(LoadSceneWithFade(sceneName));
     }
 
     public void RestartCurrentScene()
@@ -135,4 +150,15 @@ public class UIManager : MonoBehaviour
 #endif
     }
 
+    /// <summary>
+    /// https://www.youtube.com/watch?v=CE9VOZivb3I
+    /// Creates a fade transition and loads the next scene.
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator LoadSceneWithFade(string sceneName)
+    {
+        sceneTransition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(sceneName);
+    }
 }
