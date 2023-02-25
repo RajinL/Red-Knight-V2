@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 8404450057990001640}
   m_Layer: 8
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 8404450058891266888}
   m_Layer: 8
   m_Name: PlatformHorizontal
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
