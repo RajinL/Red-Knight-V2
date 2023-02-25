@@ -12,6 +12,24 @@ public class BossHealth : Health
     [SerializeField] private PatrollingEnemies enemyPatrol;
     public Animator deathAnimation;
 
+    private void Awake()
+    {
+        InitializeUISettings();
+    }
+
+    private void InitializeUISettings()
+    {
+        if (GameObject.FindGameObjectWithTag("ui_manager") != null)
+        {
+            uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
+            uiManager.SetBossMaxHealth(initialHealth);
+        }
+        else
+        {
+            Debug.LogWarning("UI Manager cannot be found. Make sure that a UI Canvas tagged with \"ui_manager\" is present");
+        }
+    }
+
     public override void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;

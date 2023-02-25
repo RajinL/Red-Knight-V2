@@ -49,6 +49,12 @@ public class UIManager : MonoBehaviour
         playerHealthSlider.value = health;
     }
 
+    public void SetBossMaxHealth(int health)
+    {
+        bossHealthSlider.maxValue = health;
+        bossHealthSlider.value = health;
+    }
+
     public void SetPlayerHealth(int health)
     {
         playerHealthSlider.value = health;

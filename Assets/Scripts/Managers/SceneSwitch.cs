@@ -12,7 +12,7 @@ public class SceneSwitch : MonoBehaviour
     }*/
 
     [SerializeField] private bool requiresKey;
-    [SerializeField] CollectKey checkKey;
+    [SerializeField] CollectKey keyPrefab;
 
     [SerializeField] private string sceneName;
 
@@ -43,7 +43,7 @@ public class SceneSwitch : MonoBehaviour
             if (requiresKey)
             {
                 // try to make it where it says if (player.hasKey)
-                if (checkKey != null && checkKey.hasKey)
+                if (keyPrefab != null && keyPrefab.hasKey)
                 {
                     CheckForSceneName();
                 }
