@@ -12,6 +12,7 @@ public class CloseDoorTrigger : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             backDoor.SetBool("Closed", true);
+
             boss.SetTrigger("StartFight");
         }
     }

@@ -361,14 +361,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94fef77d1389144a5aa4e9a099770448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 100
-  currentHealth: 100
+  initialHealth: 1
+  currentHealth: 1
   damageEffect: {fileID: 329982460}
   deathEffect: {fileID: 5638641230803131695, guid: 0382a908859434613b5914ed2787c966,
     type: 3}
   timeForDeathEffectToDestroy: 1
-  uiManager: {fileID: 0}
-  scoreValue: 1
+  scoreValue: 100
   deathEffectOn: 1
   enemyPatrol: {fileID: 0}
   deathAnimation: {fileID: 0}
