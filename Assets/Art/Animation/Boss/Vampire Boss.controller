@@ -40,7 +40,7 @@ MonoBehaviour:
   speed: 9
   waypoints: []
   target: {fileID: 0}
-  panicThreshold: 99
+  panicThreshold: 50
 --- !u!1101 &-7427944421933000914
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   attackRange: 10
-  panicThreshold: 99
+  panicThreshold: 50
 --- !u!1101 &-2922323804896978558
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
