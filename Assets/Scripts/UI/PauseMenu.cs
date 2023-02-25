@@ -22,6 +22,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject mainPage;
     [Tooltip("The level select page of the pause menu")]
     [SerializeField] private GameObject levelSelectPage;
+    [Tooltip("The controls page of the pause menu")]
+    [SerializeField] private GameObject controlsPage;
 
     private void Update()
     {
@@ -60,20 +62,32 @@ public class PauseMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// Turns the main page off and opens the level select screen page
-    /// </summary>
-    public void OpenLevelSelectPage()
-    {
-        mainPage.SetActive(false);
-        levelSelectPage.SetActive(true);
-    }
-
-    /// <summary>
     /// Turns the level select screen page off and opens the main page
     /// </summary>
     public void OpenMenuPage()
     {
         mainPage.SetActive(true);
+        controlsPage.SetActive(false);
+        levelSelectPage.SetActive(false);
+    }
+
+    /// <summary>
+    /// Turns the main page off and opens the level select screen page
+    /// </summary>
+    public void OpenLevelSelectPage()
+    {
+        mainPage.SetActive(false);
+        controlsPage.SetActive(false);
+        levelSelectPage.SetActive(true);
+    }
+
+    /// <summary>
+    /// Turns the main page off and opens the controls screen page
+    /// </summary>
+    public void OpenControlsPage()
+    {
+        mainPage.SetActive(false);
+        controlsPage.SetActive(true);
         levelSelectPage.SetActive(false);
     }
 
