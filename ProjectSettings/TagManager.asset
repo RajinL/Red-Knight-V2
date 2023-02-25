@@ -9,6 +9,7 @@ TagManager:
   - shootable
   - Ignore
   - gar_bomb_explo_parent
+  - LevelBounds
   layers:
   - Default
   - TransparentFX

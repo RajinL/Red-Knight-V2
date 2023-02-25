@@ -27,7 +27,6 @@ public class ParallaxBackground : MonoBehaviour
 
             if (layer != null)
             {
-                layer.name = "Layer-" + i;
                 parallaxLayers.Add(layer);
             }
         }

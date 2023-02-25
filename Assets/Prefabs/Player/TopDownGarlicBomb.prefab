@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2319702314299648016}
   - component: {fileID: 2319702314299648017}
+  - component: {fileID: 4066960508615257456}
   - component: {fileID: 2319702314299648019}
   - component: {fileID: 4724322853697227640}
-  - component: {fileID: 4066960508615257456}
+  - component: {fileID: -5401206674551043761}
   m_Layer: 0
   m_Name: TopDownGarlicBomb
   m_TagString: Untagged
@@ -85,45 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &2319702314299648019
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2319702314299648014}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0048668464, y: -0.061330125}
-  m_Size: {x: 0.30413362, y: 0.21067463}
-  m_Direction: 1
---- !u!114 &4724322853697227640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2319702314299648014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbfa7a99490b7a54e868715b117e5170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  damage: 100
-  rb: {fileID: 4066960508615257456}
-  ExplodeRange: 2
-  DetonationTime: 2
-  TimeToDestroy: 0.02
-  explosionEffect: {fileID: 4713116776895158531, guid: 67e78565d12ec884dab8fe44b44238dc,
-    type: 3}
-  WhatToDestroy:
-    serializedVersion: 2
-    m_Bits: 3072
 --- !u!50 &4066960508615257456
 Rigidbody2D:
   serializedVersion: 4
@@ -145,6 +107,59 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!70 &2319702314299648019
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319702314299648014}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0048668464, y: -0.061330125}
+  m_Size: {x: 0.30413362, y: 0.21067463}
+  m_Direction: 1
+--- !u!114 &4724322853697227640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319702314299648014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbfa7a99490b7a54e868715b117e5170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedThrown: 10
+  damageValue: 2
+  explodeRangeRadius: 2
+  detonationTime: 2
+  timeToTurnOffAfterDet: 0.2
+  WhatToDestroy:
+    serializedVersion: 2
+    m_Bits: 3072
+--- !u!114 &-5401206674551043761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319702314299648014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ac0102c8549e540917c734f23d719a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 4713116776895158529, guid: 67e78565d12ec884dab8fe44b44238dc,
+    type: 3}
+  amountToPool: 1
+  parentObject: {fileID: 0}
 --- !u!1001 &8112851082894032444
 PrefabInstance:
   m_ObjectHideFlags: 0
