@@ -11,22 +11,16 @@ public class Boss : MonoBehaviour
     private bool isFlipped = false;
 
     private Transform player;
+    private Animator animator;
 
 
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
+        animator = gameObject.GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        //Vector3 dir = player.transform.position - transform.position;
-        //dir = player.transform.InverseTransformDirection(dir);
-        //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //firePoint.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-    }
 
     public void LookAtPlayer()
     {
@@ -56,5 +50,14 @@ public class Boss : MonoBehaviour
         Instantiate(projectile, firePoint.position, firePoint.rotation);
     }
 
-    
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            animator.SetBool("Panicked", true);
+
+        }
+    }
+
+
 }

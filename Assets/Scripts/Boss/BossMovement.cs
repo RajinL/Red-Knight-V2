@@ -7,11 +7,11 @@ public class BossMovement : StateMachineBehaviour
     Transform player;
     Rigidbody2D rb;
     Boss boss;
-    EnemyHealth enemy;
+    BossHealth bossHealth;
 
     public float speed = 5f;
     public float attackRange = 1f;
-    public int panicThreshold = 250;
+    public int panicThreshold = 50;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -19,7 +19,7 @@ public class BossMovement : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<Boss>();
-        enemy = animator.GetComponent<EnemyHealth>();
+        bossHealth = animator.GetComponent<BossHealth>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -36,10 +36,15 @@ public class BossMovement : StateMachineBehaviour
             animator.SetTrigger("Attack");
         }
 
-        //if (enemy.health < panicThreshold)
-        //{
-        //    animator.SetBool("Panicked", true);
-        //}
+        if (bossHealth.GetCurrentHealth() < panicThreshold)
+        {
+            animator.SetBool("Panicked", true);
+        }
+
+        if (player.position.x < 0)
+        {
+            animator.Play("Idle");
+        }
 
     }
 

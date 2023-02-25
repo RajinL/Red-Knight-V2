@@ -15,9 +15,11 @@ public class FinishGame : MonoBehaviour
         tdm.target = finishPoint;
 
         GameObject frontDoor = GameObject.FindGameObjectWithTag("FinishDoor");
+        GameObject closeDoorTrigger = GameObject.Find("CloseDoorTrigger");
 
         Animator doorAnimator = frontDoor.GetComponent<Animator>();
 
         doorAnimator.SetBool("Closed", false);
+        closeDoorTrigger.SetActive(false);
     }
 }
