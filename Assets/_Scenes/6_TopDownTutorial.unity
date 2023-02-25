@@ -545,6 +545,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 996142496198584952, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
+        type: 3}
+      propertyPath: sceneTransition
+      value: 
+      objectReference: {fileID: 1083027219}
     - target: {fileID: 6796039474908558131, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
         type: 3}
       propertyPath: sceneName
@@ -3510,6 +3515,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac1770d97fa65324288ffe09aa197684, type: 3}
+--- !u!95 &1083027219 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1087680165902512418, guid: ac1770d97fa65324288ffe09aa197684,
+    type: 3}
+  m_PrefabInstance: {fileID: 1083027218}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1108144498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1156970150312423441, guid: 5df468513fb10ff4e93b598c68a76bbb,

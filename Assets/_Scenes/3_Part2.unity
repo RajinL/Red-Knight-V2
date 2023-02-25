@@ -2499,6 +2499,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 996142496198584952, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
+        type: 3}
+      propertyPath: sceneTransition
+      value: 
+      objectReference: {fileID: 1977385789}
     - target: {fileID: 6796039474908558131, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
         type: 3}
       propertyPath: requiresKey
@@ -17181,6 +17186,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac1770d97fa65324288ffe09aa197684, type: 3}
+--- !u!95 &1977385789 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1087680165902512418, guid: ac1770d97fa65324288ffe09aa197684,
+    type: 3}
+  m_PrefabInstance: {fileID: 1977385788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1983806074
 GameObject:
   m_ObjectHideFlags: 0

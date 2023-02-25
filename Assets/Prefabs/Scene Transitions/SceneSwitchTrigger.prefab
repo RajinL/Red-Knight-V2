@@ -70,7 +70,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e0aa294d8d9ec459313e6dc03b0dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiresKey: 0
-  checkKey: {fileID: 8928583432532855231, guid: 9b62947556ffdcb40aadcc979516ff5c,
-    type: 3}
   sceneName: 
+  sceneTransition: {fileID: 0}
+  transitionTime: 1
+  requiresKey: 0
+  keyPrefab: {fileID: 8928583432532855231, guid: 9b62947556ffdcb40aadcc979516ff5c,
+    type: 3}
