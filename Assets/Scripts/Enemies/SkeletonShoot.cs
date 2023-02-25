@@ -12,6 +12,7 @@ public class SkeletonShoot : MonoBehaviour
     public Transform bonePos;
 
     private float timer;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class SkeletonShoot : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        anim.SetBool("isThrowing", false);
 
         if (timer > 2)
         {
@@ -35,5 +37,6 @@ public class SkeletonShoot : MonoBehaviour
     void Shoot()
     {
         Instantiate(bone, bonePos.position, Quaternion.identity);
+        anim.SetBool("isThrowing", true);
     }
 }

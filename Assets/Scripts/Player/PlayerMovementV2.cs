@@ -21,8 +21,9 @@ public class PlayerMovementV2 : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D coll;
-    private SpriteRenderer sprite;
+    //private SpriteRenderer sprite;
     private float dirX = 0f;
+    public AudioSource jumpAudioSource;
     private enum MovementState { idle, running, jumping, falling }
     //private MovementState state = MovementState.idle;
 
@@ -32,7 +33,7 @@ public class PlayerMovementV2 : MonoBehaviour
         // Search for this component once during start instead of searching every time you want to use it
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        //sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
 
@@ -62,6 +63,7 @@ public class PlayerMovementV2 : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            AudioManagerScript.PlaySound("jump");
             rb.velocity = Vector2.up * jumpPower;
             if (rb.velocity.y < 0.1 && IsGrounded())
             {

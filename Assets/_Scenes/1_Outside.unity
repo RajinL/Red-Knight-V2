@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1117,12 +1117,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+    - target: {fileID: 3893740062982712197, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893740063077902651, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.019999
       objectReference: {fileID: 0}
     - target: {fileID: 3893740064372984711, guid: c1b76928c22c14f4f91a45b96af63541,
         type: 3}
       propertyPath: parallaxCamera
       value: 
       objectReference: {fileID: 1264541023}
+    - target: {fileID: 3893740064679800184, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1b76928c22c14f4f91a45b96af63541, type: 3}
 --- !u!1001 &8468527930058871654

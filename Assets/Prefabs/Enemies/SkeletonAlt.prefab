@@ -254,6 +254,7 @@ MonoBehaviour:
   rotationSpeed: 0
   bone: {fileID: 1793226771991854752, guid: 32cf159804b711d4188614c9e0c9ee37, type: 3}
   bonePos: {fileID: 5835261878384245074}
+  anim: {fileID: 5338059786513820904}
 --- !u!114 &146254096352204143
 MonoBehaviour:
   m_ObjectHideFlags: 0

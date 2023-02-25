@@ -10,6 +10,7 @@ TagManager:
   - Ignore
   - gar_bomb_explo_parent
   - LevelBounds
+  - platform
   layers:
   - Default
   - TransparentFX
