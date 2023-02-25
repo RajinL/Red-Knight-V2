@@ -88,8 +88,6 @@ GameObject:
   - component: {fileID: 6122029534284867845}
   - component: {fileID: 6122029534284867865}
   - component: {fileID: 5990762986018760950}
-  - component: {fileID: 557108602611100535}
-  - component: {fileID: 6541097481774538971}
   m_Layer: 11
   m_Name: Vampire Boss
   m_TagString: non_player
@@ -228,39 +226,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0181818, y: 1.8363637}
   m_EdgeRadius: 0
---- !u!114 &557108602611100535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6122029534284867844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 725b0d5d7d7b86043af48cb4e428dd1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageMaterial: {fileID: 2100000, guid: d5773d4bcfd1341488725434db1f9a19, type: 2}
-  duration: 0.07
---- !u!114 &6541097481774538971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6122029534284867844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4ddb677f1a89de45bb729581176a5e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 3
-  currentHealth: 3
-  damageEffect: {fileID: 557108602611100535}
-  deathEffect: {fileID: 6831827930727456335, guid: 90442d2c161e3524e942a06384789785,
-    type: 3}
-  timeForDeathEffectToDestroy: 1
-  scoreValue: 1
-  deathEffectOn: 1
-  enemyPatrol: {fileID: 0}
-  deathAnimation: {fileID: 0}

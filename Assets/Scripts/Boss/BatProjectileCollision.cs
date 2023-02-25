@@ -11,7 +11,7 @@ public class BatProjectileCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
             Destroy(gameObject);
         }
     }
