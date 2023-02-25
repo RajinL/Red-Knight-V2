@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3964,16 +3964,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Top Down Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692592621615522292, guid: 53241bbc018f64fb8b5d9038c991d019,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692592621615522292, guid: 53241bbc018f64fb8b5d9038c991d019,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53241bbc018f64fb8b5d9038c991d019, type: 3}
