@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 855187420}
   m_Layer: 8
   m_Name: Damage
-  m_TagString: non_player
+  m_TagString: Ignore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,9 +307,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7371611281757448633}
   - component: {fileID: 3191123250788955940}
+  - component: {fileID: 8422456876698107514}
   m_Layer: 11
   m_Name: PlayerDetection
-  m_TagString: non_player
+  m_TagString: Ignore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7933166649512818113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.378, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6361923892610812651}
@@ -335,7 +336,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7933166649512818113}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -354,3 +355,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7035281, y: 0.94786525}
   m_EdgeRadius: 0
+--- !u!114 &8422456876698107514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933166649512818113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f011956aea1f4bf4d88182e4f42007c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+  radius: 0.177
+  gizmoColor: {r: 0, g: 1, b: 0, a: 1}
+  showGizmos: 1
