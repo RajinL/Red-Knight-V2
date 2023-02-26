@@ -36,17 +36,17 @@ public class SkeletonAltPlayerDetector : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    //void Start()
-    //{
-    //    StartCoroutine(DetectionCoroutine());
-    //}
+    void Start()
+    {
+        StartCoroutine(DetectionCoroutine());
+    }
 
-    //IEnumerable DetectionCoroutine()
-    //{
-    //    yield return new WaitForSeconds(detectionDelay);
-    //    PerformDetection();
-    //    StartCoroutine(DetectionCoroutine());
-    //}
+    IEnumerator DetectionCoroutine()
+    {
+        yield return new WaitForSeconds(detectionDelay);
+        PerformDetection();
+        StartCoroutine(DetectionCoroutine());
+    }
 
     public void PerformDetection()
     {

@@ -68,6 +68,10 @@ public class EnemyHealth : Health
             deathAnimation.SetTrigger("isDead");
             enemyPatrol.moveSpeed = 0;
             gameObject.layer = LayerMask.NameToLayer("DestroyedObjects");
+            foreach (Transform child in transform)
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("DestroyedObjects");
+            }
             Destroy(gameObject, 5);
         }
     }
