@@ -11,6 +11,10 @@ TagManager:
   - gar_bomb_explo_parent
   - LevelBounds
   - platform
+  - Boss
+  - Waypoint
+  - FinishDoor
+  - Crossfade
   layers:
   - Default
   - TransparentFX

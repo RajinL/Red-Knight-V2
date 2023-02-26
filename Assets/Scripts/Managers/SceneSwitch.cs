@@ -12,16 +12,20 @@ public class SceneSwitch : MonoBehaviour
     [SerializeField] private string sceneName;
 
     [Header("Scene Fade Settings")]
-    [Tooltip("The animator component located on the Crossfade game object in the menu.")]
-    [SerializeField] private Animator sceneTransition;
     [Tooltip("The time the fade animation last for.")]
     [SerializeField] private float transitionTime = 1f;
+    private Animator sceneTransition;
 
     [Header("Key Settings")]
     [Tooltip("If this game object requires a key to load a scene.")]
     [SerializeField] private bool requiresKey;
     [Tooltip("The key prefab needed to load a scene.")]
     [SerializeField] CollectKey keyPrefab;
+
+    private void Start()
+    {
+        sceneTransition = GameObject.FindGameObjectWithTag("Crossfade").GetComponent<Animator>();
+    }
 
     /// <summary>
     /// If the player collides with this scene switch object (the door), then if it requires

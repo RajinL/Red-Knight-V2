@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// A class that handles all camera functionality for the game. It follows an object, presumably the player, is clamped
 /// between the bounds of a level, and can trigger a rush scene smoothing the camera to another target.
+/// <strong>CURRENTLY ONLY WORKS FOR 16:9 ASPECT RATIO!</strong>
 /// </summary>
 public class CameraFollow : MonoBehaviour
 {
