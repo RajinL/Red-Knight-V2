@@ -153,7 +153,7 @@ MonoBehaviour:
   timeToTurnOffAfterDet: 0.2
   WhatToDestroy:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 5120
 --- !u!114 &698580231959495043
 MonoBehaviour:
   m_ObjectHideFlags: 0
