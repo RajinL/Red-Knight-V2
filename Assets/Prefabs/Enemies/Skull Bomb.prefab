@@ -155,6 +155,8 @@ MonoBehaviour:
   WhatToDestroy:
     serializedVersion: 2
     m_Bits: 5120
+  initialDetTime: 0
+  totalTimeToTurnOff: 0
 --- !u!114 &698580231959495043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,8 +212,9 @@ MonoBehaviour:
   timeToTurnOffAfterDet: 0.2
   WhatToDestroy:
     serializedVersion: 2
-    m_Bits: 0
-  speedThrown: 10
+    m_Bits: 4096
+  initialDetTime: 0
+  totalTimeToTurnOff: 0
 --- !u!1 &9185923046620336694
 GameObject:
   m_ObjectHideFlags: 0

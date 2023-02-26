@@ -29,7 +29,7 @@ public class BombDamage : MonoBehaviour
     [Tooltip("Which layers this object will damage.")]
     [SerializeField] private LayerMask WhatToDestroy;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float initialDetTime;
     public float totalTimeToTurnOff;
 
