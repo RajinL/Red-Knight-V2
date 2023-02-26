@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3146527344178123203}
   - component: {fileID: 698580231959495043}
   - component: {fileID: 7654605786516990430}
+  - component: {fileID: 4493946619073648132}
   m_Layer: 11
   m_Name: Skull Bomb
   m_TagString: non_player
@@ -141,7 +142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5335538086431634101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbfa7a99490b7a54e868715b117e5170, type: 3}
   m_Name: 
@@ -190,6 +191,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4493946619073648132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5335538086431634101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc3f1e74b2219d459bf6fffba4d5c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedThrown: 10
+  damageValue: 2
+  explodeRangeRadius: 2
+  detonationTime: 2
+  timeToTurnOffAfterDet: 0.2
+  WhatToDestroy:
+    serializedVersion: 2
+    m_Bits: 0
+  speedThrown: 10
 --- !u!1 &9185923046620336694
 GameObject:
   m_ObjectHideFlags: 0
