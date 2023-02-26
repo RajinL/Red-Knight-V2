@@ -8,6 +8,10 @@ public class PatrollingEnemies : MonoBehaviour
     //public Transform enemy;
     int goalPoint = 0;
     public float moveSpeed = 2;
+    public float decreaseMovementOnAttack = 1.6f;
+
+    [SerializeField] private EnemyAttacksPlayer enemyAttacking;
+    public bool enemyCanAttack = false;
 
     /*[SerializeField]
     private GameObject enemySprite;*/
@@ -17,6 +21,26 @@ public class PatrollingEnemies : MonoBehaviour
     private void Update()
     {
         MoveToNextPoint();
+    }
+
+    private void FixedUpdate()
+    {
+        if (enemyCanAttack == true)
+        {
+            if (enemyAttacking.CanMove)
+            {
+                moveSpeed = 2;
+            }
+            else
+            {
+                if (moveSpeed > 0)
+                {
+                    moveSpeed -= decreaseMovementOnAttack * Time.deltaTime;
+                    Debug.Log(moveSpeed);
+                }
+                
+            }
+        }
     }
 
     void MoveToNextPoint()

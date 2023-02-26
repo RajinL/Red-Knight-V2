@@ -7,8 +7,11 @@ public class PatrollingEnemyPlayerDetection : MonoBehaviour
 {
     public LayerMask targetLayer;
 
+    [System.Serializable]
+    public class Detecting : UnityEvent<GameObject> { }
+
     [SerializeField]
-    public UnityEvent<GameObject> OnPlayerDetected;
+    public Detecting OnPlayerDetected;
 
     [Range(0.1f, 1)]
     public float radius;
