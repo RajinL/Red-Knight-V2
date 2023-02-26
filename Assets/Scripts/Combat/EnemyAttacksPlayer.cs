@@ -11,6 +11,8 @@ public class EnemyAttacksPlayer : MonoBehaviour
 
     internal static string hasTarget = "hasTarget";
 
+    private int attackDamage = 3;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -22,7 +24,7 @@ public class EnemyAttacksPlayer : MonoBehaviour
         private set
         {
             _hasTarget = value;
-            anim.SetBool(hasTarget, value);    
+            anim.SetBool(hasTarget, value);
         }
     }
 
@@ -38,5 +40,13 @@ public class EnemyAttacksPlayer : MonoBehaviour
     void Update()
     {
         HasTarget = playerDetect.detectedColliders.Count > 0;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+        }
     }
 }
