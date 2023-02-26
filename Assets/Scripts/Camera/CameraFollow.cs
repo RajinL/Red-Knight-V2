@@ -34,24 +34,30 @@ public class CameraFollow : MonoBehaviour
     private float rightBounds;
     private float topBounds;
     private float bottomBounds;
-    private float xMin;
-    private float xMax;
-    private float yMin;
-    private float yMax;
 
-    // the greatest common factor between the width and height of the aspect ratio
-    private float aspectGCD;
     // the width of the aspect ratio
-    private float aspectWidth;
+    private float cameraHalfWidth;
     // the height of the aspect ratio
-    private float aspectHeight;
+    private float cameraHalfHeight;
     // the position of the rush that the camera will lerp towards
     private Vector3 targetPosition;
 
     void Awake()
     {
+        SetCameraDimensions();
         MakeEdgeReferences();
         InitializeLevelBounds();
+    }
+
+    /// <summary>
+    /// Sets the camera's dimensions for a 16:9 aspect ratio. Necessary to calculate half the width and
+    /// height of a the camera to clamp the camera, and prevent it from going outside the bounds of the
+    /// level. (16 / 9 = 1.8, 18 / 10 = 1.8)
+    /// </summary>
+    private void SetCameraDimensions()
+    {
+        cameraHalfWidth = 18 / 2;
+        cameraHalfHeight = 10 / 2;
     }
 
     /// <summary>
@@ -77,58 +83,24 @@ public class CameraFollow : MonoBehaviour
     }
 
     /// <summary>
-    /// Calculates the aspect ratio of the scene camera and adds or subtracts these values from each
-    /// edge collider that makes up the bounds of the map. These will be the values that the camera
-    /// will be clamped between.
+    /// Adds or subtracts half of the aspect ratio of the scene camera from each edge collider that makes up
+    /// the bounds of the map. These will be the values that the camera will be clamped between.
     /// </summary>
     private void InitializeLevelBounds()
     {
-        aspectGCD = GCD(Screen.width, Screen.height);
-        aspectWidth = Screen.width / aspectGCD;
-        aspectHeight = Screen.height / aspectGCD;
-
-        //Debug.Log("GCD: " + GCD(Screen.width, Screen.height) + ", aspectX: " + aspectX + ", aspectY: " + aspectY);
-
         if (leftEdgeLevel != null && rightEdgeLevel != null &&
             topEdgeLevel != null && bottomEdgeLevel != null)
         {
-            leftBounds = (leftEdgeLevel.transform.position.x) + aspectWidth;
-            rightBounds = (rightEdgeLevel.transform.position.x) - aspectWidth;
-            topBounds = (topEdgeLevel.transform.position.y) - aspectHeight;
-            bottomBounds = (bottomEdgeLevel.transform.position.y) + aspectHeight;
-
-            xMin = leftBounds;
-            xMax = rightBounds;
-            yMin = bottomBounds;
-            yMax = topBounds;
-
-            //Debug.Log("leftBounds: " + (leftBounds) + ", rightBounds: " + (rightBounds) +
-            //          ", topBounds: " + (topBounds) + ", bottomBounds" + (bottomBounds));
-            //Debug.Log("Screen.width: " + Screen.width + ", Screen.Height: " + Screen.height);
-            //Debug.Log("GCD: " + GCD(Screen.width, Screen.height));
+            leftBounds = (leftEdgeLevel.transform.position.x) + cameraHalfWidth;
+            rightBounds = (rightEdgeLevel.transform.position.x) - cameraHalfWidth;
+            topBounds = (topEdgeLevel.transform.position.y) - cameraHalfHeight;
+            bottomBounds = (bottomEdgeLevel.transform.position.y) + cameraHalfHeight;
         }
         else
         {
             Debug.LogError("Level Bounds are not set! The Camera Level Bounds prefab must have" +
                 " four edgeCollider2Ds for the left, right, top, and bottom  sides of the level.");
         }
-    }
-
-    /// <summary>
-    /// Calculates the greatest common denominator. Used in determining the aspect ratio of a scene.
-    /// </summary>
-    private int GCD(int num1, int num2)
-    {
-        int r;
-
-        while (num2 != 0)
-        {
-            r = num1 % num2;
-            num1 = num2;
-            num2 = r;
-        }
-
-        return num1;
     }
 
     /// <summary>
@@ -139,12 +111,12 @@ public class CameraFollow : MonoBehaviour
     /// </summary>
     void Update()
     {
-        float x = Mathf.Clamp(objToFollow.transform.position.x, xMin, xMax);
-        float y = Mathf.Clamp(objToFollow.transform.position.y, yMin, yMax);
+        float x = Mathf.Clamp(objToFollow.transform.position.x, leftBounds, rightBounds);
+        float y = Mathf.Clamp(objToFollow.transform.position.y, bottomBounds, topBounds);
 
         if (rushStarted)
         {
-            targetPosition = new Vector3(x + aspectWidth, y, gameObject.transform.position.z);
+            targetPosition = new Vector3(x + cameraHalfWidth, y, gameObject.transform.position.z);
             StartCoroutine(Transition());
         }
         else

@@ -126,20 +126,25 @@ public class UIManager : MonoBehaviour
     //}
 
     /// <summary>
-    /// //https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadScene.html
+    /// Loads the scene with the same name as the sceneName paramater.
+    /// <a herf = "https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadScene.html"></a>
     /// </summary>
     public void LoadSceneByName(string sceneName)
     {
         StartCoroutine(LoadSceneWithFade(sceneName));
     }
 
+    /// <summary>
+    /// Restarts the current scene. Will be used for when player dies.
+    /// </summary>
     public void RestartCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     /// <summary>
-    /// https://docs.unity3d.com/ScriptReference/EditorApplication-isPlaying.html
+    /// Quits the game regardless if it's a build or in the engine editor.
+    /// < a href = "https://docs.unity3d.com/ScriptReference/EditorApplication-isPlaying.html"></a>
     /// </summary>
     public void QuitGame()
     {
