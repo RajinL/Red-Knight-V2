@@ -220,6 +220,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 423d7f9543fc9d4468183d1d717380c8, type: 3}
+--- !u!1 &95266633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 487230792709064592, guid: 423d7f9543fc9d4468183d1d717380c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 95266632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &98218681
 GameObject:
   m_ObjectHideFlags: 0
@@ -34708,6 +34714,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 89
       objectReference: {fileID: 0}
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 95266633}
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
+      propertyPath: gmPlayerTopdown
+      value: 
+      objectReference: {fileID: 1224115066}
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
+      propertyPath: gmPlayerSidescroller
+      value: 
+      objectReference: {fileID: 1224115067}
     - target: {fileID: 9044406909863027612, guid: e75812096960d5a4da19d008e9618992,
         type: 3}
       propertyPath: m_RootOrder

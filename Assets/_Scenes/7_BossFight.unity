@@ -383,6 +383,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 423d7f9543fc9d4468183d1d717380c8, type: 3}
+--- !u!1 &291523053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 487230792709064592, guid: 423d7f9543fc9d4468183d1d717380c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 291523052}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &320419791
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +653,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 291523053}
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
+      propertyPath: gmPlayerTopdown
+      value: 
+      objectReference: {fileID: 1967974649}
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
+      propertyPath: gmPlayerSidescroller
+      value: 
+      objectReference: {fileID: 1967974650}
     - target: {fileID: 9044406909863027612, guid: e75812096960d5a4da19d008e9618992,
         type: 3}
       propertyPath: m_RootOrder
