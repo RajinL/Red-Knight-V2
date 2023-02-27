@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkeletonShoot : MonoBehaviour
+public class SkeletonAltPlayerDetector : MonoBehaviour
 {
     [field: SerializeField]
     public bool PlayerDetected { get; private set; }
+    public Vector2 DirectionToTarget => target.transform.position - detectorOrigin.position;
 
     [Header("OverlapBox Params")]
     [SerializeField]
     private Transform detectorOrigin;
     public Vector2 detectorSize = Vector2.one;
-    public Vector2 detectorOriginOffset = Vector2.zero;
+    public Vector2 detectorOriginOffset;
 
-    public float detectionDelay = 1.5f;
+    public float detectionDelay = 0.3f;
 
     public LayerMask detectorLayerMask;
 
@@ -23,16 +24,6 @@ public class SkeletonShoot : MonoBehaviour
     public bool showGizmos = true;
 
     private GameObject target;
-
-    [Header("Bullet Params")]
-    public Animator anim;
-    public float speed;
-    //public float rotationSpeed;
-    public GameObject bone;
-    public Transform bonePos;
-    //private float shootDelay = 0;
-    //public float fireRate;
-    
 
     public GameObject Target
     {
@@ -63,31 +54,16 @@ public class SkeletonShoot : MonoBehaviour
         if (collider != null)
         {
             Target = collider.gameObject;
-            Shoot();
         }
         else
         {
             Target = null;
-            //anim.SetBool("isThrowing", false);
         }
     }
 
-    private void OnDrawGizmos()
+    // Update is called once per frame
+    void Update()
     {
-        if (showGizmos && detectorOrigin != null)
-        {
-            Gizmos.color = gizmoIdleColor;
-            if (PlayerDetected)
-            {
-                Gizmos.color = gizmoDetectedColor;
-            }
-            Gizmos.DrawCube((Vector2)detectorOrigin.position + detectorOriginOffset, detectorSize);
-        }
-    }
-
-    void Shoot()
-    {
-        Instantiate(bone, bonePos.position, Quaternion.identity);
-        anim.SetTrigger("isThrowing");
+        
     }
 }

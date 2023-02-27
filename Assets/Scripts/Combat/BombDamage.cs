@@ -13,7 +13,7 @@ public class BombDamage : MonoBehaviour
 {
     [Header("Bomb Settings")]
     [Tooltip("The speed that affects this object's rigidbody velocity.")]
-    [SerializeField] private float speedThrown = 10f;
+    [SerializeField] public float speedThrown = 10f;
     [Tooltip("The amount of damage this object deals to another object with a Health component.")]
     [SerializeField] private int damageValue = 2;
     [Tooltip("The blast radius for this object when it explodes")]
@@ -21,17 +21,17 @@ public class BombDamage : MonoBehaviour
 
     [Header("Lifetime Settings")]
     [Tooltip("Time it takes for this object to explode and deal damage")]
-    [SerializeField] private float detonationTime;
+    [SerializeField] public float detonationTime;
     [Tooltip("Time it takes for this object to turn off after it's already exploded")]
-    [SerializeField] private float timeToTurnOffAfterDet;
+    [SerializeField] public float timeToTurnOffAfterDet;
 
     [Header("Layers to Damage")]
     [Tooltip("Which layers this object will damage.")]
     [SerializeField] private LayerMask WhatToDestroy;
 
-    private Rigidbody2D rb;
-    private float initialDetTime;
-    private float totalTimeToTurnOff;
+    public Rigidbody2D rb;
+    public float initialDetTime;
+    public float totalTimeToTurnOff;
 
 
     private void Awake()
@@ -55,7 +55,7 @@ public class BombDamage : MonoBehaviour
     /// sets the bomb's rigidbody's velocity multiplied by a speed value, and sets the actual
     /// time that bomb is turned off
     /// </summary>
-    private void InitializeBomb()
+    public virtual void InitializeBomb()
     {
         detonationTime = initialDetTime;
         rb.velocity = transform.right * speedThrown;
