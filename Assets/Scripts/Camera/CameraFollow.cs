@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// A class that handles all camera functionality for the game. It follows an object, presumably the player, is clamped
@@ -9,6 +10,8 @@ using UnityEngine;
 /// </summary>
 public class CameraFollow : MonoBehaviour
 {
+    public static CameraFollow instance = null;
+
     [Header("Object Camera Follows")]
     [Tooltip("The object the camera will follow.")]
     [SerializeField] private GameObject objToFollow;
@@ -43,11 +46,36 @@ public class CameraFollow : MonoBehaviour
     // the position of the rush that the camera will lerp towards
     private Vector3 targetPosition;
 
+    [SerializeField] private GameObject playerSidescroller;
+    [SerializeField] private GameObject playerTopDown;
+    [SerializeField] private GameManager gameManager;
+
     void Awake()
     {
+        // Set up the singleton instance of this
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        SetObjToFollowReference();
         SetCameraDimensions();
         MakeEdgeReferences();
         InitializeLevelBounds();
+    }
+
+    private void SetObjToFollowReference()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "5_Part4")
+        {
+            objToFollow = GameObject.FindGameObjectWithTag("rush_object");
+        }
     }
 
     /// <summary>
@@ -104,6 +132,47 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
+    // https://answers.unity.com/questions/1174255/since-onlevelwasloaded-is-deprecated-in-540b15-wha.html
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        scene = SceneManager.GetActiveScene();
+        // Set up the singleton instance of this
+        if (scene.name == "6_TopDownTutorial" || scene.name == "7_BossFight")
+        {
+            MakeEdgeReferences();
+            InitializeLevelBounds();
+            objToFollow = playerTopDown;
+        }
+
+        else if (scene.name == "0_MainMenu")
+        {
+            Destroy(gameObject);
+        }
+
+        else
+        {
+            MakeEdgeReferences();
+            InitializeLevelBounds();
+            objToFollow = playerSidescroller;
+            if (scene.name == "5_Part4")
+            {
+                Debug.Log("In rush scene. Looking for rush_object");
+                objToFollow = GameObject.FindGameObjectWithTag("rush_object");
+                StartCoroutine(InitializeRushStartPoint(0.1f));
+            }
+        }
+    }
+
     /// <summary>
     /// Clamps the camera between the bounds of the map while following the objToFollow gameObject.
     /// If the rush has started, then the camera will move to the right to give the appearance that
@@ -134,6 +203,7 @@ public class CameraFollow : MonoBehaviour
     /// </summary>
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Collided with rush start");
         if (startOfRush != null)
         {
             rushStarted = true;
@@ -160,5 +230,11 @@ public class CameraFollow : MonoBehaviour
             transform.position = Vector3.Lerp(startingPos, targetPosition, t);
             yield return 0;
         }
+    }
+
+    IEnumerator InitializeRushStartPoint(float time)
+    {
+        yield return new WaitForSeconds(time);
+        startOfRush = GameObject.FindGameObjectWithTag("rush_start").GetComponent<Collider2D>();
     }
 }

@@ -112,7 +112,19 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadScene(int buildNumber)
     {
-        SceneManager.LoadScene(buildNumber);
+        //var op = SceneManager.LoadSceneAsync(buildNumber);
+        //op.completed += (x) =>
+        //{
+        //    Debug.Log("x: " + x);
+        //    Resume();
+        //};
+        StartCoroutine(LoadSceneWithFade(buildNumber));
         Resume();
+    }
+
+    IEnumerator LoadSceneWithFade(int buildNumber)
+    {
+        SceneManager.LoadScene(buildNumber);
+        yield return new WaitForSeconds(3);
     }
 }

@@ -15,6 +15,11 @@ TagManager:
   - Waypoint
   - FinishDoor
   - Crossfade
+  - spawn_point
+  - PlayerParent
+  - game_manager
+  - rush_object
+  - rush_start
   layers:
   - Default
   - TransparentFX

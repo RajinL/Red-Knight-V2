@@ -337,9 +337,6 @@ MonoBehaviour:
   timeForDeathEffectToDestroy: 1
   invincibilityTime: 3
   isInvincible: 0
-  initialLives: 3
-  currentLives: 3
-  maximumLives: 5
   respawnWaitTime: 3
 --- !u!1 &5773234081040054142
 GameObject:

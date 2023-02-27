@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     // The global instance for other scripts to reference
     public static GameManager instance = null;
-    [HideInInspector] public static UIManager uiManager = null;
+    public static UIManager uiManager = null;
     public GameObject player = null;
 
     [SerializeField] private string currentSceneName;
@@ -14,9 +14,15 @@ public class GameManager : MonoBehaviour
 
     public bool gameIsOver = false;
 
+    [Header("Players")]
+    [SerializeField] public GameObject gmPlayerSidescroller;
+    [SerializeField] public GameObject gmPlayerTopdown;
+    [SerializeField] public GameObject spawnPoint;
+
     [Header("Lives")]
     [SerializeField] private int gmInitialLifeCount = 0;
     [SerializeField] private int gmCurrentLifeCount = 0;
+    [SerializeField] private int gmMaxLifeCount = 0;
 
     [Header("Score")]
     [SerializeField] private int gmCurrentScoreCount = 0;
@@ -33,6 +39,18 @@ public class GameManager : MonoBehaviour
     [Header("Keys")]
     [SerializeField] private int gmInitiaKeyCount = 0;
     [SerializeField] private int gmCurrentKeyCount = 0;
+
+    public static GameObject PlayerSidescroller
+    {
+        get { return instance.gmPlayerSidescroller; }
+        //set { instance.gmPlayerSidescroller = value; }
+    }
+
+    public static GameObject PlayerTopDown
+    {
+        get { return instance.gmPlayerTopdown; }
+        //set { instance.gmPlayerTopdown = value; }
+    }
 
     public static GameObject RespawnLocation
     {
@@ -63,6 +81,13 @@ public class GameManager : MonoBehaviour
         get { return instance.gmCurrentLifeCount; }
         set { instance.gmCurrentLifeCount = value; }
     }
+
+    public static int MaxLifeCount
+    {
+        get { return instance.gmMaxLifeCount; }
+        set { instance.gmMaxLifeCount = value; }
+    }
+
     public static int CurrentScoreCount
     {
         get { return instance.gmCurrentScoreCount; }
@@ -83,6 +108,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); // MUST MAKE PLAYER DONTDESTROYONLOAD AS WELL BECUASE OBJECT POOLS ARE LOOKING FOR THE SAME INSTANCE OF GAMEMANAGER!!!
         }
         else
         {
@@ -122,10 +148,19 @@ public class GameManager : MonoBehaviour
         InitializeScoreCount();
         InitializeInGameUI();
         InitializeCurrentScene();
+        InitializeSpawnPoint();
         InitiailizeRespawnLocation();
     }
+    private void InitializeSpawnPoint()
+    {
+        if (GameObject.FindGameObjectWithTag("spawn_point"))
+        {
+            spawnPoint = GameObject.FindGameObjectWithTag("spawn_point");
+        }
+    }
 
-    private void InitializePlayer()
+
+private void InitializePlayer()
     {
         if (player == null)
         {
@@ -201,118 +236,28 @@ public class GameManager : MonoBehaviour
         uiManager.SetPlayerLifeCount(CurrentLifeCount);
     }
 
-
-
-
-
-
-
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // Player Prefs for data persistence
-    // WORK IN PROGRESS
-
-    /***
-     * Watch video by Unity to understand data persistence - singleton, player prefs, saving
-     * https://www.youtube.com/watch?v=J6FfcJpbPXE
-     * Keep track of player lives, health, score in Game Manager with player prefs
-    */
-
-    /*private void Start()
+    // https://answers.unity.com/questions/1174255/since-onlevelwasloaded-is-deprecated-in-540b15-wha.html
+    void OnEnable()
     {
-        if (PlayerPrefs.HasKey("highscore"))
-        {
-            highScore = PlayerPrefs.GetInt("highscore");
-        }
-        if (PlayerPrefs.HasKey("score"))
-        {
-            score = PlayerPrefs.GetInt("score");
-        }
-        //InitilizeGamePlayerPrefs();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void InitilizeGamePlayerPrefs()
+    void OnDisable()
     {
-        if (player != null)
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        scene = SceneManager.GetActiveScene();
+        // Set up the singleton instance of this
+        if (scene.name == "0_MainMenu")
         {
-            Health playerHealth = player.GetComponent<Health>();
-
-            // Set lives accordingly
-            if (PlayerPrefs.GetInt("lives") == 0)
-            {
-                PlayerPrefs.SetInt("lives", playerHealth.currentLives);
-            }
-
-            playerHealth.currentLives = PlayerPrefs.GetInt("lives");
-
-            // Set health accordingly
-            if (PlayerPrefs.GetInt("health") == 0)
-            {
-                PlayerPrefs.SetInt("health", playerHealth.currentHealth);
-            }
-
-            playerHealth.currentHealth = PlayerPrefs.GetInt("health");
+            Destroy(gameObject);
+        }
+        else
+        {
+            InitializeSpawnPoint();
         }
     }
-
-    private void SetGamePlayerPrefs()
-    {
-        if (player != null)
-        {
-            Health playerHealth = player.GetComponent<Health>();
-            PlayerPrefs.SetInt("lives", playerHealth.currentLives);
-            PlayerPrefs.SetInt("health", playerHealth.currentHealth);
-        }
-    }
-
-    public void GameOver()
-    {
-        gameIsOver = true;
-    }
-
-    public static void IncrementScore(int scoreAmount)
-    {
-        score += scoreAmount;
-        if (score > instance.highScore)
-        {
-            SaveHighScore();
-        }
-    }
-    public static void ResetScore()
-    {
-        PlayerPrefs.SetInt("score", 0);
-        score = 0;
-    }
-
-    public static void ResetGamePlayerPrefs()
-    {
-        PlayerPrefs.SetInt("score", 0);
-        score = 0;
-        PlayerPrefs.SetInt("lives", 0);
-        PlayerPrefs.SetInt("health", 0);
-    }
-
-    private void OnApplicationQuit()
-    {
-        SaveHighScore();
-        ResetScore();
-    }
-
-    public static void SaveHighScore()
-    {
-        if (score > instance.highScore)
-        {
-            PlayerPrefs.SetInt("highscore", score);
-            instance.highScore = score;
-        }
-    }
-
-    public static void ResetHighScore()
-    {
-        PlayerPrefs.SetInt("highscore", 0);
-        if (instance != null)
-        {
-            instance.highScore = 0;
-        }
-    }*/
 }

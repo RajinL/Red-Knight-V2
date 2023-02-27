@@ -1,43 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Health
 {
+    public static PlayerHealth instance = null;
+
     [Header("Invincibility Info")]
     [Tooltip("The time the player is invincible for after being damaged.")]
     [SerializeField] private float invincibilityTime = 3f;
     [Tooltip("If the player is invincible or not")]
     [SerializeField] private bool isInvincible = false;
 
-    [Header("Life Info")]
-    [SerializeField] protected int initialLives = 3;
-    [SerializeField] protected int currentLives = 3;
-    [SerializeField] protected int maximumLives = 5;
-
     [Header("Respawn Info")]
     [SerializeField] private float respawnWaitTime = 3f;
     private float respawnTime;
     private float timeToBecomeHurtAgain = 0;
 
-    private void Awake()
+    [Header("UI Manager")]
+    [Tooltip("The UI manager to reference")]
+    [SerializeField] private new UIManager uiManager;
+
+    // https://answers.unity.com/questions/1174255/since-onlevelwasloaded-is-deprecated-in-540b15-wha.html
+    void OnEnable()
     {
-        currentLives = initialLives;
-        InitializeUISettings();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void InitializeUISettings()
+    void OnDisable()
     {
-        if (GameObject.FindGameObjectWithTag("ui_manager") != null)
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        CheckIfUIisReferenced();
+        UpdateUI();
+    }
+
+    private void CheckIfUIisReferenced()
+    {
+        if (uiManager == null)
         {
             uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
-            uiManager.SetPlayerMaxHealth(initialHealth);
         }
-        else
-        {
-            Debug.LogWarning("UI Manager cannot be found. Make sure that a UI Canvas tagged with \"ui_manager\" is present.");
-        }
+        else return;
     }
+
     void Update()
     {
         InvincibilityCheck();
@@ -46,7 +56,7 @@ public class PlayerHealth : Health
 
     private void RespawnCheck()
     {
-        if (respawnWaitTime != 0 && currentHealth <= 0 && currentLives > 0)
+        if (respawnWaitTime != 0 && currentHealth <= 0 && GameManager.CurrentLifeCount > 0)
         {
             if (Time.time >= respawnTime)
             {
@@ -66,7 +76,7 @@ public class PlayerHealth : Health
     private void UpdateUI()
     {
         uiManager.SetPlayerHealth(currentHealth);
-        uiManager.SetPlayerLifeCount(currentLives);
+        GameManager.UpdateUI();
     }
 
     void Respawn()
@@ -74,7 +84,8 @@ public class PlayerHealth : Health
         // ******************************************************************************//////                
         // UNLOCK CONTROLS
 
-        transform.position = GameManager.instance.gmRespawnLocation.transform.position;
+        transform.position = GameObject.FindGameObjectWithTag("spawn_point").transform.position;
+
         currentHealth = initialHealth;
         UpdateUI();
     }
@@ -83,10 +94,10 @@ public class PlayerHealth : Health
     {
         // *******************************************************************************
         //if score reaches threshold
-        currentLives += additionalLife;
-        if (currentLives > maximumLives)
+        GameManager.CurrentLifeCount += additionalLife;
+        if (GameManager.CurrentLifeCount > GameManager.MaxLifeCount)
         {
-            currentLives = maximumLives;
+            GameManager.CurrentLifeCount = GameManager.MaxLifeCount;
         }
     }
 
@@ -116,11 +127,11 @@ public class PlayerHealth : Health
     {
         if (uiManager != null)
         {
-            currentLives -= 1;
+            GameManager.CurrentLifeCount -= 1;
             UpdateUI();
         }
 
-        if (currentLives > 0)
+        if (GameManager.CurrentLifeCount > 0)
         {
             if (respawnWaitTime == 0)
             {
@@ -148,6 +159,6 @@ public class PlayerHealth : Health
     {
         Debug.Log("Player has lost all lives. Game Over!");
         Time.timeScale = 0; // freeze time - temporary fix for locking controls
-        // Load menu
+        // Load Game Over menu
     }
 }

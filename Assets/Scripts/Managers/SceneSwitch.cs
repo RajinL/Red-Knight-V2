@@ -14,7 +14,7 @@ public class SceneSwitch : MonoBehaviour
     [Header("Scene Fade Settings")]
     [Tooltip("The time the fade animation last for.")]
     [SerializeField] private float transitionTime = 1f;
-    private Animator sceneTransition;
+    [SerializeField] private Animator sceneTransition;
 
     [Header("Key Settings")]
     [Tooltip("If this game object requires a key to load a scene.")]
@@ -44,7 +44,8 @@ public class SceneSwitch : MonoBehaviour
                 if (GameManager.CurrentKeyCount > 0)
                 {
                     UseKey(1);
-                    StartCoroutine(LoadSceneWithFade(transitionTime));
+                    if (sceneTransition != null) StartCoroutine(LoadSceneWithFade(transitionTime));
+                    else CheckForSceneName();
                 }
 
                 else
@@ -56,7 +57,8 @@ public class SceneSwitch : MonoBehaviour
             }
             else
             {
-                StartCoroutine(LoadSceneWithFade(transitionTime));
+                if (sceneTransition != null) StartCoroutine(LoadSceneWithFade(transitionTime));
+                else CheckForSceneName();
             }
         }
     }

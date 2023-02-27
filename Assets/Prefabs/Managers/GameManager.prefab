@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 5291226658273869663}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: game_manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,13 +292,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  mainMenuScene: 
+  currentSceneName: 
   gameUICanvas: {fileID: 409836111078767572, guid: ac1770d97fa65324288ffe09aa197684,
     type: 3}
   gmRespawnLocation: {fileID: 0}
   gameIsOver: 0
+  gmPlayerSidescroller: {fileID: 0}
+  gmPlayerTopdown: {fileID: 0}
   gmInitialLifeCount: 3
   gmCurrentLifeCount: 0
+  gmMaxLifeCount: 0
   gmCurrentScoreCount: 0
   gmInitialScoreCount: 0
   gmScoreLifeThreshold: 10

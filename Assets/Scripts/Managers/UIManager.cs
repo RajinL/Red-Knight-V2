@@ -22,16 +22,64 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Animator sceneTransition;
     [SerializeField] private float transitionTime = 1f;
 
-    private int UIMkeyCount;
-
-
     private void Awake()
     {
+        Scene scene = SceneManager.GetActiveScene();
         // Set up the singleton instance of this
-        if (instance == null)
+        if (scene.name != "0_MainMenu")
         {
-            instance = this;
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
+
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        crossFade.SetActive(false);
+        crossFade.SetActive(true);
+    }
+
+
+    // https://answers.unity.com/questions/1174255/since-onlevelwasloaded-is-deprecated-in-540b15-wha.html
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        scene = SceneManager.GetActiveScene();
+        // Set up the singleton instance of this
+        if (scene.name == "0_MainMenu")
+        {
+            Destroy(gameObject);
+        }
+
+        if (scene.name != "7_BossFight")
+        {
+            bossHealthSlider.gameObject.SetActive(false);
+        }
+
+        else if (scene.name == "7_BossFight")
+        {
+            bossHealthSlider.gameObject.SetActive(true);
+        }
+
+        crossFade.SetActive(false);
         crossFade.SetActive(true);
     }
 
@@ -46,15 +94,6 @@ public class UIManager : MonoBehaviour
         {
             allowPause = true;
         }
-    }
-
-    private void Update()
-    {
-        if (allowPause)
-        {
-            //CheckPauseInput();
-        }
-        // TESTING WITH KEY CLICK FIRST
     }
 
     /// <summary>
@@ -104,42 +143,6 @@ public class UIManager : MonoBehaviour
     {
         scoreUI.text = ("Score: " + score.ToString());
     }
-
-    //private void OnEnable()
-    //{
-    //    SetupGameManagerUIManager();
-    //}
-
-    //private void SetupGameManagerUIManager()
-    //{
-    //    if (GameManager.instance != null && GameManager.instance.uiManager == null)
-    //    {
-    //        GameManager.instance.uiManager = this;
-    //    }
-    //}
-
-    //private void CheckPauseInput()
-    //{
-
-    //    if (Input.GetKeyDown("Menu"))
-    //    {
-    //        PauseMenu.GameIsPaused = true;
-    //    }
-    //}
-
-    //public void TogglePause()
-    //{
-    //    if (isPaused)
-    //    {
-    //        Time.timeScale = 1;
-    //        isPaused = false;
-    //    }
-    //    else
-    //    {
-    //        Time.timeScale = 0;
-    //        isPaused = true;
-    //    }
-    //}
 
     /// <summary>
     /// Loads the scene with the same name as the sceneName paramater.
