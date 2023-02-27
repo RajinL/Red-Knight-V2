@@ -405,7 +405,7 @@ MonoBehaviour:
         m_CallState: 2
   radius: 0.177
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
-  showGizmos: 1
+  showGizmos: 0
 --- !u!114 &7171955873539873318
 MonoBehaviour:
   m_ObjectHideFlags: 0
