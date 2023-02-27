@@ -30,11 +30,10 @@ public class EnemyHealth : Health
 
     protected override void Die()
     {
-        if (uiManager != null)
-        {
-            GameManager.CurrentScoreCount += scoreValue;
-            uiManager.SetScoreCount(GameManager.CurrentScoreCount);
-        }
+
+        GameManager.CurrentScoreCount += scoreValue;
+        GameManager.UpdateUI();
+
         GetComponentInChildren<Damage>().StopDamaging();
         AudioManagerScript.PlaySound("enemyDead");
         KillEnemy();

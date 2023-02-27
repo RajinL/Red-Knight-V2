@@ -25,18 +25,28 @@ public class PauseMenu : MonoBehaviour
     [Tooltip("The controls page of the pause menu")]
     [SerializeField] private GameObject controlsPage;
 
+    Scene scene;
+
+    private void Start()
+    {
+        scene = SceneManager.GetActiveScene();
+    }
+
     private void Update()
     {
-        if (pauseMenuUI != null && Input.GetButtonDown("Menu"))
+        if (scene.name != "0_MainMenu")
         {
-            if (!GameIsPaused)
+            if (pauseMenuUI != null && Input.GetButtonDown("Pause"))
             {
-                Pause();
-            }
+                if (!GameIsPaused)
+                {
+                    Pause();
+                }
 
-            else
-            {
-                Resume();
+                else
+                {
+                    Resume();
+                }
             }
         }
     }

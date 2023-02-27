@@ -46,8 +46,6 @@ public class UIManager : MonoBehaviour
         {
             allowPause = true;
         }
-
-        SetPlayerKeyCount();
     }
 
     private void Update()
@@ -97,24 +95,9 @@ public class UIManager : MonoBehaviour
         bombCount.text = (": " + bombs.ToString());
     }
 
-    //public static int CurrentKeyCount
-    //{
-    //    get { return instance.UIMkeyCount; }
-    //    set { instance.UIMkeyCount = value; }
-    //}
-
-    //public static void UpdateUIMkeyCount(int keys)
-    //{
-    //    UIMkeyCount = keys;
-    //    SetPlayerKeyCount();
-    //}
-
-    public void SetPlayerKeyCount()
+    public void SetPlayerKeyCount(int keys)
     {
-        if (keyCount != null)
-        {
-            keyCount.text = (": " + GameManager.CurrentKeyCount.ToString());
-        }
+        keyCount.text = (": " + keys.ToString());
     }
 
     public void SetScoreCount(int score)
@@ -122,18 +105,18 @@ public class UIManager : MonoBehaviour
         scoreUI.text = ("Score: " + score.ToString());
     }
 
-    private void OnEnable()
-    {
-        SetupGameManagerUIManager();
-    }
+    //private void OnEnable()
+    //{
+    //    SetupGameManagerUIManager();
+    //}
 
-    private void SetupGameManagerUIManager()
-    {
-        if (GameManager.instance != null && GameManager.instance.uiManager == null)
-        {
-            GameManager.instance.uiManager = this;
-        }
-    }
+    //private void SetupGameManagerUIManager()
+    //{
+    //    if (GameManager.instance != null && GameManager.instance.uiManager == null)
+    //    {
+    //        GameManager.instance.uiManager = this;
+    //    }
+    //}
 
     //private void CheckPauseInput()
     //{

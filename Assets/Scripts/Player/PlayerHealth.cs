@@ -20,7 +20,6 @@ public class PlayerHealth : Health
     private float respawnTime;
     private float timeToBecomeHurtAgain = 0;
 
-
     private void Awake()
     {
         currentLives = initialLives;
@@ -33,11 +32,10 @@ public class PlayerHealth : Health
         {
             uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
             uiManager.SetPlayerMaxHealth(initialHealth);
-            uiManager.SetPlayerLifeCount(initialLives);
         }
         else
         {
-            Debug.LogWarning("UI Manager cannot be found. Make sure that a UI Canvas tagged with \"ui_manager\" is present");
+            Debug.LogWarning("UI Manager cannot be found. Make sure that a UI Canvas tagged with \"ui_manager\" is present.");
         }
     }
     void Update()

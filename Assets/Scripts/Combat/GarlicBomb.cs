@@ -17,28 +17,6 @@ public class GarlicBomb : MonoBehaviour
     [Tooltip("The location the bomb is turned on at.")]
     [SerializeField] private Transform bombDrop;
 
-    private UIManager uiManager;
-
-    private void Awake()
-    {
-        if (GameObject.FindGameObjectWithTag("ui_manager") != null)
-        {
-            uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
-        }
-    }
-
-    private void Start()
-    {
-        if (uiManager != null)
-        {
-            uiManager.SetPlayerBombCount(GameManager.CurrentGarlicBombCount);
-        }
-        else
-        {
-            Debug.LogWarning("UI Manager cannot be found. Make sure that a UI Canvas tagged with \"ui_manager\" is present");
-        }
-    }
-
     void Update()
     {
         HandleBombThrow();
@@ -82,6 +60,6 @@ public class GarlicBomb : MonoBehaviour
     private void UpdateAmmoCount(int ammoToTakeAway)
     {
         GameManager.CurrentGarlicBombCount -= ammoToTakeAway;
-        uiManager.SetPlayerBombCount(GameManager.CurrentGarlicBombCount);
+        GameManager.UpdateUI();
     }
 }

@@ -22,16 +22,6 @@ public class SceneSwitch : MonoBehaviour
     [Tooltip("The key prefab needed to load a scene.")]
     [SerializeField] CollectKey keyPrefab;
 
-    private UIManager uiManager;
-
-    private void Awake()
-    {
-        if (GameObject.FindGameObjectWithTag("ui_manager") != null)
-        {
-            uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
-        }
-    }
-
     private void Start()
     {
         sceneTransition = GameObject.FindGameObjectWithTag("Crossfade").GetComponent<Animator>();
@@ -78,10 +68,7 @@ public class SceneSwitch : MonoBehaviour
     private void UseKey(int amount)
     {
         GameManager.CurrentKeyCount -= amount;
-        if (uiManager != null)
-        {
-            uiManager.SetPlayerKeyCount();
-        }
+        GameManager.UpdateUI();
     }
 
     /// <summary>

@@ -1,26 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // The global instance for other scripts to reference
     public static GameManager instance = null;
-    [HideInInspector] public UIManager uiManager = null;
+    [HideInInspector] public static UIManager uiManager = null;
     public GameObject player = null;
 
-    [SerializeField] private string mainMenuScene;
+    [SerializeField] private string currentSceneName;
     [SerializeField] private GameObject gameUICanvas = null;
     public GameObject gmRespawnLocation = null;
 
     public bool gameIsOver = false;
 
     [Header("Lives")]
-    [SerializeField] private int gmLifeCount = 0;
+    [SerializeField] private int gmInitialLifeCount = 0;
+    [SerializeField] private int gmCurrentLifeCount = 0;
 
     [Header("Score")]
-    [SerializeField] private int gmScoreCount = 0;
+    [SerializeField] private int gmCurrentScoreCount = 0;
     [SerializeField] private int gmInitialScoreCount = 0;
     [SerializeField] private int gmScoreLifeThreshold = 10;
     public int highScore = 0;
@@ -61,13 +60,13 @@ public class GameManager : MonoBehaviour
 
     public static int CurrentLifeCount
     {
-        get { return instance.gmLifeCount; }
-        set { instance.gmLifeCount = value; }
+        get { return instance.gmCurrentLifeCount; }
+        set { instance.gmCurrentLifeCount = value; }
     }
     public static int CurrentScoreCount
     {
-        get { return instance.gmScoreCount; }
-        set { instance.gmScoreCount = value; }
+        get { return instance.gmCurrentScoreCount; }
+        set { instance.gmCurrentScoreCount = value; }
     }
 
     public static int ScoreLifeThreshold
@@ -93,6 +92,7 @@ public class GameManager : MonoBehaviour
         if (!IsMainMenuScene())
         {
             SetupGameParameters();
+            UpdateUI();
         }
     }
 
@@ -116,10 +116,12 @@ public class GameManager : MonoBehaviour
     private void SetupGameParameters()
     {
         InitializePlayer();
+        InitializeLifeCount();
         InitializeBombCount();
         InitializeKeyCount();
         InitializeScoreCount();
         InitializeInGameUI();
+        InitializeCurrentScene();
         InitiailizeRespawnLocation();
     }
 
@@ -127,7 +129,6 @@ public class GameManager : MonoBehaviour
     {
         if (player == null)
         {
-            Debug.Log("Initializing Game Manager's \"player\" reference.");
             player = GameObject.FindGameObjectWithTag("Player");
         }
     }
@@ -144,7 +145,12 @@ public class GameManager : MonoBehaviour
 
     private void InitializeScoreCount()
     {
-        gmScoreCount = gmInitialScoreCount;
+        gmCurrentScoreCount = gmInitialScoreCount;
+    }
+
+    private void InitializeLifeCount()
+    {
+        gmCurrentLifeCount = gmInitialLifeCount;
     }
 
     private void InitializeInGameUI()
@@ -153,30 +159,47 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("ui_manager") != null)
         {
             uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
+            gameUICanvas = uiManager.gameObject;
         }
 
         else
         {
-            Debug.LogWarning("UI Manager cannot be found in scene. Make sure that a UI Canvas tagged with \"ui_manager\" is present in the scene. Adding a Game UI Canvas...");
+            Debug.LogWarning("UI Manager cannot be found in scene. Make sure that a UI Canvas tagged with" +
+                " \"ui_manager\" is present in the scene. Adding a Game UI Canvas...");
             Instantiate(gameUICanvas);
         }
     }
 
-//    ****************************** UPDATE FOR TOP DOWN
+    private void InitializeCurrentScene()
+    {
+        currentSceneName = SceneManager.GetActiveScene().name;
+    }
+
+    //    ****************************** UPDATE FOR TOP DOWN
     private void InitiailizeRespawnLocation()
     {
         if (gmRespawnLocation == null)
         {
-            Debug.LogWarning("Player Respawn Location not found in scene. Defaulting respawn location to player's location at start of scene.");
+            Debug.LogWarning("Player Respawn Location not found in scene. Defaulting respawn location to" +
+                " player's location at start of scene.");
             gmRespawnLocation = new GameObject("Player Respawn Location");
             gmRespawnLocation.transform.position = player.transform.position;
             gmRespawnLocation.transform.SetParent(this.gameObject.transform);
         }
     }
 
-
-
-
+    /// <summary>
+    /// Calls the object tagged with "ui_manager" (In Game UI Canvas), and updates the UI by setting
+    /// various UI properties. Does not update the player's health or the boss' health as there is only
+    /// one player and one boss, and it is not necessary for this object to track their health.
+    /// </summary>
+    public static void UpdateUI()
+    {
+        uiManager.SetPlayerBombCount(CurrentGarlicBombCount);
+        uiManager.SetPlayerKeyCount(CurrentKeyCount);
+        uiManager.SetScoreCount(CurrentScoreCount);
+        uiManager.SetPlayerLifeCount(CurrentLifeCount);
+    }
 
 
 

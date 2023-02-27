@@ -51,7 +51,7 @@ public class BossHealth : Health
         if (uiManager != null)
         {
             GameManager.CurrentScoreCount += scoreValue;
-            uiManager.SetScoreCount(GameManager.CurrentScoreCount);
+            GameManager.UpdateUI();
         }
         GetComponentInChildren<Damage>().StopDamaging();
         AudioManagerScript.PlaySound("enemyDead");

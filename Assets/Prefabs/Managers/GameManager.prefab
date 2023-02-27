@@ -291,18 +291,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3967ab810339b63438484f05c79449b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 0}
   player: {fileID: 0}
   mainMenuScene: 
   gameUICanvas: {fileID: 409836111078767572, guid: ac1770d97fa65324288ffe09aa197684,
     type: 3}
   gmRespawnLocation: {fileID: 0}
   gameIsOver: 0
-  gmLifeCount: 0
-  gmScoreCount: 0
+  gmInitialLifeCount: 3
+  gmCurrentLifeCount: 0
+  gmCurrentScoreCount: 0
   gmInitialScoreCount: 0
   gmScoreLifeThreshold: 10
   highScore: 0
   gmInitialGarlicBombCount: 100
   gmCurrentGarlicBombCount: 100
   gmMaxGarlicBombCount: 100
+  gmInitiaKeyCount: 0
+  gmCurrentKeyCount: 0
