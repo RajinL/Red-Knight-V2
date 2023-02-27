@@ -103,6 +103,7 @@ public class PlayerHealth : Health
             timeToBecomeHurtAgain = Time.time + invincibilityTime;
             isInvincible = true;
             currentHealth -= damageAmount;
+            AudioManagerScript.PlaySound("enemyCollidesWithPlayer");
             damageEffect.Damage();
 
             if (uiManager != null)
