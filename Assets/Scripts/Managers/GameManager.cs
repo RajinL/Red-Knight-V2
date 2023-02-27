@@ -30,17 +30,29 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int gmCurrentGarlicBombCount = 0;
     [SerializeField] private int gmMaxGarlicBombCount = 10;
 
-    public static int CurrentGarlicBombCount
-    {
-        get { return instance.gmCurrentGarlicBombCount; }
-        set { instance.gmCurrentGarlicBombCount = value; }
-    }
+
+    [Header("Keys")]
+    [SerializeField] private int gmInitiaKeyCount = 0;
+    [SerializeField] private int gmCurrentKeyCount = 0;
 
     public static GameObject RespawnLocation
     {
         get { return instance.gmRespawnLocation; }
         set { instance.gmRespawnLocation = value; }
     }
+
+    public static int CurrentKeyCount
+    {
+        get { return instance.gmCurrentKeyCount; }
+        set { instance.gmCurrentKeyCount = value; }
+    }
+
+    public static int CurrentGarlicBombCount
+    {
+        get { return instance.gmCurrentGarlicBombCount; }
+        set { instance.gmCurrentGarlicBombCount = value; }
+    }
+
     public static int MaxGarlicBombCount
     {
         get { return instance.gmMaxGarlicBombCount; }
@@ -104,7 +116,8 @@ public class GameManager : MonoBehaviour
     private void SetupGameParameters()
     {
         InitializePlayer();
-        InitializeAmmoCount();
+        InitializeBombCount();
+        InitializeKeyCount();
         InitializeScoreCount();
         InitializeInGameUI();
         InitiailizeRespawnLocation();
@@ -114,15 +127,21 @@ public class GameManager : MonoBehaviour
     {
         if (player == null)
         {
-            //Debug.Log("Initializing Game Manager's \"player\" reference.");
+            Debug.Log("Initializing Game Manager's \"player\" reference.");
             player = GameObject.FindGameObjectWithTag("Player");
         }
     }
 
-    private void InitializeAmmoCount()
+    private void InitializeBombCount()
     {
         gmCurrentGarlicBombCount = gmInitialGarlicBombCount;
     }
+
+    private void InitializeKeyCount()
+    {
+        gmCurrentKeyCount = gmInitiaKeyCount;
+    }
+
     private void InitializeScoreCount()
     {
         gmScoreCount = gmInitialScoreCount;

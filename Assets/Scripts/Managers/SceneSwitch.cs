@@ -22,6 +22,16 @@ public class SceneSwitch : MonoBehaviour
     [Tooltip("The key prefab needed to load a scene.")]
     [SerializeField] CollectKey keyPrefab;
 
+    private UIManager uiManager;
+
+    private void Awake()
+    {
+        if (GameObject.FindGameObjectWithTag("ui_manager") != null)
+        {
+            uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
+        }
+    }
+
     private void Start()
     {
         sceneTransition = GameObject.FindGameObjectWithTag("Crossfade").GetComponent<Animator>();
@@ -39,15 +49,14 @@ public class SceneSwitch : MonoBehaviour
     {
         if (collision.GetComponent<PlayerHealth>())
         {
-            // TO DO
-            // if game manager has key instead of this object has key - UPDATE GM
             if (requiresKey)
             {
-                // try to make it where it says if (player.hasKey)
-                if (keyPrefab != null && keyPrefab.hasKey)
+                if (GameManager.CurrentKeyCount > 0)
                 {
+                    UseKey(1);
                     StartCoroutine(LoadSceneWithFade(transitionTime));
                 }
+
                 else
                 {
                     Debug.Log("Player does not have a key to open door");
@@ -59,6 +68,19 @@ public class SceneSwitch : MonoBehaviour
             {
                 StartCoroutine(LoadSceneWithFade(transitionTime));
             }
+        }
+    }
+
+    /// <summary>
+    /// Subtracts an amount of keys from the game manager and Updates the key count in the UI
+    /// </summary>
+    /// <param name="amount">The number of keys to subtract from the Game Manager's current key count.</param>
+    private void UseKey(int amount)
+    {
+        GameManager.CurrentKeyCount -= amount;
+        if (uiManager != null)
+        {
+            uiManager.SetPlayerKeyCount();
         }
     }
 

@@ -513,7 +513,7 @@ PrefabInstance:
     - target: {fileID: 3170472322368461333, guid: 1b14cc6e5c8d2bd4d9bc45171d98607c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3170472322368461333, guid: 1b14cc6e5c8d2bd4d9bc45171d98607c,
         type: 3}
@@ -1183,7 +1183,7 @@ PrefabInstance:
     - target: {fileID: 409836111078767561, guid: ac1770d97fa65324288ffe09aa197684,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 409836111078767561, guid: ac1770d97fa65324288ffe09aa197684,
         type: 3}
@@ -1279,11 +1279,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game UI Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 586284597141169678, guid: ac1770d97fa65324288ffe09aa197684,
-        type: 3}
-      propertyPath: m_TagString
-      value: Crossfade
       objectReference: {fileID: 0}
     - target: {fileID: 6250093031754103889, guid: ac1770d97fa65324288ffe09aa197684,
         type: 3}

@@ -8,19 +8,30 @@ using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance = null;
+
     public static bool allowPause; // set to false across classes if you need to prevent pausing
     private bool isPaused = false;
     [SerializeField] private Slider playerHealthSlider;
     [SerializeField] private Slider bossHealthSlider;
     [SerializeField] private TextMeshProUGUI lifeCount;
     [SerializeField] private TextMeshProUGUI bombCount;
+    [SerializeField] private TextMeshProUGUI keyCount;
     [SerializeField] private TextMeshProUGUI scoreUI;
     [SerializeField] private GameObject crossFade;
     [SerializeField] private Animator sceneTransition;
     [SerializeField] private float transitionTime = 1f;
 
+    private int UIMkeyCount;
+
+
     private void Awake()
     {
+        // Set up the singleton instance of this
+        if (instance == null)
+        {
+            instance = this;
+        }
         crossFade.SetActive(true);
     }
 
@@ -35,6 +46,8 @@ public class UIManager : MonoBehaviour
         {
             allowPause = true;
         }
+
+        SetPlayerKeyCount();
     }
 
     private void Update()
@@ -82,6 +95,26 @@ public class UIManager : MonoBehaviour
     public void SetPlayerBombCount(int bombs)
     {
         bombCount.text = (": " + bombs.ToString());
+    }
+
+    //public static int CurrentKeyCount
+    //{
+    //    get { return instance.UIMkeyCount; }
+    //    set { instance.UIMkeyCount = value; }
+    //}
+
+    //public static void UpdateUIMkeyCount(int keys)
+    //{
+    //    UIMkeyCount = keys;
+    //    SetPlayerKeyCount();
+    //}
+
+    public void SetPlayerKeyCount()
+    {
+        if (keyCount != null)
+        {
+            keyCount.text = (": " + GameManager.CurrentKeyCount.ToString());
+        }
     }
 
     public void SetScoreCount(int score)
