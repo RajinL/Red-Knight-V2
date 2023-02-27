@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 457633913787605570}
   - component: {fileID: 457633913787605577}
   - component: {fileID: 3970267909175115858}
+  - component: {fileID: 8703680465186442928}
   m_Layer: 11
   m_Name: Vampire
   m_TagString: non_player
@@ -35,6 +36,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8335141460311520298}
+  - {fileID: 4816749301513930324}
   m_Father: {fileID: 2336593281234003111}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -184,6 +186,9 @@ MonoBehaviour:
   - {fileID: 2336593282549119699}
   - {fileID: 2336593282563917858}
   moveSpeed: 2
+  decreaseMovementOnAttack: 1.6
+  enemyAttacking: {fileID: 0}
+  enemyCanAttack: 0
   facingRight: 1
 --- !u!114 &3970267909175115858
 MonoBehaviour:
@@ -202,8 +207,36 @@ MonoBehaviour:
   damageEffect: {fileID: 457633913787605570}
   deathEffect: {fileID: 6831827930727456335, guid: 90442d2c161e3524e942a06384789785,
     type: 3}
+  timeForDeathEffectToDestroy: 1
   scoreValue: 1
+  deathEffectOn: 1
   enemyPatrol: {fileID: 0}
+  deathAnimation: {fileID: 0}
+--- !u!114 &8703680465186442928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457633913787605569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e96365045af71c48b05f5a86358e1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PlayerDetected>k__BackingField: 0
+  detectorOrigin: {fileID: 457633913787605568}
+  detectorSize: {x: 5.09, y: 1.32}
+  detectorOriginOffset: {x: 0, y: 0}
+  detectionDelay: 1.5
+  detectorLayerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  gizmoIdleColor: {r: 0, g: 1, b: 0, a: 0.11764706}
+  gizmoDetectedColor: {r: 1, g: 0, b: 0, a: 0.11764706}
+  showGizmos: 1
+  bomb: {fileID: 5335538086431634101, guid: d6ebd623c0f3e9e4491b6919db78eed4, type: 3}
+  bombPos: {fileID: 4816749301513930324}
 --- !u!1 &2336593281234003128
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +329,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2336593281234003111}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4642443343238743229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4816749301513930324}
+  m_Layer: 11
+  m_Name: ShootBomb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4816749301513930324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642443343238743229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.558, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 457633913787605568}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8151853228729832468
 GameObject:

@@ -66,6 +66,7 @@ public class Damage : MonoBehaviour
     /// </summary>
     public void StopDamaging()
     {
+        GetComponent<Collider2D>().enabled = false;
         canDamage = false;
         //Debug.Log("canDamage: " + canDamage);
     }

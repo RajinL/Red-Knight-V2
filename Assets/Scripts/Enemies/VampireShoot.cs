@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkeletonShoot : MonoBehaviour
+public class VampireShoot : MonoBehaviour
 {
     [field: SerializeField]
     public bool PlayerDetected { get; private set; }
@@ -25,14 +25,10 @@ public class SkeletonShoot : MonoBehaviour
     private GameObject target;
 
     [Header("Bullet Params")]
-    public Animator anim;
-    public float speed;
-    //public float rotationSpeed;
-    public GameObject bone;
-    public Transform bonePos;
-    //private float shootDelay = 0;
-    //public float fireRate;
-    
+    public GameObject bomb;
+    public Transform bombPos;
+
+
 
     public GameObject Target
     {
@@ -68,7 +64,6 @@ public class SkeletonShoot : MonoBehaviour
         else
         {
             Target = null;
-            //anim.SetBool("isThrowing", false);
         }
     }
 
@@ -87,7 +82,7 @@ public class SkeletonShoot : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bone, bonePos.position, Quaternion.identity);
-        anim.SetTrigger("isThrowing");
+        Instantiate(bomb, bombPos.position, Quaternion.identity);
+
     }
 }
