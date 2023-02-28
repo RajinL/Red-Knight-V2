@@ -33,6 +33,7 @@ public class StoryText : MonoBehaviour
             {
                 gameObject.SetActive(false);
             }
+            Time.timeScale = 1f;
         }
     }
 

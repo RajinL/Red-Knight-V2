@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1f;
         crossFade.SetActive(false);
         crossFade.SetActive(true);
     }

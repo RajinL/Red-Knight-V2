@@ -92,12 +92,21 @@ public class SceneSwitch : MonoBehaviour
     /// </summary>
     private void CheckForSceneName()
     {
+        Scene scene = SceneManager.GetActiveScene();
+
         if (sceneName != "")
         {
+            Debug.Log("Loading " + sceneName);
             SceneManager.LoadScene(sceneName);
         }
+        //if (scene.name == "7_BossFight")
+        //{
+        //    Debug.Log("Loading menu scene");
+        //    SceneManager.LoadScene(0);
+        //}
         else
         {
+            Debug.Log("Loading " + scene.name + " scene");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

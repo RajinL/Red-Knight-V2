@@ -15,7 +15,7 @@ public class Boss : MonoBehaviour
 
 
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = gameObject.GetComponent<Animator>();
