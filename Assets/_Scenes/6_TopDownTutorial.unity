@@ -1947,7 +1947,7 @@ Transform:
   m_Children:
   - {fileID: 681579176}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &600977794 stripped
 Transform:
@@ -4491,6 +4491,82 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1745453018}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1342564729
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6829509834675170004, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: storyText
+      value: "You have finally reached Nosferatu\u2019s lair! He knows you are close,
+        so he is trying to trick your senses with an illusion that changes your perspective.
+        Test your altered player controls to make sure you are ready to face him!\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170007, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_Name
+      value: StoryUITrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 854980cee08e1eb4f958563d540e5174, type: 3}
 --- !u!1001 &1374700968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6453,7 +6529,7 @@ PrefabInstance:
     - target: {fileID: 487230792709064595, guid: 423d7f9543fc9d4468183d1d717380c8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.07824624
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 487230792709064595, guid: 423d7f9543fc9d4468183d1d717380c8,
         type: 3}

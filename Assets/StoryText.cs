@@ -25,6 +25,17 @@ public class StoryText : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<PlayerHealth>())
+        {
+            if (!uiManager.storyUIPanel.activeInHierarchy)
+            {
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
     IEnumerator DelayStoryUIPanel(float time)
     {
         yield return new WaitForSeconds(time);
