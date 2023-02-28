@@ -262,6 +262,8 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        ChangePlayerType(scene);
+
         scene = SceneManager.GetActiveScene();
         // Set up the singleton instance of this
         if (scene.name == "0_MainMenu")
@@ -284,5 +286,20 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         UpdateUI();
+    }
+
+    public void ChangePlayerType(Scene scene)
+    {
+        scene = SceneManager.GetActiveScene();
+        if (scene.name == "6_TopDownTutorial" || scene.name == "7_BossFight")
+        {
+            player = PlayerTopDown;
+        }
+
+        else if (scene.name == "1_Outside" || scene.name == "2_Part1" ||
+            scene.name == "3_Part2" || scene.name == "4_Part3" || scene.name == "5_Part4")
+        {
+            player = PlayerSidescroller;
+        }
     }
 }
