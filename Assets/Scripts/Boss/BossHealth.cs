@@ -12,47 +12,44 @@ public class BossHealth : Health
     [SerializeField] private PatrollingEnemies enemyPatrol;
     public Animator deathAnimation;
 
-    private void Awake()
+    private void Start()
     {
-        InitializeUISettings();
+        UIManager.instance.SetBossMaxHealth(initialHealth);
     }
 
-    private void InitializeUISettings()
+    void Update()
     {
-        if (GameObject.FindGameObjectWithTag("ui_manager") != null)
-        {
-            uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
-            uiManager.SetBossMaxHealth(initialHealth);
-        }
-        else
-        {
-            Debug.LogWarning("UI Manager cannot be found. Make sure that a UI Canvas tagged with \"ui_manager\" is present");
-        }
+        InvincibilityCheck();
     }
 
     public override void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount;
-        if (damageEffect != null)
+        if (isInvincible || GameManager.CurrentPlayerHealth <= 0)
         {
-            damageEffect.Damage();
-            AudioManagerScript.PlaySound("enemyHit");
+            return;
         }
+        else
+        {
+            timeToBecomeHurtAgain = Time.time + invincibilityTime;
+            isInvincible = true;
 
-        if (uiManager != null)
-        {
-            uiManager.SetBossHealth(currentHealth);
+            currentHealth -= damageAmount;
+            if (damageEffect != null)
+            {
+                damageEffect.Damage();
+            }
+
+            AudioManagerScript.PlaySound("enemyHit");
+            UIManager.instance.SetBossHealth(currentHealth);
+            CheckIfObjectIsDead();
         }
-        CheckIfObjectIsDead();
     }
 
     protected override void Die()
     {
-        if (uiManager != null)
-        {
-            GameManager.CurrentScoreCount += scoreValue;
-            GameManager.UpdateUI();
-        }
+        GameManager.CurrentScoreCount += scoreValue;
+        GameManager.instance.UpdateUI();
+
         GetComponentInChildren<Damage>().StopDamaging();
         AudioManagerScript.PlaySound("enemyDead");
         KillEnemy();

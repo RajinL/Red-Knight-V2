@@ -63,7 +63,7 @@ public class CameraFollow : MonoBehaviour
             Destroy(gameObject);
         }
 
-        SetObjToFollowReference();
+        //SetObjToFollowReference();
         SetCameraDimensions();
         MakeEdgeReferences();
         InitializeLevelBounds();
@@ -146,7 +146,15 @@ public class CameraFollow : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         scene = SceneManager.GetActiveScene();
-        // Set up the singleton instance of this
+
+        if (scene.name != "1_Outside")
+        {
+            if (GetComponent<ParallaxCamera>())
+            {
+                GetComponent<ParallaxCamera>().enabled = false;
+            }
+        }
+
         if (scene.name == "6_TopDownTutorial" || scene.name == "7_BossFight")
         {
             MakeEdgeReferences();

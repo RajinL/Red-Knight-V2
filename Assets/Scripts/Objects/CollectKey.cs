@@ -12,7 +12,7 @@ public class CollectKey : MonoBehaviour
     /// <param name="collision"></param>
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject == GameManager.instance.player)
         {
             UpdateKeyCount(1);
             AudioManagerScript.PlaySound("treasureChest");
@@ -27,6 +27,6 @@ public class CollectKey : MonoBehaviour
     private void UpdateKeyCount(int amountToAdd)
     {
         GameManager.CurrentKeyCount += amountToAdd;
-        GameManager.UpdateUI();
+        GameManager.instance.UpdateUI();
     }
 }

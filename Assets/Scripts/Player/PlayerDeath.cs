@@ -12,7 +12,7 @@ public class PlayerDeath : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject == GameManager.instance.player)
         {
             if (myEvents == null)
             {

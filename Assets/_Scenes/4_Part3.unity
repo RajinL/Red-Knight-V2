@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7838,6 +7838,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 582317265, guid: ac1770d97fa65324288ffe09aa197684, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 582317265, guid: ac1770d97fa65324288ffe09aa197684, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 409836111078767561, guid: ac1770d97fa65324288ffe09aa197684,
         type: 3}
       propertyPath: m_Pivot.x
@@ -8071,6 +8079,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1128806085}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1150689570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8468527930222063737, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1632807643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1150689571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150689570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa0c19961b6c5849ad2d2cbce57c42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 1
+  storyText: The door seems to be locked!
 --- !u!1001 &1156759456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8582,9 +8610,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1741346711}
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 381420468}
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
+      propertyPath: gmPlayerParent
+      value: 
+      objectReference: {fileID: 1741346712}
     - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
         type: 3}
       propertyPath: gmPlayerTopdown
@@ -9039,6 +9077,11 @@ PrefabInstance:
       propertyPath: parentObject
       value: 
       objectReference: {fileID: 1515148987}
+    - target: {fileID: 8198482487268615231, guid: 932a30cb4ec9254418950d6467008e47,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1515148989}
     - target: {fileID: 8340396382187115601, guid: 932a30cb4ec9254418950d6467008e47,
         type: 3}
       propertyPath: m_Name
@@ -9110,6 +9153,12 @@ GameObject:
 --- !u!1 &1741346711 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6059668081482659130, guid: 932a30cb4ec9254418950d6467008e47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1741346709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741346712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8340396382187115601, guid: 932a30cb4ec9254418950d6467008e47,
     type: 3}
   m_PrefabInstance: {fileID: 1741346709}
   m_PrefabAsset: {fileID: 0}

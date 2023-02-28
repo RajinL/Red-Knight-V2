@@ -36,7 +36,7 @@ public class PatrollingEnemies : MonoBehaviour
                 if (moveSpeed > 0)
                 {
                     moveSpeed -= decreaseMovementOnAttack * Time.deltaTime;
-                    Debug.Log(moveSpeed);
+                    //Debug.Log(moveSpeed);
                 }
                 
             }

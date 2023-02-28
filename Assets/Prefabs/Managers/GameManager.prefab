@@ -293,12 +293,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   currentSceneName: 
-  gameUICanvas: {fileID: 409836111078767572, guid: ac1770d97fa65324288ffe09aa197684,
-    type: 3}
   gmRespawnLocation: {fileID: 0}
   gameIsOver: 0
+  gmPlayerParent: {fileID: 0}
   gmPlayerSidescroller: {fileID: 0}
   gmPlayerTopdown: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  gmInitialHealth: 5
+  gmCurrentHealth: 5
+  gmMaxHealth: 5
   gmInitialLifeCount: 3
   gmCurrentLifeCount: 0
   gmMaxLifeCount: 0

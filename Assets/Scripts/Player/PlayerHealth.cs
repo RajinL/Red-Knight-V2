@@ -5,48 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Health
 {
-    public static PlayerHealth instance = null;
-
-    [Header("Invincibility Info")]
-    [Tooltip("The time the player is invincible for after being damaged.")]
-    [SerializeField] private float invincibilityTime = 3f;
-    [Tooltip("If the player is invincible or not")]
-    [SerializeField] private bool isInvincible = false;
-
     [Header("Respawn Info")]
     [SerializeField] private float respawnWaitTime = 3f;
     private float respawnTime;
-    private float timeToBecomeHurtAgain = 0;
-
-    [Header("UI Manager")]
-    [Tooltip("The UI manager to reference")]
-    [SerializeField] private new UIManager uiManager;
-
-    // https://answers.unity.com/questions/1174255/since-onlevelwasloaded-is-deprecated-in-540b15-wha.html
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        CheckIfUIisReferenced();
-        UpdateUI();
-    }
-
-    private void CheckIfUIisReferenced()
-    {
-        if (uiManager == null)
-        {
-            uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
-        }
-        else return;
-    }
 
     void Update()
     {
@@ -56,27 +17,13 @@ public class PlayerHealth : Health
 
     private void RespawnCheck()
     {
-        if (respawnWaitTime != 0 && currentHealth <= 0 && GameManager.CurrentLifeCount > 0)
+        if (respawnWaitTime != 0 && GameManager.CurrentPlayerHealth <= 0 && GameManager.CurrentLifeCount > 0)
         {
             if (Time.time >= respawnTime)
             {
                 Respawn();
             }
         }
-    }
-
-    private void InvincibilityCheck()
-    {
-        if (timeToBecomeHurtAgain <= Time.time)
-        {
-            isInvincible = false;
-        }
-    }
-
-    private void UpdateUI()
-    {
-        uiManager.SetPlayerHealth(currentHealth);
-        GameManager.UpdateUI();
     }
 
     void Respawn()
@@ -86,8 +33,8 @@ public class PlayerHealth : Health
 
         transform.position = GameObject.FindGameObjectWithTag("spawn_point").transform.position;
 
-        currentHealth = initialHealth;
-        UpdateUI();
+        GameManager.instance.ResetHealth();
+        GameManager.instance.UpdateUI();
     }
 
     public void AddLives(int additionalLife)
@@ -103,7 +50,7 @@ public class PlayerHealth : Health
 
     public override void TakeDamage(int damageAmount)
     {
-        if (isInvincible || currentHealth <= 0)
+        if (isInvincible || GameManager.CurrentPlayerHealth <= 0)
         {
             return;
         }
@@ -111,25 +58,30 @@ public class PlayerHealth : Health
         {
             timeToBecomeHurtAgain = Time.time + invincibilityTime;
             isInvincible = true;
-            currentHealth -= damageAmount;
+
+            GameManager.CurrentPlayerHealth -= damageAmount;
             AudioManagerScript.PlaySound("enemyCollidesWithPlayer");
             damageEffect.Damage();
 
-            if (uiManager != null)
-            {
-                UpdateUI();
-            }
+            GameManager.instance.UpdateUI();
             CheckIfObjectIsDead();
         }
     }
 
+    protected override bool CheckIfObjectIsDead()
+    {
+        if (GameManager.CurrentPlayerHealth <= 0)
+        {
+            Die();
+            return true;
+        }
+        return false;
+    }
+
     protected override void Die()
     {
-        if (uiManager != null)
-        {
-            GameManager.CurrentLifeCount -= 1;
-            UpdateUI();
-        }
+        GameManager.CurrentLifeCount -= 1;
+        GameManager.instance.UpdateUI();
 
         if (GameManager.CurrentLifeCount > 0)
         {
@@ -148,11 +100,16 @@ public class PlayerHealth : Health
         // no lives left
         else
         {
-            if (uiManager != null)
+            if (UIManager.instance != null)
             {
                 GameOver();
             }
         }
+    }
+
+    public override int GetCurrentHealth()
+    {
+        return currentHealth;
     }
 
     public void GameOver()

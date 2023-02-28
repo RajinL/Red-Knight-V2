@@ -6,12 +6,12 @@ public class StickyPlatform : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject == GameManager.instance.player)
         {
             collision.gameObject.transform.SetParent(transform);
         }
 
-        if (collision.gameObject.tag == "non_player")
+        if (collision.gameObject.CompareTag("non_player"))
         {
             collision.gameObject.transform.SetParent(transform);
         }
@@ -20,12 +20,12 @@ public class StickyPlatform : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject  == GameManager.instance.player)
         {
-            collision.gameObject.transform.SetParent(null);
+            collision.gameObject.transform.SetParent(GameManager.instance.gmPlayerParent.transform);
         }
 
-        if (collision.gameObject.tag == "non_player")
+        if (collision.gameObject.CompareTag("non_player"))
         {
             collision.gameObject.transform.SetParent(null);
         }

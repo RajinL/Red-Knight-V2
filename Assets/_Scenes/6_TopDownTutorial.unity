@@ -1317,6 +1317,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 932a30cb4ec9254418950d6467008e47, type: 3}
+--- !u!1 &410727992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8340396382187115601, guid: 932a30cb4ec9254418950d6467008e47,
+    type: 3}
+  m_PrefabInstance: {fileID: 410727991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &417400470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8449,9 +8455,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 901803830}
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1686802824}
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
+      propertyPath: gmPlayerParent
+      value: 
+      objectReference: {fileID: 410727992}
     - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
         type: 3}
       propertyPath: gmPlayerTopdown

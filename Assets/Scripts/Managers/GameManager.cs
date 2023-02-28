@@ -1,23 +1,29 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // The global instance for other scripts to reference
     public static GameManager instance = null;
-    public static UIManager uiManager = null;
     public GameObject player = null;
 
     [SerializeField] private string currentSceneName;
-    [SerializeField] private GameObject gameUICanvas = null;
     public GameObject gmRespawnLocation = null;
 
     public bool gameIsOver = false;
 
     [Header("Players")]
+    [SerializeField] public GameObject gmPlayerParent;
     [SerializeField] public GameObject gmPlayerSidescroller;
     [SerializeField] public GameObject gmPlayerTopdown;
     [SerializeField] public GameObject spawnPoint;
+
+    [Header("Health")]
+    [SerializeField] private int gmInitialHealth = 0;
+    [SerializeField] private int gmCurrentHealth = 0;
+    [SerializeField] private int gmMaxHealth = 0; // if a health pickup is created
 
     [Header("Lives")]
     [SerializeField] private int gmInitialLifeCount = 0;
@@ -76,6 +82,18 @@ public class GameManager : MonoBehaviour
         set { instance.gmMaxGarlicBombCount = value; }
     }
 
+    public static int CurrentPlayerHealth
+    {
+        get { return instance.gmCurrentHealth; }
+        set { instance.gmCurrentHealth = value; }
+    }
+
+    public static int MaxHealth
+    {
+        get { return instance.gmMaxHealth; }
+        set { instance.gmMaxHealth = value; }
+    }
+
     public static int CurrentLifeCount
     {
         get { return instance.gmCurrentLifeCount; }
@@ -108,17 +126,22 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // MUST MAKE PLAYER DONTDESTROYONLOAD AS WELL BECUASE OBJECT POOLS ARE LOOKING FOR THE SAME INSTANCE OF GAMEMANAGER!!!
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(this.gameObject);
         }
+        InitiailizeRespawnLocation();
+
+    }
+
+    private void Start()
+    {
 
         if (!IsMainMenuScene())
         {
             SetupGameParameters();
-            UpdateUI();
         }
     }
 
@@ -146,11 +169,15 @@ public class GameManager : MonoBehaviour
         InitializeBombCount();
         InitializeKeyCount();
         InitializeScoreCount();
-        InitializeInGameUI();
         InitializeCurrentScene();
         InitializeSpawnPoint();
         InitiailizeRespawnLocation();
+        UIManager.instance.SetPlayerMaxHealth(MaxHealth);
     }
+
+    // Sometimes causes bugs forcing the player to respawn in the wrong spot!! Reason being is FinsGameObjectWithTag is slow,
+    // and the player needs to be able to find the spawn_point immediately. One possible fix is to make sure the scene is
+    // running fast to avoid hiccups
     private void InitializeSpawnPoint()
     {
         if (GameObject.FindGameObjectWithTag("spawn_point"))
@@ -160,12 +187,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-private void InitializePlayer()
+    private void InitializePlayer()
     {
-        if (player == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player");
-        }
+        ResetHealth();
     }
 
     private void InitializeBombCount()
@@ -186,23 +210,6 @@ private void InitializePlayer()
     private void InitializeLifeCount()
     {
         gmCurrentLifeCount = gmInitialLifeCount;
-    }
-
-    private void InitializeInGameUI()
-    {
-
-        if (GameObject.FindGameObjectWithTag("ui_manager") != null)
-        {
-            uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
-            gameUICanvas = uiManager.gameObject;
-        }
-
-        else
-        {
-            Debug.LogWarning("UI Manager cannot be found in scene. Make sure that a UI Canvas tagged with" +
-                " \"ui_manager\" is present in the scene. Adding a Game UI Canvas...");
-            Instantiate(gameUICanvas);
-        }
     }
 
     private void InitializeCurrentScene()
@@ -228,12 +235,18 @@ private void InitializePlayer()
     /// various UI properties. Does not update the player's health or the boss' health as there is only
     /// one player and one boss, and it is not necessary for this object to track their health.
     /// </summary>
-    public static void UpdateUI()
+    public void UpdateUI()
     {
-        uiManager.SetPlayerBombCount(CurrentGarlicBombCount);
-        uiManager.SetPlayerKeyCount(CurrentKeyCount);
-        uiManager.SetScoreCount(CurrentScoreCount);
-        uiManager.SetPlayerLifeCount(CurrentLifeCount);
+        UIManager.instance.SetPlayerBombCount(CurrentGarlicBombCount);
+        UIManager.instance.SetPlayerKeyCount(CurrentKeyCount);
+        UIManager.instance.SetScoreCount(CurrentScoreCount);
+        UIManager.instance.SetPlayerLifeCount(CurrentLifeCount);
+        UIManager.instance.SetPlayerHealth(CurrentPlayerHealth);
+    }
+
+    public void ResetHealth()
+    {
+        gmCurrentHealth = gmInitialHealth;
     }
 
     // https://answers.unity.com/questions/1174255/since-onlevelwasloaded-is-deprecated-in-540b15-wha.html
@@ -258,6 +271,18 @@ private void InitializePlayer()
         else
         {
             InitializeSpawnPoint();
+            StartCoroutine(DelayUpdatingUI(0.1f));
         }
+    }
+
+    /// <summary>
+    /// Delays updating the gameUI due to Unity's execution order
+    /// </summary>
+    /// <param name="time"></param>
+    /// <returns></returns>
+    IEnumerator DelayUpdatingUI(float time)
+    {
+        yield return new WaitForSeconds(time);
+        UpdateUI();
     }
 }

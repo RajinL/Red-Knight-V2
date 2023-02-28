@@ -11,12 +11,19 @@ public class Health : MonoBehaviour
     [Tooltip("The current health the player has.")]
     [SerializeField] protected int currentHealth = 3;
 
+    [Header("Invincibility Info")]
+    [Tooltip("The time the player is invincible for after being damaged.")]
+    [SerializeField] protected float invincibilityTime = 3f;
+    [Tooltip("If the player is invincible or not")]
+    [SerializeField] protected bool isInvincible = false;
+    [Tooltip("The invincibilityTime plus the time at the beginning of being damaged")]
+    protected float timeToBecomeHurtAgain = 0;
+
     [Header("Effects")]
     [SerializeField] protected DamageEffect damageEffect;
     [SerializeField] protected GameObject deathEffect;
     [SerializeField][Range(0, 5)] protected float timeForDeathEffectToDestroy = 1;
 
-    protected UIManager uiManager;
     protected Animator animator;
 
     private void Awake()
@@ -38,9 +45,17 @@ public class Health : MonoBehaviour
         }
     }
 
-    public int GetCurrentHealth()
+    public virtual int GetCurrentHealth()
     {
         return currentHealth;
+    }
+
+    protected virtual void InvincibilityCheck()
+    {
+        if (timeToBecomeHurtAgain <= Time.time)
+        {
+            isInvincible = false;
+        }
     }
 
     public virtual void TakeDamage(int damageAmount)

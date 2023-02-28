@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class SceneSwitch : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class SceneSwitch : MonoBehaviour
     /// <param name="collision">The player object.</param>
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerHealth>())
+        if (collision.gameObject == GameManager.instance.player)
         {
             if (requiresKey)
             {
@@ -46,13 +47,15 @@ public class SceneSwitch : MonoBehaviour
                     UseKey(1);
                     if (sceneTransition != null) StartCoroutine(LoadSceneWithFade(transitionTime));
                     else CheckForSceneName();
+                    return;
                 }
 
                 else
                 {
-                    Debug.Log("Player does not have a key to open door");
-                    //code here for alert box
-                    //"oh no, the door seems to be locked!"
+                    if (gameObject.GetComponent<StoryText>())
+                    {
+                        UIManager.instance.DisplayMessage(gameObject.GetComponent<StoryText>().storyText);
+                    }
                 }
             }
             else
@@ -70,7 +73,7 @@ public class SceneSwitch : MonoBehaviour
     private void UseKey(int amount)
     {
         GameManager.CurrentKeyCount -= amount;
-        GameManager.UpdateUI();
+        GameManager.instance.UpdateUI();
     }
 
     /// <summary>
@@ -96,17 +99,10 @@ public class SceneSwitch : MonoBehaviour
 
         if (sceneName != "")
         {
-            Debug.Log("Loading " + sceneName);
             SceneManager.LoadScene(sceneName);
         }
-        //if (scene.name == "7_BossFight")
-        //{
-        //    Debug.Log("Loading menu scene");
-        //    SceneManager.LoadScene(0);
-        //}
         else
         {
-            Debug.Log("Loading " + scene.name + " scene");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

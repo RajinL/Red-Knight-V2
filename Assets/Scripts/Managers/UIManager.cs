@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI keyCount;
     [SerializeField] private TextMeshProUGUI scoreUI;
     [SerializeField] public GameObject storyUIPanel;
+    [SerializeField] public Button storyUIButton;
     [SerializeField] public TextMeshProUGUI storyTextUI;
     [SerializeField] private GameObject crossFade;
     [SerializeField] private Animator sceneTransition;
@@ -185,5 +186,11 @@ public class UIManager : MonoBehaviour
         sceneTransition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void DisplayMessage(string message)
+    {
+        storyUIPanel.SetActive(true);
+        storyTextUI.text = message;
     }
 }

@@ -335,7 +335,7 @@ MonoBehaviour:
   damageEffect: {fileID: 5147518992519147172}
   deathEffect: {fileID: 0}
   timeForDeathEffectToDestroy: 1
-  invincibilityTime: 3
+  invincibilityTime: 1
   isInvincible: 0
   respawnWaitTime: 3
 --- !u!1 &5773234081040054142

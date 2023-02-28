@@ -21,9 +21,9 @@ public class EnemyHealth : Health
             AudioManagerScript.PlaySound("enemyHit");
         }
 
-        if (uiManager != null && gameObject.name == "Vampire Boss")
+        if (UIManager.instance != null && gameObject.name == "Vampire Boss")
         {
-            uiManager.SetBossHealth(currentHealth);
+            UIManager.instance.SetBossHealth(currentHealth);
         }
         CheckIfObjectIsDead();
     }
@@ -32,7 +32,7 @@ public class EnemyHealth : Health
     {
 
         GameManager.CurrentScoreCount += scoreValue;
-        GameManager.UpdateUI();
+        GameManager.instance.UpdateUI();
 
         GetComponentInChildren<Damage>().StopDamaging();
         AudioManagerScript.PlaySound("enemyDead");

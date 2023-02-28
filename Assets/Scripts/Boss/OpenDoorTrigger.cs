@@ -8,7 +8,7 @@ public class OpenDoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             backDoor.SetBool("Closed", false);
         }

@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// TO DO
-// move the uiManager setting bomb count to the game manager script - delete functionality in Awake and Start
-
 /// <summary>
 /// Class that allows the player to throw a bomb, and updates the UI ammo count.
 /// </summary>
@@ -60,6 +57,6 @@ public class GarlicBomb : MonoBehaviour
     private void UpdateAmmoCount(int ammoToTakeAway)
     {
         GameManager.CurrentGarlicBombCount -= ammoToTakeAway;
-        GameManager.UpdateUI();
+        GameManager.instance.UpdateUI();
     }
 }

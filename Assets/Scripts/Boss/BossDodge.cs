@@ -44,7 +44,7 @@ public class BossDodge : StateMachineBehaviour
         float distanceFromPlayer = Vector2.Distance(rb.position, player.position);
         if (bossHealth.GetCurrentHealth() > panicThreshold && distanceFromPlayer > 1f)
         {
-            Debug.Log("Far enough away");
+            //Debug.Log("Far enough away");
             animator.SetBool("Panicked", false);
         }
         

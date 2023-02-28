@@ -50,6 +50,18 @@ public class TopDownMovement : MonoBehaviour
         UpdateTarget();
     }
 
+    private void UpdateTarget()
+    {
+        if (GameObject.FindGameObjectsWithTag("Boss").Length >= 1)
+        {
+            target = GameObject.FindGameObjectWithTag("Boss").transform;
+        }
+        else if (GameObject.FindGameObjectWithTag("Finish"))
+        {
+            target = GameObject.FindGameObjectWithTag("Finish").transform;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -70,15 +82,31 @@ public class TopDownMovement : MonoBehaviour
         FindTarget();
     }
 
-    private void UpdateTarget()
+
+    private void FindTarget()
     {
-        if (GameObject.FindGameObjectsWithTag("Boss").Length >= 1)
+        if (CheckIfBossExists())
         {
-            target = GameObject.FindGameObjectWithTag("Boss").transform;
+            LookAtBoss();
         }
         else if (GameObject.FindGameObjectWithTag("Finish"))
         {
             target = GameObject.FindGameObjectWithTag("Finish").transform;
+        }
+    }
+
+    /// <summary>
+    /// If the boss exists and has not been destroyed
+    /// </summary>
+    private bool CheckIfBossExists()
+    {
+        if (target != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -130,41 +158,11 @@ public class TopDownMovement : MonoBehaviour
 
     private void Flip()
     {
- 
         Vector3 playerFlipped = transform.localScale;
         playerFlipped.z *= -1f;
         transform.localScale = playerFlipped;
         transform.Rotate(0f, 180f, 0f);
 
         isFlipped = !isFlipped;
-
-    }
-
-
-    /// <summary>
-    /// If the boss exists and has not been destroyed
-    /// </summary>
-    private bool CheckIfBossExists()
-    {
-        if (target != null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    private void FindTarget()
-    {
-        if (CheckIfBossExists())
-        {
-            LookAtBoss();
-        }
-        else if (GameObject.FindGameObjectWithTag("Finish"))
-        {
-            target = GameObject.FindGameObjectWithTag("Finish").transform;
-        }
     }
 }

@@ -1,39 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class StoryText : MonoBehaviour
 {
-    [SerializeField] private UIManager uiManager;
-    [TextArea][SerializeField] private string storyText;
-    [SerializeField]private float delayTime = 1f;
+    [SerializeField] private float delayTime = 1f;
+    [TextArea(3, 10)] //https://docs.unity3d.com/2019.4/Documentation/ScriptReference/TextAreaAttribute.html
+    [SerializeField] public string storyText;
 
     private void Awake()
     {
         GetComponent<BoxCollider2D>().isTrigger = true;
-        uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
     }
 
+    /// <summary>
+    /// When the player collides with this object, the storyUIpanel appears with the text replaced with this object's
+    /// storyText property. If the object the player collides with is tagged as "Finish", when the player clicks
+    /// the storyUIButton, then the FinishGameButton_onClick event is called.
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerHealth>())
         {
             StartCoroutine(DelayStoryUIPanel(delayTime));
-            uiManager.storyUIPanel.SetActive(true);
-            uiManager.storyTextUI.text = storyText;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<PlayerHealth>())
-        {
-            if (!uiManager.storyUIPanel.activeInHierarchy)
+            UIManager.instance.DisplayMessage(storyText);
+            if (gameObject.CompareTag("Finish"))
             {
-                gameObject.SetActive(false);
+                UIManager.instance.storyUIButton.onClick.AddListener(FinishGameButton_onClick); //subscribe to the onClick event
             }
-            Time.timeScale = 1f;
         }
     }
 
@@ -41,5 +39,27 @@ public class StoryText : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Time.timeScale = 0f;
+    }
+
+    /// <summary>
+    /// Loads the main menu.
+    /// <a href = "https://answers.unity.com/questions/1448790/change-onclick-function-via-script.html"></a>
+    /// </summary>
+    void FinishGameButton_onClick()
+    {
+
+        UIManager.instance.LoadSceneByName("0_MainMenu");
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<PlayerHealth>())
+        {
+            if (!UIManager.instance.storyUIPanel.activeInHierarchy)
+            {
+                gameObject.SetActive(false);
+            }
+            Time.timeScale = 1f;
+        }
     }
 }
