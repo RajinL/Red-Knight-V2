@@ -11,13 +11,14 @@ public class UIManager : MonoBehaviour
     public static UIManager instance = null;
 
     public static bool allowPause; // set to false across classes if you need to prevent pausing
-    private bool isPaused = false;
     [SerializeField] private Slider playerHealthSlider;
     [SerializeField] private Slider bossHealthSlider;
     [SerializeField] private TextMeshProUGUI lifeCount;
     [SerializeField] private TextMeshProUGUI bombCount;
     [SerializeField] private TextMeshProUGUI keyCount;
     [SerializeField] private TextMeshProUGUI scoreUI;
+    [SerializeField] public GameObject storyUIPanel;
+    [SerializeField] public TextMeshProUGUI storyTextUI;
     [SerializeField] private GameObject crossFade;
     [SerializeField] private Animator sceneTransition;
     [SerializeField] private float transitionTime = 1f;

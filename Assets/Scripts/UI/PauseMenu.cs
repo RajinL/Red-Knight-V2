@@ -24,6 +24,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject levelSelectPage;
     [Tooltip("The controls page of the pause menu")]
     [SerializeField] private GameObject controlsPage;
+    [Tooltip("The story page of the pause menu")]
+    [SerializeField] private GameObject storyUIPanel;
 
     Scene scene;
 
@@ -56,7 +58,14 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void Resume()
     {
-        if (pauseMenuUI != null) pauseMenuUI.SetActive(false);
+        if (pauseMenuUI != null)
+        {
+            mainPage.SetActive(false);
+            controlsPage.SetActive(false);
+            levelSelectPage.SetActive(false);
+            storyUIPanel.SetActive(false);
+            pauseMenuUI.SetActive(false);
+        }
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -66,7 +75,11 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void Pause()
     {
-        if (pauseMenuUI != null) pauseMenuUI.SetActive(true);
+        if (pauseMenuUI != null)
+        {
+            mainPage.SetActive(true);
+            pauseMenuUI.SetActive(true);
+        }
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
@@ -112,12 +125,6 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadScene(int buildNumber)
     {
-        //var op = SceneManager.LoadSceneAsync(buildNumber);
-        //op.completed += (x) =>
-        //{
-        //    Debug.Log("x: " + x);
-        //    Resume();
-        //};
         StartCoroutine(LoadSceneWithFade(buildNumber));
         Resume();
     }

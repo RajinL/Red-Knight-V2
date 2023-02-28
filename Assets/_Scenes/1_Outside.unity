@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -181,7 +181,7 @@ PrefabInstance:
     - target: {fileID: 8357043190068474753, guid: 932a30cb4ec9254418950d6467008e47,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8357043190068474753, guid: 932a30cb4ec9254418950d6467008e47,
         type: 3}
@@ -922,7 +922,7 @@ Transform:
   m_Children:
   - {fileID: 2137240609}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1598393520 stripped
 GameObject:
@@ -1696,6 +1696,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1b76928c22c14f4f91a45b96af63541, type: 3}
+--- !u!1001 &6829509835651347390
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6829509834675170004, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: delayTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.560826
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170005, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170007, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_Name
+      value: StoryUITrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 854980cee08e1eb4f958563d540e5174, type: 3}
 --- !u!1001 &8468527930058871654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1795,6 +1869,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5, type: 3}
+--- !u!1 &8468527930058871655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8468527930222063737, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
+    type: 3}
+  m_PrefabInstance: {fileID: 8468527930058871654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8468527930058871656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8468527930058871655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa0c19961b6c5849ad2d2cbce57c42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 0}
+  storyText: "Are you ready to enter Nosferatu\u2019s castle and fight his evil army
+    of the undead?\r"
+  delayTime: 0.5
 --- !u!1 &8686783133825479390 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8686783132974874313, guid: 83e3c27f0b4d7814399f3d6cf30b858c,
