@@ -24,7 +24,7 @@ public class PlayerMovementV2 : MonoBehaviour
     //private SpriteRenderer sprite;
     private float dirX = 0f;
     public AudioSource jumpAudioSource;
-    public enum MovementState { idle, running, jumping, dead }
+    public enum MovementState { idle, running, jumping, falling, dead }
     public MovementState state = MovementState.idle;
     private bool isJumping;
     //private MovementState state = MovementState.idle;
@@ -72,7 +72,7 @@ public class PlayerMovementV2 : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            isJumping = true;
+            //isJumping = true;
             AudioManagerScript.PlaySound("jump");
             rb.velocity = Vector2.up * jumpPower;
             if (rb.velocity.y < 0.1 && IsGrounded())
@@ -83,7 +83,7 @@ public class PlayerMovementV2 : MonoBehaviour
 
         else if (rb.velocity.y > 0.1 && !Input.GetButton("Jump"))
         {
-            isJumping = false;
+            //isJumping = false;
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
@@ -113,12 +113,13 @@ public class PlayerMovementV2 : MonoBehaviour
         }
         else
         {
-            if (isJumping)
+            if (rb.velocity.y > .1f)
             {
                 SetState(MovementState.jumping);
             }
-            else
+            else if (rb.velocity.y < -.01f)
             {
+                SetState(MovementState.falling);
                 CreateDustTrail();
             }
         }
@@ -133,7 +134,7 @@ public class PlayerMovementV2 : MonoBehaviour
         //    state = MovementState.falling;
         //}
 
-        anim.SetInteger("state", (int)state);
+        //anim.SetInteger("state", (int)state);
     }
 
     private void HandleFlipping()
