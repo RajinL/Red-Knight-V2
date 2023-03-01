@@ -204,6 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 3
   currentHealth: 3
+  invincibilityTime: 3
+  isInvincible: 0
   damageEffect: {fileID: 457633913787605570}
   deathEffect: {fileID: 6831827930727456335, guid: 90442d2c161e3524e942a06384789785,
     type: 3}
@@ -354,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4642443343238743229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.558, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 457633913787605568}
