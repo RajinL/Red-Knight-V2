@@ -63,7 +63,7 @@ public class CameraFollow : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //SetObjToFollowReference();
+        SetObjToFollowReference();
         SetCameraDimensions();
         MakeEdgeReferences();
         InitializeLevelBounds();

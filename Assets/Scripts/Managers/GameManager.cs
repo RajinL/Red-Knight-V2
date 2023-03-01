@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     public bool gameIsOver = false;
 
+    public bool acceptPlayerInput = true;
+    public bool triggeredStoryAtScene = false;
+
     [Header("Players")]
     [SerializeField] public GameObject gmPlayerParent;
     [SerializeField] public GameObject gmPlayerSidescroller;
@@ -35,7 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int gmInitialScoreCount = 0;
     [SerializeField] private int gmScoreLifeThreshold = 10;
     public int highScore = 0;
-    
+
     [Header("Weapon Ammo")]
     [SerializeField] private int gmInitialGarlicBombCount = 0;
     [SerializeField] private int gmCurrentGarlicBombCount = 0;
@@ -45,6 +48,7 @@ public class GameManager : MonoBehaviour
     [Header("Keys")]
     [SerializeField] private int gmInitiaKeyCount = 0;
     [SerializeField] private int gmCurrentKeyCount = 0;
+
 
     public static GameObject PlayerSidescroller
     {
@@ -262,10 +266,10 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Time.timeScale = 1;
         ChangePlayerType(scene);
 
         scene = SceneManager.GetActiveScene();
-        // Set up the singleton instance of this
         if (scene.name == "0_MainMenu")
         {
             Destroy(gameObject);
@@ -300,6 +304,15 @@ public class GameManager : MonoBehaviour
             scene.name == "3_Part2" || scene.name == "4_Part3" || scene.name == "5_Part4")
         {
             player = PlayerSidescroller;
+        }
+    }
+
+    public void StopPlayerInput()
+    {
+        acceptPlayerInput = false;
+        if (player.GetComponent<Rigidbody2D>())
+        {
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
         }
     }
 }

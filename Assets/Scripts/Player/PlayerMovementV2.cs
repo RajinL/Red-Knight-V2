@@ -24,7 +24,9 @@ public class PlayerMovementV2 : MonoBehaviour
     //private SpriteRenderer sprite;
     private float dirX = 0f;
     public AudioSource jumpAudioSource;
-    private enum MovementState { idle, running, jumping, falling }
+    public enum MovementState { idle, running, jumping, dead }
+    public MovementState state = MovementState.idle;
+    private bool isJumping;
     //private MovementState state = MovementState.idle;
 
     // Start is called before the first frame update
@@ -40,20 +42,27 @@ public class PlayerMovementV2 : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //dirX = Input.GetAxis("Horizontal");
-        dirX = Input.GetAxisRaw("Horizontal");
-        //Debug.Log(dirX);
+        if (state != MovementState.dead)
+        {
+            if (GameManager.instance.acceptPlayerInput)
+            {
+                //dirX = Input.GetAxis("Horizontal");
+                dirX = Input.GetAxisRaw("Horizontal");
+                //Debug.Log(dirX);
 
-        rb.velocity = new Vector2(dirX * playerSpeed, rb.velocity.y);
+                rb.velocity = new Vector2(dirX * playerSpeed, rb.velocity.y);
 
-        //if (Input.GetButtonDown("Jump") && IsGrounded())
-        //{
-        //    rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-        //}
+                //if (Input.GetButtonDown("Jump") && IsGrounded())
+                //{
+                //    rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+                //}
 
-        HandleBetterJump();
+                HandleBetterJump();
+                HandleFlipping();
+                UpdateAnimationState();
+            }
 
-        UpdateAnimationState();
+        }
     }
 
     /// <summary>
@@ -63,6 +72,7 @@ public class PlayerMovementV2 : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            isJumping = true;
             AudioManagerScript.PlaySound("jump");
             rb.velocity = Vector2.up * jumpPower;
             if (rb.velocity.y < 0.1 && IsGrounded())
@@ -73,15 +83,61 @@ public class PlayerMovementV2 : MonoBehaviour
 
         else if (rb.velocity.y > 0.1 && !Input.GetButton("Jump"))
         {
+            isJumping = false;
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
 
+    public void SetState(MovementState newState)
+    {
+        state = newState;
+    }
+
     void UpdateAnimationState()
     {
+        if (GameManager.CurrentPlayerHealth <= 0)
+        {
+            SetState(MovementState.dead);
+        }
 
-        MovementState state;
+        else if (IsGrounded())
+        {
+            if (dirX != 0f)
+            {
+                state = MovementState.running;
+            }
+            else
+            {
+                state = MovementState.idle;
+            }
+        }
+        else
+        {
+            if (isJumping)
+            {
+                SetState(MovementState.jumping);
+            }
+            else
+            {
+                CreateDustTrail();
+            }
+        }
 
+        //if (rb.velocity.y > .1f)
+        //{
+        //    state = MovementState.jumping;
+        //}
+        //else if (rb.velocity.y < -.01f)
+        //{
+        //    CreateDustTrail();
+        //    state = MovementState.falling;
+        //}
+
+        anim.SetInteger("state", (int)state);
+    }
+
+    private void HandleFlipping()
+    {
         if (dirX > 0f && !facingRight)
         {
             Flip();
@@ -90,31 +146,6 @@ public class PlayerMovementV2 : MonoBehaviour
         {
             Flip();
         }
-
-        if (dirX > 0f)
-        { 
-            state = MovementState.running;
-        }
-        else if (dirX < 0f)
-        {
-            state = MovementState.running;
-        }
-        else
-        {
-            state = MovementState.idle;
-        }
-
-        if (rb.velocity.y > .1f)
-        {
-            state = MovementState.jumping;
-        }
-        else if (rb.velocity.y < -.01f)
-        {
-            CreateDustTrail();
-            state = MovementState.falling;
-        }
-
-        anim.SetInteger("state", (int)state);
     }
 
     private bool IsGrounded()

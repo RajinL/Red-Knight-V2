@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSidescroller: {fileID: 6059668081482659130}
   playerTopDown: {fileID: 5108340544582330358}
+  gameManager: {fileID: 0}
 --- !u!1001 &1534879532801890154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,12 +63,12 @@ PrefabInstance:
     - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.416072
       objectReference: {fileID: 0}
     - target: {fileID: 4688700344877761920, guid: 7823d34312bee9946b63bc3989216e8d,
         type: 3}
@@ -143,12 +144,12 @@ PrefabInstance:
     - target: {fileID: 6692592620862092914, guid: 53241bbc018f64fb8b5d9038c991d019,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 6692592620862092914, guid: 53241bbc018f64fb8b5d9038c991d019,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.416072
       objectReference: {fileID: 0}
     - target: {fileID: 6692592620862092914, guid: 53241bbc018f64fb8b5d9038c991d019,
         type: 3}

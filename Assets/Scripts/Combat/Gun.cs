@@ -15,9 +15,12 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (GameManager.instance.acceptPlayerInput)
         {
-            Shoot();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
         }
     }
 

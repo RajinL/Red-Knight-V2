@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -34607,6 +34607,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1874804967784549542, guid: 932a30cb4ec9254418950d6467008e47,
+        type: 3}
+      propertyPath: parentObject
+      value: 
+      objectReference: {fileID: 1515148988}
+    - target: {fileID: 1874804968225806572, guid: 932a30cb4ec9254418950d6467008e47,
+        type: 3}
+      propertyPath: parentObject
+      value: 
+      objectReference: {fileID: 1515148987}
+    - target: {fileID: 2005468102748884702, guid: 932a30cb4ec9254418950d6467008e47,
+        type: 3}
+      propertyPath: parentObject
+      value: 
+      objectReference: {fileID: 1515148987}
+    - target: {fileID: 6069967867931290760, guid: 932a30cb4ec9254418950d6467008e47,
+        type: 3}
+      propertyPath: parentObject
+      value: 
+      objectReference: {fileID: 1515148988}
     - target: {fileID: 8198482487268615231, guid: 932a30cb4ec9254418950d6467008e47,
         type: 3}
       propertyPath: gameManager
@@ -127711,7 +127731,7 @@ GameObject:
   - component: {fileID: 8906833487380620634}
   m_Layer: 0
   m_Name: SpikeCollider
-  m_TagString: Untagged
+  m_TagString: Ignore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -489,31 +489,11 @@ PrefabInstance:
       propertyPath: parentObject
       value: 
       objectReference: {fileID: 1515148988}
-    - target: {fileID: 5108340544582330122, guid: 932a30cb4ec9254418950d6467008e47,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5108340544582330122, guid: 932a30cb4ec9254418950d6467008e47,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.416072
-      objectReference: {fileID: 0}
     - target: {fileID: 6069967867931290760, guid: 932a30cb4ec9254418950d6467008e47,
         type: 3}
       propertyPath: parentObject
       value: 
       objectReference: {fileID: 1515148987}
-    - target: {fileID: 6079121530285740778, guid: 932a30cb4ec9254418950d6467008e47,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6079121530285740778, guid: 932a30cb4ec9254418950d6467008e47,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.416072
-      objectReference: {fileID: 0}
     - target: {fileID: 8198482487268615231, guid: 932a30cb4ec9254418950d6467008e47,
         type: 3}
       propertyPath: gameManager
@@ -523,11 +503,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerSideWithTop
-      objectReference: {fileID: 0}
-    - target: {fileID: 8340396382187115601, guid: 932a30cb4ec9254418950d6467008e47,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8357043190068474753, guid: 932a30cb4ec9254418950d6467008e47,
         type: 3}
@@ -16182,14 +16157,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 582317265, guid: ac1770d97fa65324288ffe09aa197684, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 582317265, guid: ac1770d97fa65324288ffe09aa197684, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 409836111078767561, guid: ac1770d97fa65324288ffe09aa197684,
         type: 3}
       propertyPath: m_Pivot.x

@@ -24,8 +24,10 @@ public class StoryText : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerHealth>())
+        if (collision.gameObject == GameManager.instance.player)
         {
+            GameManager.instance.triggeredStoryAtScene = true;
+
             StartCoroutine(DelayStoryUIPanel(delayTime));
             UIManager.instance.DisplayMessage(storyText);
             if (gameObject.CompareTag("Finish"))
@@ -38,7 +40,8 @@ public class StoryText : MonoBehaviour
     IEnumerator DelayStoryUIPanel(float time)
     {
         yield return new WaitForSeconds(time);
-        Time.timeScale = 0f;
+        GameManager.instance.StopPlayerInput();
+        //GameManager.instance.acceptPlayerInput = false;
     }
 
     /// <summary>
@@ -47,13 +50,13 @@ public class StoryText : MonoBehaviour
     /// </summary>
     void FinishGameButton_onClick()
     {
-
+        Time.timeScale = 1f;
         UIManager.instance.LoadSceneByName("0_MainMenu");
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerHealth>())
+        if (collision.gameObject == GameManager.instance.player)
         {
             if (!UIManager.instance.storyUIPanel.activeInHierarchy)
             {

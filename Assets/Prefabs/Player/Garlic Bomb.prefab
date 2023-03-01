@@ -4923,6 +4923,9 @@ MonoBehaviour:
   WhatToDestroy:
     serializedVersion: 2
     m_Bits: 3072
+  rb: {fileID: 0}
+  initialDetTime: 0
+  totalTimeToTurnOff: 0
 --- !u!114 &7172902066562931512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4939,4 +4942,4 @@ MonoBehaviour:
   objectToPool: {fileID: 4713116776895158529, guid: 67e78565d12ec884dab8fe44b44238dc,
     type: 3}
   amountToPool: 1
-  parent: {fileID: 0}
+  parentObject: {fileID: 0}

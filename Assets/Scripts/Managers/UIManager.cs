@@ -65,7 +65,6 @@ public class UIManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         scene = SceneManager.GetActiveScene();
-        // Set up the singleton instance of this
         if (scene.name == "0_MainMenu")
         {
             Destroy(gameObject);
@@ -190,6 +189,8 @@ public class UIManager : MonoBehaviour
 
     public void DisplayMessage(string message)
     {
+        GameManager.instance.StopPlayerInput();
+        //GameManager.instance.acceptPlayerInput = false;
         storyUIPanel.SetActive(true);
         storyTextUI.text = message;
     }

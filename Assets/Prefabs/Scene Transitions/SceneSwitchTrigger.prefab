@@ -71,8 +71,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
+  transitionTime: 0.5
   sceneTransition: {fileID: 0}
-  transitionTime: 1
   requiresKey: 0
   keyPrefab: {fileID: 8928583432532855231, guid: 9b62947556ffdcb40aadcc979516ff5c,
     type: 3}

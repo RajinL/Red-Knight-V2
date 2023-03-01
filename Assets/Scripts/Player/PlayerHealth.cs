@@ -8,6 +8,12 @@ public class PlayerHealth : Health
     [Header("Respawn Info")]
     [SerializeField] private float respawnWaitTime = 3f;
     private float respawnTime;
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -30,8 +36,13 @@ public class PlayerHealth : Health
     {
         // ******************************************************************************//////                
         // UNLOCK CONTROLS
+        transform.position = GameManager.instance.spawnPoint.transform.position;
+        UIManager.instance.RestartCurrentScene();
 
-        transform.position = GameObject.FindGameObjectWithTag("spawn_point").transform.position;
+        if (GetComponent<PlayerMovementV2>())
+        {
+            GetComponent<PlayerMovementV2>().SetState(PlayerMovementV2.MovementState.idle);
+        }
 
         GameManager.instance.ResetHealth();
         GameManager.instance.UpdateUI();
@@ -83,6 +94,13 @@ public class PlayerHealth : Health
         GameManager.CurrentLifeCount -= 1;
         GameManager.instance.UpdateUI();
 
+///////////////////// Make a dead state for the TopDownMovement and call it here. Should have a death
+////////////// animation and turn the physics2d material off. Look at PlayerAnimator.cs for reference
+        if (GetComponent<PlayerMovementV2>())
+        {
+            GetComponent<PlayerMovementV2>().SetState(PlayerMovementV2.MovementState.dead);
+        }
+
         if (GameManager.CurrentLifeCount > 0)
         {
             if (respawnWaitTime == 0)
@@ -91,19 +109,13 @@ public class PlayerHealth : Health
             }
             else
             {
-                // ******************************************************************************//////                
-                // PLAY DEATH ANIMATION HERE
-                // LOCK CONTROLS
                 respawnTime = Time.time + respawnWaitTime;
             }
         }
         // no lives left
         else
         {
-            if (UIManager.instance != null)
-            {
-                GameOver();
-            }
+            GameOver();
         }
     }
 
@@ -114,8 +126,16 @@ public class PlayerHealth : Health
 
     public void GameOver()
     {
-        Debug.Log("Player has lost all lives. Game Over!");
-        Time.timeScale = 0; // freeze time - temporary fix for locking controls
-        // Load Game Over menu
+        UIManager.instance.DisplayMessage("Player has lost all lives. Game Over!");
+        UIManager.instance.storyUIButton.onClick.AddListener(RestartGameButton_onClick); //subscribe to the onClick event
+    }
+
+    /// <summary>
+    /// Loads the main menu.
+    /// <a href = "https://answers.unity.com/questions/1448790/change-onclick-function-via-script.html"></a>
+    /// </summary>
+    void RestartGameButton_onClick()
+    {
+        UIManager.instance.LoadSceneByName("0_MainMenu");
     }
 }

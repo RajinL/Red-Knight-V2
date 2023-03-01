@@ -44,13 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa0c19961b6c5849ad2d2cbce57c42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 0}
+  delayTime: 1
   storyText: "The world\u2019s most skilled Vampire Huntress has been hunting Nosferatu,
     the Vampire King, across the globe to avenge the death of her family as well
     as so many others who have fallen victim to his terror. After years of searching,
     she has found him at last \u2013 and is ready to fight Nosferatu himself, and
     all his minions, to end his evil reign of the night."
-  delayTime: 1
 --- !u!61 &6829509834675170002
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -25,12 +25,15 @@ public class GarlicBomb : MonoBehaviour
     /// </summary>
     private void HandleBombThrow()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (GameManager.instance.acceptPlayerInput)
         {
-            if (GameManager.CurrentGarlicBombCount > 0)
+            if (Input.GetButtonDown("Fire2"))
             {
-                ThrowBomb();
-                UpdateAmmoCount(1);
+                if (GameManager.CurrentGarlicBombCount > 0)
+                {
+                    ThrowBomb();
+                    UpdateAmmoCount(1);
+                }
             }
         }
     }

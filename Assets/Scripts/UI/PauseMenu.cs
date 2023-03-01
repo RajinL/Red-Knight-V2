@@ -66,6 +66,8 @@ public class PauseMenu : MonoBehaviour
             storyUIPanel.SetActive(false);
             pauseMenuUI.SetActive(false);
         }
+        GameManager.instance.triggeredStoryAtScene = false;
+        GameManager.instance.acceptPlayerInput = true;
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -80,6 +82,8 @@ public class PauseMenu : MonoBehaviour
             mainPage.SetActive(true);
             pauseMenuUI.SetActive(true);
         }
+        GameManager.instance.StopPlayerInput();
+        //GameManager.instance.acceptPlayerInput = false;
         Time.timeScale = 0f;
         GameIsPaused = true;
     }

@@ -95,8 +95,6 @@ public class SceneSwitch : MonoBehaviour
     /// </summary>
     private void CheckForSceneName()
     {
-        Scene scene = SceneManager.GetActiveScene();
-
         if (sceneName != "")
         {
             SceneManager.LoadScene(sceneName);

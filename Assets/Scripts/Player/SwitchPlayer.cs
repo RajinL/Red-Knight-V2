@@ -13,6 +13,7 @@ public class SwitchPlayer : MonoBehaviour
 
     private void Awake()
     {
+        // Set up the singleton instance of this
         if (instance == null)
         {
             instance = this;

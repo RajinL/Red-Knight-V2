@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 5147518992519147172}
   - component: {fileID: 5773234081951711043}
   - component: {fileID: 6421746134898268615}
+  - component: {fileID: 7715738874406759813}
   m_Layer: 12
   m_Name: PlayerV3
   m_TagString: Player
@@ -318,6 +319,7 @@ MonoBehaviour:
     m_Bits: 1280
   dust: {fileID: 5773234081040054141}
   jumpAudioSource: {fileID: 0}
+  state: 0
 --- !u!114 &6421746134898268615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,12 +334,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 5
   currentHealth: 5
+  invincibilityTime: 1
+  isInvincible: 0
   damageEffect: {fileID: 5147518992519147172}
   deathEffect: {fileID: 0}
   timeForDeathEffectToDestroy: 1
-  invincibilityTime: 1
-  isInvincible: 0
   respawnWaitTime: 3
+--- !u!114 &7715738874406759813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707590706219672144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07d1a0b45b2d674bb37d413012b5707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 5773234081951711043}
+  animator: {fileID: 5773234081951711102}
+  bodyCollider: {fileID: 355004023255776024}
+  physicsMaterial: {fileID: 6200000, guid: 6eee83e7ac2af2d4282f973b30318de5, type: 2}
 --- !u!1 &5773234081040054142
 GameObject:
   m_ObjectHideFlags: 0

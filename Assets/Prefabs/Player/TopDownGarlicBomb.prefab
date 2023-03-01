@@ -143,6 +143,9 @@ MonoBehaviour:
   WhatToDestroy:
     serializedVersion: 2
     m_Bits: 3072
+  rb: {fileID: 0}
+  initialDetTime: 0
+  totalTimeToTurnOff: 0
 --- !u!114 &-5401206674551043761
 MonoBehaviour:
   m_ObjectHideFlags: 0
