@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 698580231959495043}
   - component: {fileID: 7654605786516990430}
   - component: {fileID: 4493946619073648132}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Skull Bomb
   m_TagString: non_player
   m_Icon: {fileID: 0}
