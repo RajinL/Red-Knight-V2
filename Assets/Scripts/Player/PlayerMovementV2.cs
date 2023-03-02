@@ -123,18 +123,6 @@ public class PlayerMovementV2 : MonoBehaviour
                 CreateDustTrail();
             }
         }
-
-        //if (rb.velocity.y > .1f)
-        //{
-        //    state = MovementState.jumping;
-        //}
-        //else if (rb.velocity.y < -.01f)
-        //{
-        //    CreateDustTrail();
-        //    state = MovementState.falling;
-        //}
-
-        //anim.SetInteger("state", (int)state);
     }
 
     private void HandleFlipping()

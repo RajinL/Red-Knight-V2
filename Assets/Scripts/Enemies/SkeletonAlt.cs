@@ -24,7 +24,7 @@ public class SkeletonAlt : MonoBehaviour
         else
         {
             
-            if (transform.parent.CompareTag( "platform"))
+            if (transform.parent.CompareTag("platform"))
             {
                 transform.localScale = new Vector3(-0.33f, 0.33f, 0.33f);
             }
