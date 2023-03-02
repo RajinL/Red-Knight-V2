@@ -73,7 +73,7 @@ public class AudioManagerScript : MonoBehaviour
                 audioSource.PlayOneShot(garlicBombExplosion);
                 break;
             case "barrelBreaks":
-                audioSource.volume = 1f;
+                audioSource.volume = 0.5f;
                 audioSource.pitch = 1f;
                 audioSource.PlayOneShot(barrelBreakSound);
                 break;
