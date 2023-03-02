@@ -54,6 +54,15 @@ public class PlayerAnimator : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
+        if (playerMovement.state == PlayerMovementV2.MovementState.falling)
+        {
+            animator.SetBool("isFalling", true);
+        }
+        else
+        {
+            animator.SetBool("isFalling", false);
+        }
+
         if (playerMovement.state == PlayerMovementV2.MovementState.dead)
         {
             bodyCollider.sharedMaterial = null;
