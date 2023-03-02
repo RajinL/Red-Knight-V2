@@ -28,6 +28,7 @@ public class PlayerAnimator : MonoBehaviour
         if (playerMovement.state == PlayerMovementV2.MovementState.idle)
         {
             bodyCollider.sharedMaterial = physicsMaterial;
+            GameManager.instance.isPlayerDead = false;
             animator.SetBool("isIdle", true);
         }
         else
@@ -56,6 +57,7 @@ public class PlayerAnimator : MonoBehaviour
         if (playerMovement.state == PlayerMovementV2.MovementState.dead)
         {
             bodyCollider.sharedMaterial = null;
+            GameManager.instance.isPlayerDead = true;
             animator.SetBool("isDead", true);
         }
         else

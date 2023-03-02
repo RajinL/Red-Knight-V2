@@ -17,14 +17,6 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] private GameObject objectToPool;
     [Tooltip("The number of obects to be stored in this pool.")]
     [SerializeField] private int amountToPool;
-    [Tooltip("The object in the scene that will become the parent of any pooled object." +
-        "Useful for keeping scene organized.")]
-    [SerializeField] private Transform parentObject;
-
-    //void Awake()
-    //{
-    //    SharedInstance = this;
-    //}
 
     /// <summary>
     /// Instantiates a number of GameObjects to pool with the amountToPool parameter,
@@ -39,7 +31,6 @@ public class ObjectPool : MonoBehaviour
         for (int i = 0; i < amountToPool; i++)
         {
             tmp = Instantiate(objectToPool);
-            //if (parentObject != null) tmp.transform.SetParent(parentObject);
             tmp.SetActive(false);
             pooledObjects.Add(tmp);
         }

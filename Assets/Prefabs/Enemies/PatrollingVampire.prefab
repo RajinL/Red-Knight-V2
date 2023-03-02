@@ -204,6 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 3
   currentHealth: 3
+  invincibilityTime: 3
+  isInvincible: 0
   damageEffect: {fileID: 457633913787605570}
   deathEffect: {fileID: 6831827930727456335, guid: 90442d2c161e3524e942a06384789785,
     type: 3}
@@ -369,8 +371,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8335141460311520298}
-  - component: {fileID: 6826515942952609635}
   - component: {fileID: 8678936884882498269}
+  - component: {fileID: 6826515942952609635}
   m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
@@ -392,23 +394,6 @@ Transform:
   m_Father: {fileID: 457633913787605568}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6826515942952609635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8151853228729832468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28b13e61b33a5f4faa1d3a9987f03ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canDamage: 1
-  canOneShot: 0
-  damageAmount: 1
-  dealDamageOnTriggerEnter: 1
-  dealDamageOnTriggerStay: 1
 --- !u!61 &8678936884882498269
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -435,3 +420,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1.1556855}
   m_EdgeRadius: 0
+--- !u!114 &6826515942952609635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8151853228729832468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28b13e61b33a5f4faa1d3a9987f03ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDamage: 1
+  canOneShot: 0
+  damageAmount: 1
+  dealDamageOnTriggerEnter: 1
+  dealDamageOnTriggerStay: 1

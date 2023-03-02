@@ -65,7 +65,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3693956534325832588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.464, y: -3.34, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7509609911716087024}
@@ -137,7 +137,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01516223, y: -0.12131739}
+  m_Offset: {x: 0.026606292, y: -0.17830276}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +148,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66687727, y: 0.9954605}
+  m_Size: {x: 0.71975464, y: 0.88758576}
   m_EdgeRadius: 0
 --- !u!50 &8965111872740030014
 Rigidbody2D:
@@ -232,6 +232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 3
   currentHealth: 3
+  invincibilityTime: 3
+  isInvincible: 0
   damageEffect: {fileID: 3515464902751687449}
   deathEffect: {fileID: 6181689312659180035, guid: 1506892aee8324b46bc1fe926c2dabe5,
     type: 3}
@@ -322,7 +324,7 @@ GameObject:
   - component: {fileID: 699041621726390455}
   m_Layer: 11
   m_Name: Damage
-  m_TagString: Untagged
+  m_TagString: non_player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -371,18 +373,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023825169, y: -0.16931176}
+  m_Offset: {x: 0.026606292, y: -0.17830276}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0476191, y: 1.2380953}
+    newSize: {x: 1.0476191, y: 1.2380953}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.71660423, y: 0.8921423}
+  m_Size: {x: 0.71975464, y: 0.88758576}
   m_EdgeRadius: 0
 --- !u!1 &8247226704782472499
 GameObject:

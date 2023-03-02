@@ -21,13 +21,11 @@ public class PlayerMovementV2 : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D coll;
-    //private SpriteRenderer sprite;
     private float dirX = 0f;
     public AudioSource jumpAudioSource;
     public enum MovementState { idle, running, jumping, dead }
     public MovementState state = MovementState.idle;
     private bool isJumping;
-    //private MovementState state = MovementState.idle;
 
     // Start is called before the first frame update
     private void Start()
@@ -35,7 +33,6 @@ public class PlayerMovementV2 : MonoBehaviour
         // Search for this component once during start instead of searching every time you want to use it
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
-        //sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
 
@@ -46,16 +43,9 @@ public class PlayerMovementV2 : MonoBehaviour
         {
             if (GameManager.instance.acceptPlayerInput)
             {
-                //dirX = Input.GetAxis("Horizontal");
                 dirX = Input.GetAxisRaw("Horizontal");
-                //Debug.Log(dirX);
 
                 rb.velocity = new Vector2(dirX * playerSpeed, rb.velocity.y);
-
-                //if (Input.GetButtonDown("Jump") && IsGrounded())
-                //{
-                //    rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-                //}
 
                 HandleBetterJump();
                 HandleFlipping();
@@ -123,16 +113,6 @@ public class PlayerMovementV2 : MonoBehaviour
             }
         }
 
-        //if (rb.velocity.y > .1f)
-        //{
-        //    state = MovementState.jumping;
-        //}
-        //else if (rb.velocity.y < -.01f)
-        //{
-        //    CreateDustTrail();
-        //    state = MovementState.falling;
-        //}
-
         anim.SetInteger("state", (int)state);
     }
 
@@ -155,13 +135,7 @@ public class PlayerMovementV2 : MonoBehaviour
 
     void Flip()
     {
-        //CreateDustTrail();
         transform.Rotate(0f, 180f, 0f);
-
-        //Vector3 currentScale = gameObject.transform.localScale;
-        //currentScale.x *= -1;
-        //gameObject.transform.localScale = currentScale;
-
         facingRight = !facingRight;
     }
 

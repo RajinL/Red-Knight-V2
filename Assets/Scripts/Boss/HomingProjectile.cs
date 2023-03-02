@@ -12,8 +12,6 @@ public class HomingProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player").transform;
-        //player = GameManager.instance.gmPlayerTopdown.transform;
         player = GameManager.instance.player.transform;
         rb = GetComponent<Rigidbody2D>();
     }

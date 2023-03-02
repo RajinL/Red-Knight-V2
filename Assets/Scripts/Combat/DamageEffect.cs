@@ -13,14 +13,17 @@ public class DamageEffect : MonoBehaviour
 
     private Coroutine damageRoutine;
 
-
-    void Start()
+    private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalMaterial = spriteRenderer.material;
     }
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        spriteRenderer.material = originalMaterial;
+    }
+
     public void Damage()
     {
         if (damageRoutine != null)

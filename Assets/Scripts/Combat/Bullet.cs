@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        SetParentToObjWithTag("bullet_parent");
     }
     private void Start()
     {
@@ -36,13 +37,31 @@ public class Bullet : MonoBehaviour
     /// then the bullet should pass through. Put an "Ignore" tag on an object
     /// if you want the bullet to pass through.
     /// </summary>
-    /// <param name="hitInfo">The object the bullet collides with.</param>
-    private void OnTriggerEnter2D(Collider2D hitInfo)
+    /// <param name="collision">The object the bullet collides with.</param>
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!hitInfo.CompareTag("Ignore"))
+        if (!collision.CompareTag("Ignore"))
         {
-            //Destroy(gameObject);
             gameObject.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// Sets this object's parent to an object with a tag.
+    /// </summary>
+    /// <param name="tag">The tag name's as a string</param>
+    private void SetParentToObjWithTag(string tag)
+    {
+        if (GameObject.FindGameObjectWithTag(tag))
+        {
+            Transform parent = GameObject.FindGameObjectWithTag(tag).transform;
+            transform.SetParent(parent);
+        }
+        else
+        {
+            Debug.LogWarning("Unable to find " + tag + " tag to set the " + gameObject.name + " game objects's parent" +
+                " because the Object Pool prefab is not included in this scene! Insert the Object Pool prefab into the scene" +
+                " to organize pooled objects.");
         }
     }
 }

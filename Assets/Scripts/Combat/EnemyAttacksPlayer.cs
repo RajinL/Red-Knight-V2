@@ -11,7 +11,7 @@ public class EnemyAttacksPlayer : MonoBehaviour
 
     internal static string hasTarget = "hasTarget";
 
-    private int attackDamage = 3;
+    //private int attackDamage = 3;
 
     private void Awake()
     {
@@ -42,11 +42,12 @@ public class EnemyAttacksPlayer : MonoBehaviour
         HasTarget = playerDetect.detectedColliders.Count > 0;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject == GameManager.instance.player)
-        {
-            collision.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
-        }
-    }
+    // SKELETON ALREADY HAS A DAMAGE COMPONENT THAT DOES THIS - CAUSING SKELETON TO DAMAGE PLAYER TWICE - JUST USE DAMAGE COMPONENT
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject == GameManager.instance.player)
+    //    {
+    //        collision.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+    //    }
+    //}
 }

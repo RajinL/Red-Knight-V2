@@ -52,7 +52,7 @@ public class TopDownMovement : MonoBehaviour
 
     private void UpdateTarget()
     {
-        if (GameObject.FindGameObjectsWithTag("Boss").Length >= 1)
+        if (GameObject.FindGameObjectWithTag("Boss"))
         {
             target = GameObject.FindGameObjectWithTag("Boss").transform;
         }

@@ -14,7 +14,6 @@ public class BossHealth : Health
 
     private void Start()
     {
-        //UIManager.instance.SetBossMaxHealth(initialHealth);
         GameManager.instance.uiManager.SetBossMaxHealth(initialHealth);
     }
 
@@ -41,7 +40,6 @@ public class BossHealth : Health
             }
 
             AudioManagerScript.PlaySound("enemyHit");
-            //UIManager.instance.SetBossHealth(currentHealth);
             GameManager.instance.uiManager.SetBossHealth(currentHealth);
             CheckIfObjectIsDead();
         }

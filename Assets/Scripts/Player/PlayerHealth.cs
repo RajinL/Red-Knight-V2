@@ -8,12 +8,6 @@ public class PlayerHealth : Health
     [Header("Respawn Info")]
     [SerializeField] private float respawnWaitTime = 3f;
     private float respawnTime;
-    private Animator anim;
-
-    private void Awake()
-    {
-        anim = GetComponent<Animator>();
-    }
 
     void Update()
     {
@@ -34,10 +28,6 @@ public class PlayerHealth : Health
 
     void Respawn()
     {
-        // ******************************************************************************//////                
-        // UNLOCK CONTROLS
-        //transform.position = GameManager.instance.spawnPoint.transform.position;
-        //UIManager.instance.RestartCurrentScene();
         GameManager.instance.uiManager.RestartCurrentScene();
 
         if (GetComponent<PlayerMovementV2>())
@@ -127,8 +117,7 @@ public class PlayerHealth : Health
 
     public void GameOver()
     {
-        //UIManager.instance.DisplayMessage("Player has lost all lives. Game Over!");
-        //UIManager.instance.storyUIButton.onClick.AddListener(RestartGameButton_onClick); //subscribe to the onClick event
+        GameManager.instance.isGameOver = true;
         GameManager.instance.uiManager.DisplayMessage("Player has lost all lives. Game Over!");
         GameManager.instance.uiManager.storyUIButton.onClick.AddListener(RestartGameButton_onClick); //subscribe to the onClick event
     }
@@ -139,7 +128,6 @@ public class PlayerHealth : Health
     /// </summary>
     void RestartGameButton_onClick()
     {
-        //UIManager.instance.LoadSceneByName("0_MainMenu");
         GameManager.instance.uiManager.LoadSceneByName("0_MainMenu");
     }
 }

@@ -25,7 +25,7 @@ public class GarlicBomb : MonoBehaviour
     /// </summary>
     private void HandleBombThrow()
     {
-        if (GameManager.instance.acceptPlayerInput)
+        if (GameManager.instance.acceptPlayerInput && !GameManager.instance.isPlayerDead)
         {
             if (Input.GetButtonDown("Fire2"))
             {

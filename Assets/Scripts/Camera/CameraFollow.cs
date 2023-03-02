@@ -32,7 +32,6 @@ public class CameraFollow : MonoBehaviour
     private GameObject rightEdgeLevel;
     private GameObject topEdgeLevel;
     private GameObject bottomEdgeLevel;
-
     // the bounds of the level with the aspect ratio taken into account
     private float leftBounds;
     private float rightBounds;
@@ -52,17 +51,6 @@ public class CameraFollow : MonoBehaviour
 
     void Awake()
     {
-        //Set up the singleton instance of this
-        //if (instance == null)
-        //{
-        //    instance = this;
-        //    DontDestroyOnLoad(gameObject);
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
-
         SetObjToFollowReference();
         SetCameraDimensions();
         MakeEdgeReferences();
@@ -134,55 +122,6 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
-    //// https://answers.unity.com/questions/1174255/since-onlevelwasloaded-is-deprecated-in-540b15-wha.html
-    //void OnEnable()
-    //{
-    //    SceneManager.sceneLoaded += OnSceneLoaded;
-    //}
-
-    //void OnDisable()
-    //{
-    //    SceneManager.sceneLoaded -= OnSceneLoaded;
-    //}
-
-    //private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    //{
-    //    scene = SceneManager.GetActiveScene();
-
-    //    if (scene.name != "1_Outside")
-    //    {
-    //        if (GetComponent<ParallaxCamera>())
-    //        {
-    //            GetComponent<ParallaxCamera>().enabled = false;
-    //        }
-    //    }
-
-    //    if (scene.name == "6_TopDownTutorial" || scene.name == "7_BossFight")
-    //    {
-    //        MakeEdgeReferences();
-    //        InitializeLevelBounds();
-    //        //objToFollow = playerTopDown;
-    //    }
-
-    //    else if (scene.name == "0_MainMenu")
-    //    {
-    //        Destroy(gameObject);
-    //    }
-
-    //    else
-    //    {
-    //        MakeEdgeReferences();
-    //        InitializeLevelBounds();
-    //        //objToFollow = playerSidescroller;
-    //        if (scene.name == "5_Part4")
-    //        {
-    //            Debug.Log("In rush scene. Looking for rush_object");
-    //            objToFollow = GameObject.FindGameObjectWithTag("rush_object");
-    //            StartCoroutine(InitializeRushStartPoint(0.1f));
-    //        }
-    //    }
-    //}
-
     /// <summary>
     /// Clamps the camera between the bounds of the map while following the objToFollow gameObject.
     /// If the rush has started, then the camera will move to the right to give the appearance that
@@ -240,11 +179,5 @@ public class CameraFollow : MonoBehaviour
             transform.position = Vector3.Lerp(startingPos, targetPosition, t);
             yield return 0;
         }
-    }
-
-    IEnumerator InitializeRushStartPoint(float time)
-    {
-        yield return new WaitForSeconds(time);
-        startOfRush = GameObject.FindGameObjectWithTag("rush_start").GetComponent<Collider2D>();
     }
 }

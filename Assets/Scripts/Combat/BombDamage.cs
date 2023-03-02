@@ -38,6 +38,7 @@ public class BombDamage : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         initialDetTime = detonationTime;
+        SetParentToObjWithTag("gar_bomb_parent");
     }
 
     void Start()
@@ -150,6 +151,25 @@ public class BombDamage : MonoBehaviour
         {
             bombExplosion.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
             bombExplosion.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Sets this object's parent to an object with a tag.
+    /// </summary>
+    /// <param name="tag">The tag name's as a string</param>
+    private void SetParentToObjWithTag(string tag)
+    {
+        if (GameObject.FindGameObjectWithTag(tag))
+        {
+            Transform parent = GameObject.FindGameObjectWithTag(tag).transform;
+            transform.SetParent(parent);
+        }
+        else
+        {
+            Debug.LogWarning("Unable to find " + tag + " tag to set the " + gameObject.name + " game objects's parent" +
+                " because the Object Pool prefab is not included in this scene! Insert the Object Pool prefab into the scene" +
+                " to organize pooled objects.");
         }
     }
 }

@@ -20,6 +20,9 @@ TagManager:
   - game_manager
   - rush_object
   - rush_start
+  - bullet_parent
+  - gar_bomb_parent
+  - bat_projectile_parent
   layers:
   - Default
   - TransparentFX

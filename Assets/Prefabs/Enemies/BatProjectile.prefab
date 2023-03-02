@@ -48,7 +48,7 @@ MonoBehaviour:
   canOneShot: 0
   damageAmount: 1
   dealDamageOnTriggerEnter: 1
-  dealDamageOnTriggerStay: 1
+  dealDamageOnTriggerStay: 0
 --- !u!61 &1805870076921752858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -86,15 +86,15 @@ GameObject:
   - component: {fileID: 8157244836311377828}
   - component: {fileID: 8157244836311377829}
   - component: {fileID: 8157244836311377834}
-  - component: {fileID: 4423834856956309262}
   - component: {fileID: 8794354722312837224}
-  - component: {fileID: -3029397376895586530}
-  - component: {fileID: 9051510966294330825}
   - component: {fileID: 9050323941849642948}
-  - component: {fileID: 864247006685655683}
+  - component: {fileID: 4423834856956309262}
+  - component: {fileID: 1859511810506916115}
+  - component: {fileID: 77642485228842674}
+  - component: {fileID: -3029397376895586530}
   m_Layer: 11
   m_Name: BatProjectile
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,19 +184,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4423834856956309262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8157244836311377835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0ae4deba9f9048a2bb1cf6382e4438e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!50 &8794354722312837224
 Rigidbody2D:
   serializedVersion: 4
@@ -218,42 +205,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-3029397376895586530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8157244836311377835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 725b0d5d7d7b86043af48cb4e428dd1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageMaterial: {fileID: 2100000, guid: d5773d4bcfd1341488725434db1f9a19, type: 2}
-  duration: 0.07
---- !u!114 &9051510966294330825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8157244836311377835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4ddb677f1a89de45bb729581176a5e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 3
-  currentHealth: 3
-  damageEffect: {fileID: -3029397376895586530}
-  deathEffect: {fileID: 5638641230803131695, guid: 95f62d3c76ea77d49b9ad677a84e72a4,
-    type: 3}
-  timeForDeathEffectToDestroy: 1
-  scoreValue: 1
-  deathEffectOn: 1
-  enemyPatrol: {fileID: 0}
-  deathAnimation: {fileID: 0}
 --- !u!61 &9050323941849642948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -280,7 +231,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42, y: 0.28}
   m_EdgeRadius: 0
---- !u!114 &864247006685655683
+--- !u!114 &4423834856956309262
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,7 +240,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 8157244836311377835}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c9ca60676584ddd893e8eccc08c553, type: 3}
+  m_Script: {fileID: 11500000, guid: c0ae4deba9f9048a2bb1cf6382e4438e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
+  speed: 5
+--- !u!114 &1859511810506916115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157244836311377835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503a69fdf2590484b82719ebbf423ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDeactivation: 0.15
+--- !u!114 &77642485228842674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157244836311377835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d92cd9bac3fc564fb91d2f18051b034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 3
+  currentHealth: 3
+  invincibilityTime: 3
+  isInvincible: 0
+  damageEffect: {fileID: -3029397376895586530}
+  deathEffect: {fileID: 5638641230803131695, guid: 95f62d3c76ea77d49b9ad677a84e72a4,
+    type: 3}
+  timeForDeathEffectToDestroy: 1
+  scoreValue: 1
+  deathEffectOn: 0
+  deathAnimation: {fileID: 0}
+--- !u!114 &-3029397376895586530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157244836311377835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725b0d5d7d7b86043af48cb4e428dd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageMaterial: {fileID: 2100000, guid: d5773d4bcfd1341488725434db1f9a19, type: 2}
+  duration: 0.07

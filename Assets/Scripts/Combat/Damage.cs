@@ -34,7 +34,10 @@ public class Damage : MonoBehaviour
     }
 
     /// <summary>
-    /// When this object collides with another object and stays next to it
+    /// When this object collides with another object and stays next to it.
+    /// If this damage component canDamage, if the object it hits is not tagged
+    /// as ignore, and if dealDamageOnTriggerStay is true, then it will call the
+    /// DealDamage function.
     /// </summary>
     /// <param name="collision"></param>
     private void OnTriggerStay2D(Collider2D collision)

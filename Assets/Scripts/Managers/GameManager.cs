@@ -10,18 +10,12 @@ public class GameManager : MonoBehaviour
     public GameObject player = null;
 
     [SerializeField] private string currentSceneName;
-    //public GameObject gmRespawnLocation = null;
     public UIManager uiManager;
-    public bool gameIsOver = false;
+    public bool isGameOver = false;
 
     public bool acceptPlayerInput = true;
+    public bool isPlayerDead = false;
     public bool triggeredStoryAtScene = false;
-
-    //[Header("Players")]
-    //[SerializeField] public GameObject gmPlayerParent;
-    //[SerializeField] public GameObject gmPlayerSidescroller;
-    //[SerializeField] public GameObject gmPlayerTopdown;
-    //[SerializeField] public GameObject spawnPoint;
 
     [Header("Health")]
     [SerializeField] private int gmInitialHealth = 0;
@@ -48,25 +42,6 @@ public class GameManager : MonoBehaviour
     [Header("Keys")]
     [SerializeField] private int gmInitiaKeyCount = 0;
     [SerializeField] private int gmCurrentKeyCount = 0;
-
-
-    //public static GameObject PlayerSidescroller
-    //{
-    //    get { return instance.gmPlayerSidescroller; }
-    //    //set { instance.gmPlayerSidescroller = value; }
-    //}
-
-    //public static GameObject PlayerTopDown
-    //{
-    //    get { return instance.gmPlayerTopdown; }
-    //    //set { instance.gmPlayerTopdown = value; }
-    //}
-
-    //public static GameObject RespawnLocation
-    //{
-    //    get { return instance.gmRespawnLocation; }
-    //    set { instance.gmRespawnLocation = value; }
-    //}
 
     public static int CurrentKeyCount
     {
@@ -136,8 +111,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        //InitiailizeRespawnLocation();
-
     }
 
     private void Start()
@@ -174,23 +147,9 @@ public class GameManager : MonoBehaviour
         InitializeKeyCount();
         InitializeScoreCount();
         InitializeCurrentScene();
-        //InitializeSpawnPoint();
-        //InitiailizeRespawnLocation();
-        //UIManager.instance.SetPlayerMaxHealth(MaxHealth);
         uiManager.SetPlayerMaxHealth(MaxHealth);
+        isGameOver = false;
     }
-
-    //// Sometimes causes bugs forcing the player to respawn in the wrong spot!! Reason being is FinsGameObjectWithTag is slow,
-    //// and the player needs to be able to find the spawn_point immediately. One possible fix is to make sure the scene is
-    //// running fast to avoid hiccups
-    //private void InitializeSpawnPoint()
-    //{
-    //    if (GameObject.FindGameObjectWithTag("spawn_point"))
-    //    {
-    //        spawnPoint = GameObject.FindGameObjectWithTag("spawn_point");
-    //    }
-    //}
-
 
     private void InitializePlayer()
     {
@@ -224,19 +183,6 @@ public class GameManager : MonoBehaviour
         currentSceneName = SceneManager.GetActiveScene().name;
     }
 
-    //    ****************************** UPDATE FOR TOP DOWN
-    //private void InitiailizeRespawnLocation()
-    //{
-    //    if (gmRespawnLocation == null)
-    //    {
-    //        Debug.LogWarning("Player Respawn Location not found in scene. Defaulting respawn location to" +
-    //            " player's location at start of scene.");
-    //        gmRespawnLocation = new GameObject("Player Respawn Location");
-    //        gmRespawnLocation.transform.position = player.transform.position;
-    //        gmRespawnLocation.transform.SetParent(this.gameObject.transform);
-    //    }
-    //}
-
     /// <summary>
     /// Calls the object tagged with "ui_manager" (In Game UI Canvas), and updates the UI by setting
     /// various UI properties. Does not update the player's health or the boss' health as there is only
@@ -244,11 +190,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void UpdateUI()
     {
-        //UIManager.instance.SetPlayerBombCount(CurrentGarlicBombCount);
-        //UIManager.instance.SetPlayerKeyCount(CurrentKeyCount);
-        //UIManager.instance.SetScoreCount(CurrentScoreCount);
-        //UIManager.instance.SetPlayerLifeCount(CurrentLifeCount);
-        //UIManager.instance.SetPlayerHealth(CurrentPlayerHealth);
         uiManager.SetPlayerBombCount(CurrentGarlicBombCount);
         uiManager.SetPlayerKeyCount(CurrentKeyCount);
         uiManager.SetScoreCount(CurrentScoreCount);
@@ -275,7 +216,7 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Time.timeScale = 1;
-        //ChangePlayerType(scene);
+        isPlayerDead = false;
 
         scene = SceneManager.GetActiveScene();
         if (scene.name == "0_MainMenu")
@@ -287,36 +228,9 @@ public class GameManager : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().gameObject;
             uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
             uiManager.SetPlayerMaxHealth(MaxHealth);
-            //InitializeSpawnPoint();
-            StartCoroutine(DelayUpdatingUI(0.1f));
+            UpdateUI();
         }
     }
-
-    /// <summary>
-    /// Delays updating the gameUI due to Unity's execution order
-    /// </summary>
-    /// <param name="time"></param>
-    /// <returns></returns>
-    IEnumerator DelayUpdatingUI(float time)
-    {
-        yield return new WaitForSeconds(time);
-        UpdateUI();
-    }
-
-    //public void ChangePlayerType(Scene scene)
-    //{
-    //    scene = SceneManager.GetActiveScene();
-    //    if (scene.name == "6_TopDownTutorial" || scene.name == "7_BossFight")
-    //    {
-    //        player = PlayerTopDown;
-    //    }
-
-    //    else if (scene.name == "1_Outside" || scene.name == "2_Part1" ||
-    //        scene.name == "3_Part2" || scene.name == "4_Part3" || scene.name == "5_Part4")
-    //    {
-    //        player = PlayerSidescroller;
-    //    }
-    //}
 
     public void StopPlayerInput()
     {

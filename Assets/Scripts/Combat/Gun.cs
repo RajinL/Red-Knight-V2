@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.instance.acceptPlayerInput)
+        if (GameManager.instance.acceptPlayerInput && !GameManager.instance.isPlayerDead)
         {
             if (Input.GetButtonDown("Fire1"))
             {

@@ -54,7 +54,16 @@ public class GarBombExplosion : MonoBehaviour
     /// <param name="tag">The tag name's as a string</param>
     private void SetParentToObjWithTag(string tag)
     {
-        GameObject parent = GameObject.FindGameObjectWithTag(tag);
-        transform.SetParent(parent.transform);
+        if (GameObject.FindGameObjectWithTag(tag))
+        {
+            Transform parent = GameObject.FindGameObjectWithTag(tag).transform;
+            transform.SetParent(parent);
+        }
+        else
+        {
+            Debug.LogWarning("Unable to find " + tag + " tag to set the " + gameObject.name + " game objects's parent" +
+                " because the Object Pool prefab is not included in this scene! Insert the Object Pool prefab into the scene" +
+                " to organize pooled objects.");
+        }
     }
 }

@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : Health
+public class EnemyProjectileHealth : Health
 {
     [Header("Score Value")]
     [Tooltip("The score amount this object awards.")]
     [SerializeField] private int scoreValue = 1;
 
     public bool deathEffectOn = true;
-    [SerializeField] private PatrollingEnemies enemyPatrol;
     public Animator deathAnimation;
+
+    private void OnEnable()
+    {
+        currentHealth = initialHealth;
+    }
 
     public override void TakeDamage(int damageAmount)
     {
@@ -47,20 +51,13 @@ public class EnemyHealth : Health
             // to improve performance
             // https://answers.unity.com/questions/1558312/how-to-destroy-particle-system-after-instantiating.html
             GameObject deathEffectInstance = Instantiate(deathEffect, transform.position, Quaternion.identity);
-
-            Destroy(gameObject);
-            Destroy(deathEffectInstance, timeForDeathEffectToDestroy);
+            gameObject.SetActive(false);
+            deathEffectInstance.SetActive(false); // use a coroutine with a timeForDeathEffectToDestroy
         }
         else
         {
-            deathAnimation.SetTrigger("isDead");
-            enemyPatrol.moveSpeed = 0;
-            gameObject.layer = LayerMask.NameToLayer("DestroyedObjects");
-            foreach (Transform child in transform)
-            {
-                child.gameObject.layer = LayerMask.NameToLayer("DestroyedObjects");
-            }
-            Destroy(gameObject, 5);
+            if (deathAnimation) deathAnimation.SetTrigger("isDead");
+            gameObject.SetActive(false);
         }
     }
 }

@@ -22,7 +22,6 @@ public class Boss : MonoBehaviour
 
     private void Start()
     {
-        //player = GameManager.instance.gmPlayerTopdown.transform;
         player = GameManager.instance.player.transform;
     }
 
@@ -52,17 +51,20 @@ public class Boss : MonoBehaviour
 
     public void Attack()
     {
-        Instantiate(projectile, firePoint.position, firePoint.rotation);
+        GameObject bat = GetComponent<ObjectPool>().GetPooledObject();
+        if (bat != null)
+        {
+            AudioManagerScript.PlaySound("shoot");
+            bat.transform.SetPositionAndRotation(firePoint.position, firePoint.rotation);
+            bat.SetActive(true);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject == GameManager.instance.player)
         {
             animator.SetBool("Panicked", true);
-
         }
     }
-
-
 }
