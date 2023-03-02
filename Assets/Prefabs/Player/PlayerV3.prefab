@@ -62,7 +62,6 @@ MonoBehaviour:
   objectToPool: {fileID: 2319702314299648014, guid: 0ba5318d5c832bd459c0c45262a3882a,
     type: 3}
   amountToPool: 20
-  parentObject: {fileID: 0}
 --- !u!1 &2622389308742375488
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +124,6 @@ MonoBehaviour:
   objectToPool: {fileID: 8235967003491384808, guid: 3c58ce87b09c73449a2db6cc28e41119,
     type: 3}
   amountToPool: 20
-  parentObject: {fileID: 0}
 --- !u!1 &4707590706219672144
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +314,7 @@ MonoBehaviour:
   lowJumpMultiplier: 2
   jumpableGround:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 3328
   dust: {fileID: 5773234081040054141}
   jumpAudioSource: {fileID: 0}
   state: 0
@@ -352,9 +350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07d1a0b45b2d674bb37d413012b5707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 5773234081951711043}
-  animator: {fileID: 5773234081951711102}
-  bodyCollider: {fileID: 355004023255776024}
   physicsMaterial: {fileID: 6200000, guid: 6eee83e7ac2af2d4282f973b30318de5, type: 2}
 --- !u!1 &5773234081040054142
 GameObject:
