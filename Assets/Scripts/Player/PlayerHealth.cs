@@ -36,8 +36,9 @@ public class PlayerHealth : Health
     {
         // ******************************************************************************//////                
         // UNLOCK CONTROLS
-        transform.position = GameManager.instance.spawnPoint.transform.position;
-        UIManager.instance.RestartCurrentScene();
+        //transform.position = GameManager.instance.spawnPoint.transform.position;
+        //UIManager.instance.RestartCurrentScene();
+        GameManager.instance.uiManager.RestartCurrentScene();
 
         if (GetComponent<PlayerMovementV2>())
         {
@@ -126,8 +127,10 @@ public class PlayerHealth : Health
 
     public void GameOver()
     {
-        UIManager.instance.DisplayMessage("Player has lost all lives. Game Over!");
-        UIManager.instance.storyUIButton.onClick.AddListener(RestartGameButton_onClick); //subscribe to the onClick event
+        //UIManager.instance.DisplayMessage("Player has lost all lives. Game Over!");
+        //UIManager.instance.storyUIButton.onClick.AddListener(RestartGameButton_onClick); //subscribe to the onClick event
+        GameManager.instance.uiManager.DisplayMessage("Player has lost all lives. Game Over!");
+        GameManager.instance.uiManager.storyUIButton.onClick.AddListener(RestartGameButton_onClick); //subscribe to the onClick event
     }
 
     /// <summary>
@@ -136,6 +139,7 @@ public class PlayerHealth : Health
     /// </summary>
     void RestartGameButton_onClick()
     {
-        UIManager.instance.LoadSceneByName("0_MainMenu");
+        //UIManager.instance.LoadSceneByName("0_MainMenu");
+        GameManager.instance.uiManager.LoadSceneByName("0_MainMenu");
     }
 }

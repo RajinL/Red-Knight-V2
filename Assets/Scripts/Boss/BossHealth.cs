@@ -14,7 +14,8 @@ public class BossHealth : Health
 
     private void Start()
     {
-        UIManager.instance.SetBossMaxHealth(initialHealth);
+        //UIManager.instance.SetBossMaxHealth(initialHealth);
+        GameManager.instance.uiManager.SetBossMaxHealth(initialHealth);
     }
 
     void Update()
@@ -24,7 +25,7 @@ public class BossHealth : Health
 
     public override void TakeDamage(int damageAmount)
     {
-        if (isInvincible || GameManager.CurrentPlayerHealth <= 0)
+        if (isInvincible || currentHealth <= 0)
         {
             return;
         }
@@ -40,7 +41,8 @@ public class BossHealth : Health
             }
 
             AudioManagerScript.PlaySound("enemyHit");
-            UIManager.instance.SetBossHealth(currentHealth);
+            //UIManager.instance.SetBossHealth(currentHealth);
+            GameManager.instance.uiManager.SetBossHealth(currentHealth);
             CheckIfObjectIsDead();
         }
     }

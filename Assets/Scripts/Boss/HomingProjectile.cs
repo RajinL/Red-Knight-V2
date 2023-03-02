@@ -13,7 +13,8 @@ public class HomingProjectile : MonoBehaviour
     void Start()
     {
         //player = GameObject.FindGameObjectWithTag("Player").transform;
-        player = GameManager.instance.gmPlayerTopdown.transform;
+        //player = GameManager.instance.gmPlayerTopdown.transform;
+        player = GameManager.instance.player.transform;
         rb = GetComponent<Rigidbody2D>();
     }
 

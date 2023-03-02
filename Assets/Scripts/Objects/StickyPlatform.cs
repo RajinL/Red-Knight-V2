@@ -22,7 +22,8 @@ public class StickyPlatform : MonoBehaviour
     {
         if (collision.gameObject  == GameManager.instance.player)
         {
-            collision.gameObject.transform.SetParent(GameManager.instance.gmPlayerParent.transform);
+            //collision.gameObject.transform.SetParent(GameManager.instance.gmPlayerParent.transform);
+            collision.gameObject.transform.SetParent(null);
         }
 
         if (collision.gameObject.CompareTag("non_player"))

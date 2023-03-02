@@ -29,10 +29,12 @@ public class StoryText : MonoBehaviour
             GameManager.instance.triggeredStoryAtScene = true;
 
             StartCoroutine(DelayStoryUIPanel(delayTime));
-            UIManager.instance.DisplayMessage(storyText);
+            //UIManager.instance.DisplayMessage(storyText);
+            GameManager.instance.uiManager.DisplayMessage(storyText);
             if (gameObject.CompareTag("Finish"))
             {
-                UIManager.instance.storyUIButton.onClick.AddListener(FinishGameButton_onClick); //subscribe to the onClick event
+                //UIManager.instance.storyUIButton.onClick.AddListener(FinishGameButton_onClick); //subscribe to the onClick event
+                GameManager.instance.uiManager.storyUIButton.onClick.AddListener(FinishGameButton_onClick); //subscribe to the onClick event
             }
         }
     }
@@ -51,14 +53,16 @@ public class StoryText : MonoBehaviour
     void FinishGameButton_onClick()
     {
         Time.timeScale = 1f;
-        UIManager.instance.LoadSceneByName("0_MainMenu");
+        //UIManager.instance.LoadSceneByName("0_MainMenu");
+        GameManager.instance.uiManager.LoadSceneByName("0_MainMenu");
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject == GameManager.instance.player)
         {
-            if (!UIManager.instance.storyUIPanel.activeInHierarchy)
+            //if (!UIManager.instance.storyUIPanel.activeInHierarchy)
+            if (!GameManager.instance.uiManager)
             {
                 gameObject.SetActive(false);
             }

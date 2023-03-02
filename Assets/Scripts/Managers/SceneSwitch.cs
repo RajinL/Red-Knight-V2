@@ -54,7 +54,8 @@ public class SceneSwitch : MonoBehaviour
                 {
                     if (gameObject.GetComponent<StoryText>())
                     {
-                        UIManager.instance.DisplayMessage(gameObject.GetComponent<StoryText>().storyText);
+                        //UIManager.instance.DisplayMessage(gameObject.GetComponent<StoryText>().storyText);
+                        GameManager.instance.uiManager.DisplayMessage(gameObject.GetComponent<StoryText>().storyText);
                     }
                 }
             }

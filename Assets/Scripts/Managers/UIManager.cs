@@ -26,25 +26,25 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        Scene scene = SceneManager.GetActiveScene();
-        // Set up the singleton instance of this
-        if (scene.name != "0_MainMenu")
-        {
-            if (instance == null)
-            {
-                instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+        //Scene scene = SceneManager.GetActiveScene();
+        //// Set up the singleton instance of this
+        //if (scene.name != "0_MainMenu")
+        //{
+        //    if (instance == null)
+        //    {
+        //        instance = this;
+        //        DontDestroyOnLoad(gameObject);
+        //    }
+        //    else
+        //    {
+        //        Destroy(gameObject);
+        //    }
+        //}
 
-        else
-        {
-            Destroy(gameObject);
-        }
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
 
         crossFade.SetActive(false);
         crossFade.SetActive(true);

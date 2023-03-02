@@ -9,7 +9,12 @@ public class BatProjectileCollision : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject == GameManager.instance.gmPlayerTopdown)
+        //if (collision.gameObject == GameManager.instance.gmPlayerTopdown)
+        //{
+        //    collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+        //    Destroy(gameObject);
+        //}
+        if (collision.gameObject == GameManager.instance.player)
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
             Destroy(gameObject);

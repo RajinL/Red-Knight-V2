@@ -22,7 +22,8 @@ public class Boss : MonoBehaviour
 
     private void Start()
     {
-        player = GameManager.instance.gmPlayerTopdown.transform;
+        //player = GameManager.instance.gmPlayerTopdown.transform;
+        player = GameManager.instance.player.transform;
     }
 
 

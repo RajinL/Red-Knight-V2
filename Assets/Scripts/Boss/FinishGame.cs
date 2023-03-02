@@ -9,7 +9,8 @@ public class FinishGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
+        player = GameManager.instance.player;
         TopDownMovement tdm = player.GetComponent<TopDownMovement>();
         Transform finishPoint = GameObject.FindGameObjectWithTag("Finish").transform;
         tdm.target = finishPoint;
