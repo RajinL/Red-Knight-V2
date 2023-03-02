@@ -67,7 +67,8 @@ public class PauseMenu : MonoBehaviour
             pauseMenuUI.SetActive(false);
         }
         GameManager.instance.triggeredStoryAtScene = false;
-        GameManager.instance.acceptPlayerInput = true;
+        //GameManager.instance.acceptPlayerInput = true;
+        GameManager.instance.ResumeplayerInput();
         Time.timeScale = 1f;
         GameIsPaused = false;
     }

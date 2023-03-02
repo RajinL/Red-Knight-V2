@@ -225,6 +225,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            //ResumeplayerInput();
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().gameObject;
             uiManager = GameObject.FindGameObjectWithTag("ui_manager").GetComponent<UIManager>();
             uiManager.SetPlayerMaxHealth(MaxHealth);
@@ -239,5 +240,10 @@ public class GameManager : MonoBehaviour
         {
             player.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
         }
+    }
+
+    public void ResumeplayerInput()
+    {
+        acceptPlayerInput = true;
     }
 }

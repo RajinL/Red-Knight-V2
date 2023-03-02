@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -245,55 +245,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65eae747d2ed3b44dace73c45c95ea92, type: 3}
---- !u!1 &403271718
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 403271719}
-  - component: {fileID: 403271720}
-  m_Layer: 0
-  m_Name: Right Bounds (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &403271719
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403271718}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.739538, y: -1.2020969, z: 0}
-  m_LocalScale: {x: 1.8604653, y: 1.8390806, z: 1}
-  m_Children: []
-  m_Father: {fileID: 796240339}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &403271720
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403271718}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0, y: 100}
-  - {x: 0, y: -100}
 --- !u!1 &663627793
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,12 +434,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd41bca31cca0ee4c92778808a91451f, type: 3}
---- !u!4 &796240339 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 807148431755048966, guid: c1b76928c22c14f4f91a45b96af63541,
-    type: 3}
-  m_PrefabInstance: {fileID: 3893740062739668461}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &973594018
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
         type: 3}
+      propertyPath: acceptPlayerInput
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291226658273869663, guid: e75812096960d5a4da19d008e9618992,
+        type: 3}
       propertyPath: gmPlayerSidescroller
       value: 
       objectReference: {fileID: 0}
@@ -840,44 +790,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1598393520 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2140299533030958110, guid: c1b76928c22c14f4f91a45b96af63541,
-    type: 3}
-  m_PrefabInstance: {fileID: 3893740062739668461}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1598393524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598393520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e738e33d9fd33479ace822c5e0e98b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxFactor: -0.2
---- !u!1 &1646001469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 807148431141244205, guid: c1b76928c22c14f4f91a45b96af63541,
-    type: 3}
-  m_PrefabInstance: {fileID: 3893740062739668461}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1646001473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646001469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e738e33d9fd33479ace822c5e0e98b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxFactor: -0.2
 --- !u!1001 &1796011855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1066,7 +978,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rightEdgeLevel
       value: 
-      objectReference: {fileID: 403271719}
+      objectReference: {fileID: 3893740063141883338}
     - target: {fileID: 8686783132974874324, guid: 83e3c27f0b4d7814399f3d6cf30b858c,
         type: 3}
       propertyPath: bottomEdgeLevel
@@ -1261,6 +1173,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2652817284503036521, guid: ac1770d97fa65324288ffe09aa197684,
+        type: 3}
+      propertyPath: m_text
+      value: "The world\u2019s most skilled Vampire Huntress has been hunting Nosferatu,
+        the Vampire King, across the globe to avenge the death of her family as well
+        as so many others who have fallen victim to his terror. After years of searching,
+        she has found him at last ready to fight Nosferatu himself, and all his minions,
+        to end his evil reign of the night.\n\nBefore you enter, try the player controls
+        to be prepared to fight your way through the castle.\r"
+      objectReference: {fileID: 0}
     - target: {fileID: 6250093031754103889, guid: ac1770d97fa65324288ffe09aa197684,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1270,6 +1192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641184033538348627, guid: ac1770d97fa65324288ffe09aa197684,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac1770d97fa65324288ffe09aa197684, type: 3}
@@ -1499,118 +1426,101 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
-    - target: {fileID: 807148430513312955, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 807148431823713369, guid: c1b76928c22c14f4f91a45b96af63541,
         type: 3}
       propertyPath: parallaxCamera
       value: 
       objectReference: {fileID: 1264541023}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[0].x
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[0].y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[1].x
-      value: 13.0941105
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[2].x
-      value: 15.347653
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[2].y
-      value: 1.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[3].x
-      value: 18.341557
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[4].x
-      value: 20.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[4].y
-      value: 2.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[5].x
-      value: 22.404732
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[6].x
-      value: 27.490372
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[6].y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123589, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Points.Array.data[7].x
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148431992123591, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_Name
-      value: Ground EdgeCollider
-      objectReference: {fileID: 0}
-    - target: {fileID: 807148432014638773, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_ColliderPaths.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3893740062982712197, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3893740063077902651, guid: c1b76928c22c14f4f91a45b96af63541,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.019999
-      objectReference: {fileID: 0}
-    - target: {fileID: 3893740063807889275, guid: c1b76928c22c14f4f91a45b96af63541,
+    - target: {fileID: 3532583724023100189, guid: c1b76928c22c14f4f91a45b96af63541,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532583724023100198, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532583724023100198, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532583724023100198, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532583724023100198, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893740063417342409, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: message
+      value: "Are you ready to enter Nosferatu\u2019s castle and fight his evil army
+        of the undead?\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893740063417342412, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893740063417342412, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893740063417342413, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893740063417342415, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_SortingLayer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893740063417342415, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893740063417342415, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893740064004572346, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.19
       objectReference: {fileID: 0}
     - target: {fileID: 3893740064372984711, guid: c1b76928c22c14f4f91a45b96af63541,
         type: 3}
       propertyPath: parallaxCamera
       value: 
       objectReference: {fileID: 1264541023}
-    - target: {fileID: 3893740064679800184, guid: c1b76928c22c14f4f91a45b96af63541,
+    - target: {fileID: 5283568112790366492, guid: c1b76928c22c14f4f91a45b96af63541,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -25.28
+      propertyPath: message
+      value: "Are you ready to enter Nosferatu\u2019s castle and fight his evil army
+        of the undead?\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283568112790366492, guid: c1b76928c22c14f4f91a45b96af63541,
+        type: 3}
+      propertyPath: requiresKey
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1b76928c22c14f4f91a45b96af63541, type: 3}
+--- !u!4 &3893740063141883338 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 403271719, guid: c1b76928c22c14f4f91a45b96af63541,
+    type: 3}
+  m_PrefabInstance: {fileID: 3893740062739668461}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6829509835651347390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1688,128 +1598,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartingPoint StoryUITrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 6829509834675170007, guid: 854980cee08e1eb4f958563d540e5174,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 854980cee08e1eb4f958563d540e5174, type: 3}
---- !u!1001 &8468527930058871654
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 796240339}
-    m_Modifications:
-    - target: {fileID: 996142496198584952, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: sceneTransition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063682, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063687, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063687, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 5.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063687, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8468527930222063737, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-        type: 3}
-      propertyPath: m_Name
-      value: SceneSwitchTrigger
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5, type: 3}
---- !u!1 &8468527930058871655 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8468527930222063737, guid: 0f4a9b6bf108e6d4ca9c18886e3e5ee5,
-    type: 3}
-  m_PrefabInstance: {fileID: 8468527930058871654}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8468527930058871656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8468527930058871655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fa0c19961b6c5849ad2d2cbce57c42e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayTime: 0.5
-  storyText: "Are you ready to enter Nosferatu\u2019s castle and fight his evil army
-    of the undead?\r"
 --- !u!1 &8686783133825479390 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8686783132974874313, guid: 83e3c27f0b4d7814399f3d6cf30b858c,

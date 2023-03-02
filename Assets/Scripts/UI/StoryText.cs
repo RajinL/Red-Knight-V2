@@ -28,7 +28,7 @@ public class StoryText : MonoBehaviour
         {
             GameManager.instance.triggeredStoryAtScene = true;
 
-            StartCoroutine(DelayStoryUIPanel(delayTime));
+            //StartCoroutine(DelayStoryUIPanel(delayTime));
             GameManager.instance.uiManager.DisplayMessage(storyText);
             if (gameObject.CompareTag("Finish"))
             {
@@ -37,11 +37,11 @@ public class StoryText : MonoBehaviour
         }
     }
 
-    IEnumerator DelayStoryUIPanel(float time)
-    {
-        yield return new WaitForSeconds(time);
-        GameManager.instance.StopPlayerInput();
-    }
+    //IEnumerator DelayStoryUIPanel(float time)
+    //{
+    //    yield return new WaitForSeconds(time);
+    //    GameManager.instance.StopPlayerInput();
+    //}
 
     /// <summary>
     /// Loads the main menu.
@@ -57,11 +57,10 @@ public class StoryText : MonoBehaviour
     {
         if (collision.gameObject == GameManager.instance.player)
         {
-            if (!GameManager.instance.uiManager)
-            {
-                gameObject.SetActive(false);
-            }
+            Debug.Log("exiting");
+            gameObject.SetActive(false);
             Time.timeScale = 1f;
+            GameManager.instance.ResumeplayerInput();
         }
     }
 }

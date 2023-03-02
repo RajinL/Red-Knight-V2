@@ -22,6 +22,9 @@ public class SceneSwitch : MonoBehaviour
     [SerializeField] private bool requiresKey;
     [Tooltip("The key prefab needed to load a scene.")]
     [SerializeField] CollectKey keyPrefab;
+    [Tooltip("Message to display.")]
+    [TextArea(3, 10)] //https://docs.unity3d.com/2019.4/Documentation/ScriptReference/TextAreaAttribute.html
+    [SerializeField] private string message;
 
     private void Start()
     {
@@ -47,15 +50,11 @@ public class SceneSwitch : MonoBehaviour
                     UseKey(1);
                     if (sceneTransition != null) StartCoroutine(LoadSceneWithFade(transitionTime));
                     else CheckForSceneName();
-                    return;
                 }
 
                 else
                 {
-                    if (gameObject.GetComponent<StoryText>())
-                    {
-                        GameManager.instance.uiManager.DisplayMessage(gameObject.GetComponent<StoryText>().storyText);
-                    }
+                    GameManager.instance.uiManager.DisplayMessage(message);
                 }
             }
             else
