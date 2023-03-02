@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5201667483052565834}
   - component: {fileID: 5165028526507681358}
   - component: {fileID: 1805870076921752858}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: Damage
   m_TagString: non_player
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1859511810506916115}
   - component: {fileID: 77642485228842674}
   - component: {fileID: -3029397376895586530}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: BatProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
