@@ -40,6 +40,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 392218c362ae54f0f95bcafd5379defd, type: 3}
   - {fileID: 21300000, guid: 4cd70fb4a47bf4c84ad549f7f57b3cd6, type: 3}
   - {fileID: 21300000, guid: a49935f49dc384b83ae4e1e7ac7802f2, type: 3}
+  - {fileID: 21300000, guid: 85daec36085bf3a45898f416b1d8e61c, type: 3}
   - {fileID: 21300000, guid: 169c738601686406e9dc499aecfe1539, type: 3}
   - {fileID: 21300000, guid: eca112b76f20b46868ad86e0bd613dae, type: 3}
   - {fileID: -3826213409532092036, guid: 5ac3bbe7bafeb9146b86f759ca98a8cf, type: 3}
@@ -515,6 +516,7 @@ SpriteAtlas:
   - mountains
   - statue
   - stone-1
+  - castle-pillar
   - bush-large
   - tree-1
   - castle_115
