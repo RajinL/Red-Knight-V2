@@ -46,7 +46,8 @@ public class Bullet : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10)
+        //if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == 10)
         {
             GameObject particleEffectInstance = Instantiate(particleEffect, transform.position, Quaternion.identity);
             Destroy(particleEffectInstance, 1);
