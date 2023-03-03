@@ -62,6 +62,6 @@ MonoBehaviour:
   highScore: 0
   gmInitialGarlicBombCount: 10
   gmCurrentGarlicBombCount: 10
-  gmMaxGarlicBombCount: 10
+  gmMaxGarlicBombCount: 25
   gmInitiaKeyCount: 0
   gmCurrentKeyCount: 0
