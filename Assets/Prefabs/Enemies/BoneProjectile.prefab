@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1793226771991854765}
   - component: {fileID: 70836216168739606}
   - component: {fileID: 1915841092296123274}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BoneProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
