@@ -8,7 +8,7 @@ public class BoneProjectile : MonoBehaviour
     //public float force;
     public float speed = 10f;
     public float rotationSpeed = 10f;
-    [SerializeField] private int attackDamage = 1;
+    //[SerializeField] private int attackDamage = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -40,11 +40,11 @@ public class BoneProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.gameObject == GameManager.instance.player)
-        {
-            hitInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
-            Debug.Log("Colliding with player");
-        }
+        //if (hitInfo.gameObject == GameManager.instance.player)
+        //{
+        //    hitInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+        //    Debug.Log("Colliding with player");
+        //}
         Destroy(gameObject);
     }
 }

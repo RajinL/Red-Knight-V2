@@ -23,6 +23,7 @@ TagManager:
   - bullet_parent
   - gar_bomb_parent
   - bat_projectile_parent
+  - parallax_background_layer
   layers:
   - Default
   - TransparentFX
