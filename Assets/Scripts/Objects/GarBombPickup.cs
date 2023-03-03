@@ -15,7 +15,7 @@ public class GarBombPickup : Pickup
     {
         if (collision.gameObject == GameManager.instance.player)
         {
-            AddBomb(1);
+            AddBomb(amountOfBombs);
         }
         base.OnTriggerEnter2D(collision);
     }
