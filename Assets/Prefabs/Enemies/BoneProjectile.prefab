@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1793226771991854755}
   - component: {fileID: 1793226771991854765}
   - component: {fileID: 70836216168739606}
+  - component: {fileID: 1915841092296123274}
   m_Layer: 0
   m_Name: BoneProjectile
-  m_TagString: Untagged
+  m_TagString: Ignore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,6 +149,7 @@ MonoBehaviour:
   rotationSpeed: 2
   bone: {fileID: 0}
   bonePos: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &70836216168739606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +162,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6bbbf70673dc3409a444c4013e1259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 5
   speed: 5
   rotationSpeed: 1000
-  attackDamage: 1
+--- !u!114 &1915841092296123274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793226771991854752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28b13e61b33a5f4faa1d3a9987f03ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDamage: 1
+  canOneShot: 0
+  damageAmount: 1
+  dealDamageOnTriggerEnter: 1
+  dealDamageOnTriggerStay: 0

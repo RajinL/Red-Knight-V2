@@ -50,9 +50,9 @@ MonoBehaviour:
   acceptPlayerInput: 1
   isPlayerDead: 0
   triggeredStoryAtScene: 0
-  gmInitialHealth: 5
-  gmCurrentHealth: 5
-  gmMaxHealth: 5
+  gmInitialHealth: 7
+  gmCurrentHealth: 7
+  gmMaxHealth: 7
   gmInitialLifeCount: 3
   gmCurrentLifeCount: 0
   gmMaxLifeCount: 0
@@ -60,8 +60,8 @@ MonoBehaviour:
   gmInitialScoreCount: 0
   gmScoreLifeThreshold: 10
   highScore: 0
-  gmInitialGarlicBombCount: 100
-  gmCurrentGarlicBombCount: 100
-  gmMaxGarlicBombCount: 100
+  gmInitialGarlicBombCount: 10
+  gmCurrentGarlicBombCount: 10
+  gmMaxGarlicBombCount: 10
   gmInitiaKeyCount: 0
   gmCurrentKeyCount: 0

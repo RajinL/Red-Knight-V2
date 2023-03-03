@@ -152,7 +152,7 @@ public class CameraFollow : MonoBehaviour
         {
             //Debug.Log("Rush has started!");
             objToFollow = rushObject;
-            targetPosition = new Vector3(x + cameraHalfWidth, y, gameObject.transform.position.z);
+            targetPosition = new Vector3(x + cameraHalfWidth - rushObject.GetComponent<Collider2D>().bounds.size.x / 2, y, gameObject.transform.position.z);
             StartCoroutine(Transition());
         }
         else if (rushEnded)

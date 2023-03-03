@@ -24,6 +24,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject levelSelectPage;
     [Tooltip("The controls page of the pause menu")]
     [SerializeField] private GameObject controlsPage;
+    [Tooltip("The credits page of the pause menu")]
+    [SerializeField] private GameObject creditsPage;
     [Tooltip("The story page of the pause menu")]
     [SerializeField] private GameObject storyUIPanel;
 
@@ -65,6 +67,7 @@ public class PauseMenu : MonoBehaviour
             levelSelectPage.SetActive(false);
             storyUIPanel.SetActive(false);
             pauseMenuUI.SetActive(false);
+            creditsPage.SetActive(false);
         }
         GameManager.instance.triggeredStoryAtScene = false;
         //GameManager.instance.acceptPlayerInput = true;
@@ -97,6 +100,7 @@ public class PauseMenu : MonoBehaviour
         mainPage.SetActive(true);
         controlsPage.SetActive(false);
         levelSelectPage.SetActive(false);
+        creditsPage.SetActive(false);
     }
 
     /// <summary>
@@ -107,6 +111,7 @@ public class PauseMenu : MonoBehaviour
         mainPage.SetActive(false);
         controlsPage.SetActive(false);
         levelSelectPage.SetActive(true);
+        creditsPage.SetActive(false);
     }
 
     /// <summary>
@@ -117,6 +122,18 @@ public class PauseMenu : MonoBehaviour
         mainPage.SetActive(false);
         controlsPage.SetActive(true);
         levelSelectPage.SetActive(false);
+        creditsPage.SetActive(false);
+    }
+
+    /// <summary>
+    /// Turns the main page off and opens the controls screen page
+    /// </summary>
+    public void OpenCreditsPage()
+    {
+        mainPage.SetActive(false);
+        controlsPage.SetActive(false);
+        levelSelectPage.SetActive(false);
+        creditsPage.SetActive(true);
     }
 
     /// <summary>

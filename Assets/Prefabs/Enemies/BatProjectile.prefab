@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: -3029397376895586530}
   m_Layer: 15
   m_Name: BatProjectile
-  m_TagString: Untagged
+  m_TagString: non_player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,6 +12,15 @@ public class EnemyHealth : Health
     [SerializeField] private PatrollingEnemies enemyPatrol;
     public Animator deathAnimation;
 
+    Transform parallaxBackgroundLayer;
+
+    private void Awake()
+    {
+        if (GameObject.FindGameObjectWithTag("parallax_background_layer"))
+        {
+            parallaxBackgroundLayer = GameObject.FindGameObjectWithTag("parallax_background_layer").transform;
+        }
+    }
     public override void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
@@ -47,6 +56,11 @@ public class EnemyHealth : Health
             // to improve performance
             // https://answers.unity.com/questions/1558312/how-to-destroy-particle-system-after-instantiating.html
             GameObject deathEffectInstance = Instantiate(deathEffect, transform.position, Quaternion.identity);
+
+            if (parallaxBackgroundLayer != null)
+            {
+                deathEffectInstance.transform.SetParent(parallaxBackgroundLayer);
+            }
 
             Destroy(gameObject);
             Destroy(deathEffectInstance, timeForDeathEffectToDestroy);

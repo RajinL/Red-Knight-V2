@@ -330,8 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbea67e96e0b5844c89612460f5e9c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 5
-  currentHealth: 5
+  initialHealth: 7
+  currentHealth: 7
   invincibilityTime: 1
   isInvincible: 0
   damageEffect: {fileID: 5147518992519147172}

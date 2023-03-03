@@ -36407,7 +36407,7 @@ GameObject:
   - component: {fileID: 1975565412}
   m_Layer: 0
   m_Name: BatWall2
-  m_TagString: rush_object
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128314,7 +128314,7 @@ GameObject:
   - component: {fileID: 8906833487380620637}
   m_Layer: 0
   m_Name: SpikeCollider
-  m_TagString: Ignore
+  m_TagString: rush_object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

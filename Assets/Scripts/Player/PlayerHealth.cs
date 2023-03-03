@@ -9,6 +9,11 @@ public class PlayerHealth : Health
     [SerializeField] private float respawnWaitTime = 3f;
     private float respawnTime;
 
+    private void Start()
+    {
+        currentHealth = GameManager.CurrentPlayerHealth;
+    }
+
     void Update()
     {
         InvincibilityCheck();
