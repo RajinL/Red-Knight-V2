@@ -36108,6 +36108,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 1408235391936448442, guid: 3f82db9b61f4b5a4fbd2ba338aa413cf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f82db9b61f4b5a4fbd2ba338aa413cf, type: 3}
 --- !u!4 &1812762637 stripped
