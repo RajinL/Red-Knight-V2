@@ -148,6 +148,7 @@ public class GameManager : MonoBehaviour
         InitializeScoreCount();
         InitializeCurrentScene();
         uiManager.SetPlayerMaxHealth(MaxHealth);
+        UpdateUI();
         isGameOver = false;
     }
 

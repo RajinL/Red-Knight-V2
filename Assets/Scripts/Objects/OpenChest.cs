@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class OpenChest : MonoBehaviour
 {
     public Sprite ChestOpened;
+    [SerializeField] private GameObject garlicBomb;
+    [SerializeField] private bool hasBeenOpened = false;
 
     /// <summary>
     /// If an object with a PlayerHealth component (i.e. the Player) collides with this chest,
@@ -16,14 +18,17 @@ public class OpenChest : MonoBehaviour
     /// <param name="collision"></param>
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //StartCoroutine(ExecuteAfterTime(1));
-        //StartCoroutine(ExecuteAfterTime(0));
-        if (collision.GetComponent<PlayerHealth>())
+        if (collision.gameObject == GameManager.instance.player && !hasBeenOpened)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = ChestOpened;
             AudioManagerScript.PlaySound("treasureChest");
-            // TO DO
-            // Instantiate a bomb for player to collect
+            garlicBomb.SetActive(true);
+            hasBeenOpened = true;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        hasBeenOpened = true;
     }
 }
