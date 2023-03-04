@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     [Header("Bullet Settings")]
     [Tooltip("The speed the bullet travels at. Affects the rigidbody of this component.")]
     [SerializeField] private float speed = 20f;
+    public GameObject particleEffect;
 
     private Rigidbody2D rb;
 
@@ -44,6 +45,13 @@ public class Bullet : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
+        //if (collision.gameObject.layer == 8 || collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == 10)
+        {
+            GameObject particleEffectInstance = Instantiate(particleEffect, transform.position, Quaternion.identity);
+            Destroy(particleEffectInstance, 1);
+        }  
     }
 
     /// <summary>

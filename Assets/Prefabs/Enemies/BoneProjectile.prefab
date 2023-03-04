@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 1793226771991854765}
   - component: {fileID: 70836216168739606}
   - component: {fileID: 1915841092296123274}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BoneProjectile
-  m_TagString: Ignore
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotationSpeed: 1000
+  destroyEffect: {fileID: 2145878787403279428, guid: a7626e6dc0840f24d80dcbe926a31a86,
+    type: 3}
 --- !u!114 &1915841092296123274
 MonoBehaviour:
   m_ObjectHideFlags: 0
