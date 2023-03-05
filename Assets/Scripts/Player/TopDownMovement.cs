@@ -25,6 +25,9 @@ public class TopDownMovement : MonoBehaviour
     [SerializeField]
     float angle;
 
+    public enum MovementState { idle, dead }
+    public MovementState state = MovementState.idle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,16 +75,20 @@ public class TopDownMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GameManager.instance.acceptPlayerInput)
+        if (state != MovementState.dead)
         {
-            // Move the player
-            rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
+            if (GameManager.instance.acceptPlayerInput)
+            {
+                // Move the player
+                rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
 
-            isRunning = movement.x != 0 || movement.y != 0 ? 1 : 0;
+                isRunning = movement.x != 0 || movement.y != 0 ? 1 : 0;
 
-            animator.SetInteger("state", isRunning);
+                animator.SetInteger("state", isRunning);
 
-            FindTarget();
+                FindTarget();
+                UpdateAnimationState();
+            }
         }
     }
 
@@ -167,5 +174,23 @@ public class TopDownMovement : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
 
         isFlipped = !isFlipped;
+    }
+
+    public void SetState(MovementState newState)
+    {
+        state = newState;
+    }
+
+    void UpdateAnimationState()
+    {
+        if (GameManager.CurrentPlayerHealth <= 0)
+        {
+            playerGun.SetActive(false);
+
+            SetState(MovementState.dead);
+
+        }
+
+
     }
 }
