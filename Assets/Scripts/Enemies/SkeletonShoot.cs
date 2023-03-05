@@ -89,5 +89,7 @@ public class SkeletonShoot : MonoBehaviour
     {
         Instantiate(bone, bonePos.position, Quaternion.identity);
         anim.SetTrigger("isThrowing");
+        AudioManagerScript.PlaySound("throwbone");
+
     }
 }
