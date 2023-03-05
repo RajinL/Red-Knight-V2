@@ -139,5 +139,5 @@ SpriteAtlas:
   - mainlevbuild_803
   - mainlevbuild_428
   - mainlevbuild_427
-  m_Tag: New Sprite Atlas
+  m_Tag: TopDownTileAtlas
   m_IsVariant: 0
