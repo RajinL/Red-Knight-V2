@@ -82,6 +82,7 @@ public class VampireShoot : MonoBehaviour
 
     void Shoot()
     {
+        AudioManagerScript.PlaySound("skullBomb");
         Instantiate(bomb, bombPos.position, Quaternion.identity);
 
     }

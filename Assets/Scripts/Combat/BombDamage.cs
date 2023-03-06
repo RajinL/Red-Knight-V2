@@ -110,6 +110,7 @@ public class BombDamage : MonoBehaviour
     {
         DealDamage(damageValue, explodeRangeRadius);
         AudioManagerScript.PlaySound("garlicBomb");
+
         CreateExplosionEffect();
     }
 
