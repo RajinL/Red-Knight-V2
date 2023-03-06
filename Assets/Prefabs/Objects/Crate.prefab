@@ -162,6 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 4
   currentHealth: 4
+  invincibilityTime: 3
+  isInvincible: 0
   damageEffect: {fileID: -7086116954931361942}
   deathEffect: {fileID: 1860957981043368082, guid: b0efe8e169625204ab18081859c6da75,
     type: 3}
