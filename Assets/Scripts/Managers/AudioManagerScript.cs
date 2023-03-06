@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManagerScript : MonoBehaviour
 {
-    public static AudioClip skullBombExplosion, skeletonThrowSound, barrelBreakSound, enemyCollisionSound, garlicBombExplosion, treasureChestSound, jumpSound, shootSound, enemyHurtSound, enemyDeathSound;
+    public static AudioClip menuSound, menuSelectSound, skullBombExplosion, skeletonThrowSound, barrelBreakSound, enemyCollisionSound, garlicBombExplosion, treasureChestSound, jumpSound, shootSound, enemyHurtSound, enemyDeathSound;
     static AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -25,7 +25,8 @@ public class AudioManagerScript : MonoBehaviour
 
         skeletonThrowSound = Resources.Load<AudioClip>("skeletonthrow");
 
-
+        menuSelectSound = Resources.Load<AudioClip>("menuSelect");
+        menuSound = Resources.Load<AudioClip>("menuSound");
 
         audioSource = GetComponent<AudioSource>();
 
@@ -42,6 +43,16 @@ public class AudioManagerScript : MonoBehaviour
     {
         switch (clip)
         {
+            case "menuSelect":
+                audioSource.volume = 1f;
+                audioSource.pitch = 1f;
+                audioSource.PlayOneShot(menuSelectSound);
+                break;
+            case "menuSound":
+                audioSource.volume = 1f;
+                audioSource.pitch = 1f;
+                audioSource.PlayOneShot(menuSound);
+                break;
             case "shoot":
                 audioSource.volume = 0.5f;
                 audioSource.pitch = 1.8f;

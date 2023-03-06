@@ -14,7 +14,7 @@ public class EnlargeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        AudioManagerScript.PlaySound("shoot");
+        AudioManagerScript.PlaySound("menuSound");
         transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
     }
 

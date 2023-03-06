@@ -54,7 +54,7 @@ public class MainMenu : MonoBehaviour
     IEnumerator LoadSceneWithFade(string sceneName)
     {
         sceneTransition.SetTrigger("Start");
-        AudioManagerScript.PlaySound("enemyDead");
+        AudioManagerScript.PlaySound("menuSelect");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneName);
     }
