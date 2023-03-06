@@ -24,6 +24,7 @@ TagManager:
   - gar_bomb_parent
   - bat_projectile_parent
   - parallax_background_layer
+  - skeleton
   layers:
   - Default
   - TransparentFX

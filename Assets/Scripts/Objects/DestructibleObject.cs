@@ -25,8 +25,14 @@ public class DestructibleObject : MonoBehaviour
         rb.AddForce(forceDirection);
         rb.AddTorque(randomTorque);
 
-
-        AudioManagerScript.PlaySound("barrelBreaks");
+        if (gameObject.CompareTag("skeleton"))
+        {
+            AudioManagerScript.PlaySound("skeletonDies");
+        }
+        else
+        {
+            AudioManagerScript.PlaySound("barrelBreaks");
+        }
 
         Invoke("DestroySelf", Random.Range(1f, 3f));
     }

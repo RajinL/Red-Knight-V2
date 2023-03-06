@@ -98,6 +98,11 @@ public class AudioManagerScript : MonoBehaviour
                 audioSource.pitch = 1f;
                 audioSource.PlayOneShot(barrelBreakSound);
                 break;
+            case "skeletonDies":
+                audioSource.volume = 1f;
+                audioSource.pitch = 3f;
+                audioSource.PlayOneShot(barrelBreakSound);
+                break;
             case "throwbone":
                 audioSource.volume = 0.5f;
                 audioSource.pitch = 1f;

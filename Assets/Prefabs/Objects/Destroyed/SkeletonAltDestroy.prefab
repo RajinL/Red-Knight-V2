@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4740287379314265292}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_10
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 8553334126929672481}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_3
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 2791696564738528530}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_6
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 6659280408204687409}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_2
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -599,7 +599,7 @@ GameObject:
   - component: {fileID: 845205107700547539}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_1
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 9113986433803649507}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_8
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 4362584502939480539}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_5
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1079,7 +1079,7 @@ GameObject:
   - component: {fileID: 4224407617496047501}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_7
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 4601126033588944384}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_4
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1371,7 +1371,7 @@ GameObject:
   - component: {fileID: 4051769799028745239}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_0
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1517,7 +1517,7 @@ GameObject:
   - component: {fileID: 7166565057263578591}
   m_Layer: 9
   m_Name: skeleton-alt-destroyed_9
-  m_TagString: Untagged
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
