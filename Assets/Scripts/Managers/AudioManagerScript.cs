@@ -74,7 +74,7 @@ public class AudioManagerScript : MonoBehaviour
                 audioSource.PlayOneShot(enemyCollisionSound);
                 break;
             case "enemyDead":
-                audioSource.volume = 1;
+                audioSource.volume = 1.2f;
                 audioSource.pitch = 1;
                 audioSource.PlayOneShot(enemyDeathSound);
                 break;

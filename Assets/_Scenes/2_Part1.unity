@@ -4669,6 +4669,11 @@ PrefabInstance:
       propertyPath: parentObject
       value: 
       objectReference: {fileID: 2097635503}
+    - target: {fileID: 6421746134898268615, guid: 7823d34312bee9946b63bc3989216e8d,
+        type: 3}
+      propertyPath: respawnWaitTime
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7823d34312bee9946b63bc3989216e8d, type: 3}
 --- !u!1 &419139441 stripped
