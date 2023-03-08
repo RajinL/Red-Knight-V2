@@ -31,8 +31,14 @@ public class GarlicBomb : MonoBehaviour
             {
                 if (GameManager.CurrentGarlicBombCount > 0)
                 {
+                    AudioManagerScript.PlaySound("garlicBombLaunch");
+                    AudioManagerScript.PlaySound("garlicBombFuse");
                     ThrowBomb();
                     UpdateAmmoCount(1);
+                }
+                else
+                {
+                    AudioManagerScript.PlaySound("garlicBombEmpty");
                 }
             }
         }

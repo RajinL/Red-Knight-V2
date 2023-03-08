@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManagerScript : MonoBehaviour
 {
-    public static AudioClip menuSound, menuSelectSound, skullBombExplosion, skeletonThrowSound, barrelBreakSound, enemyCollisionSound, garlicBombExplosion, treasureChestSound, jumpSound, shootSound, enemyHurtSound, enemyDeathSound;
+    public static AudioClip menuSound, menuSelectSound, skullBombExplosion, skeletonThrowSound, barrelBreakSound, enemyCollisionSound, garlicBombLaunch, garlicBombFuse, garlicBombExplosion, garlicBombEmpty, treasureChestSound, jumpSound, shootSound, enemyHurtSound, enemyDeathSound;
     static AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -16,7 +16,10 @@ public class AudioManagerScript : MonoBehaviour
         enemyDeathSound = Resources.Load<AudioClip>("enemyDead");
 
         treasureChestSound = Resources.Load<AudioClip>("treasureChestOpenSound");
+        garlicBombLaunch = Resources.Load<AudioClip>("garlicBombLauncher");
+        garlicBombFuse = Resources.Load<AudioClip>("garlicBombFuse");
         garlicBombExplosion = Resources.Load<AudioClip>("garlicBombExplosion");
+        garlicBombEmpty = Resources.Load<AudioClip>("garlicBombEmpty");
         skullBombExplosion = Resources.Load<AudioClip>("skullbomb2");
 
 
@@ -87,6 +90,21 @@ public class AudioManagerScript : MonoBehaviour
                 audioSource.volume = 0.05f;
                 audioSource.pitch = 1f;
                 audioSource.PlayOneShot(garlicBombExplosion);
+                break;
+            case "garlicBombLaunch":
+                audioSource.volume = 0.5f;
+                audioSource.pitch = 0.8f;
+                audioSource.PlayOneShot(garlicBombLaunch);
+                break;
+            case "garlicBombFuse":
+                audioSource.volume = 0.7f;
+                audioSource.pitch = 1f;
+                audioSource.PlayOneShot(garlicBombFuse);
+                break;
+            case "garlicBombEmpty":
+                audioSource.volume = 0.6f;
+                audioSource.pitch = 0.8f;
+                audioSource.PlayOneShot(garlicBombEmpty);
                 break;
             case "skullBomb":
                 audioSource.volume = 1f;
