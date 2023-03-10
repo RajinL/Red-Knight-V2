@@ -259,7 +259,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.42, y: 0.28}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -300,6 +300,9 @@ MonoBehaviour:
   - {fileID: 805510654674251963}
   - {fileID: 805510655209351847}
   moveSpeed: 1.5
+  decreaseMovementOnAttack: 1.6
+  enemyAttacking: {fileID: 0}
+  enemyCanAttack: 0
   facingRight: 1
 --- !u!114 &3421823100678581457
 MonoBehaviour:
@@ -315,11 +318,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 3
   currentHealth: 3
+  invincibilityTime: 3
+  isInvincible: 0
   damageEffect: {fileID: 805510655734386383}
-  deathEffect: {fileID: 5638641230803131695, guid: 95f62d3c76ea77d49b9ad677a84e72a4,
+  deathEffect: {fileID: 1626361841414519742, guid: f6d7f01c642763c45ad99d504571b8c7,
     type: 3}
+  timeForDeathEffectToDestroy: 1
   scoreValue: 1
+  deathEffectOn: 1
   enemyPatrol: {fileID: 0}
+  deathAnimation: {fileID: 0}
 --- !u!1 &2486158460806598165
 GameObject:
   m_ObjectHideFlags: 0

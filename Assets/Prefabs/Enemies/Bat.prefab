@@ -250,8 +250,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 3
   currentHealth: 3
+  invincibilityTime: 3
+  isInvincible: 0
   damageEffect: {fileID: 736528194681393929}
-  deathEffect: {fileID: 5638641230803131695, guid: 95f62d3c76ea77d49b9ad677a84e72a4,
+  deathEffect: {fileID: 1626361841414519742, guid: f6d7f01c642763c45ad99d504571b8c7,
     type: 3}
   timeForDeathEffectToDestroy: 1
   scoreValue: 1
