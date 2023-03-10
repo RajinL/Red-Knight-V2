@@ -128,8 +128,8 @@ public class AudioManagerScript : MonoBehaviour
                 audioSource.PlayOneShot(skeletonThrowSound);
                 break;
             case "skeletonPunch":
-                audioSource.volume = 0.5f;
-                audioSource.pitch = 1f;
+                audioSource.volume = 0.1f;
+                audioSource.pitch = 1.3f;
                 audioSource.PlayOneShot(skeletonPunch);
                 break;
 
